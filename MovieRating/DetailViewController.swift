@@ -21,7 +21,6 @@ class DetailViewController: UIViewController{
    
     
     override func viewDidLoad() {
-        self.movieTitle = "Saving Christmas"
         if let movieTitle = movieTitle{
 
             titleLabel.text = movieTitle
