@@ -8,7 +8,7 @@
         <!--Scan-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="scanBarcodeViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="MovieRating" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MovieRating" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -226,7 +226,7 @@
         <!--Navigation Controller-->
         <scene sceneID="pQG-Zl-tlm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vyY-JO-ZiY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RatingsNavController" automaticallyAdjustsScrollViewInsets="NO" id="vyY-JO-ZiY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PuM-WX-Ci7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

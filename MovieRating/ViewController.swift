@@ -23,6 +23,16 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         self.view.layer.addSublayer(previewLayer!)
     }
     
+    func updateCameraFeed(){
+        let previewLayerConnection = previewLayer?.connection;
+        
+        if (previewLayerConnection!.supportsVideoOrientation){
+            previewLayerConnection?.videoOrientation = AVCaptureVideoOrientation.init(rawValue: UIApplication.sharedApplication().statusBarOrientation.rawValue)!
+            previewLayer?.frame = self.view.bounds
+        }
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +54,12 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             AVMetadataObjectTypeEAN8Code,
             AVMetadataObjectTypeUPCECode,
             AVMetadataObjectTypeEAN13Code]
+      
         output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        updateCameraFeed()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,7 +67,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
         processingNetworkRequest = false
         session.startRunning()
+        
+        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateCameraFeed), name: UIDeviceOrientationDidChangeNotification, object: UIDevice.currentDevice())
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
