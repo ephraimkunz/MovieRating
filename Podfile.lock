@@ -1,0 +1,17 @@
+PODS:
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - Cosmos (1.2.2)
+
+DEPENDENCIES:
+  - ChameleonFramework
+  - Cosmos
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Cosmos: 87c49100c69d2cb2eebfa4eb8d1e801fe29ff774
+
+PODFILE CHECKSUM: c44dcef7599b6626e156c9ebaab5ace495fe3f0a
+
+COCOAPODS: 1.0.0

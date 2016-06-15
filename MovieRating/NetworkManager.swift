@@ -34,7 +34,6 @@ class NetworkManager{
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
             do{
                 let dict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSDictionary
-               // print( try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! String)
                 
                 dispatch_async(dispatch_get_main_queue()){
                     callback(data: dict)
