@@ -8,8 +8,9 @@
 
 import Foundation
 struct MovieInfo{
-    let title: String
-    let imdbRating: Float?
-    let metaRating: Int?
-    let rottenRating: Float?
+    var title: String?
+    var imdbRating: Double?
+    var metaRating: Double?
+    var rottenRating: Double?
+    var detail: String?
 }

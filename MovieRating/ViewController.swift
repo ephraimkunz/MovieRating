@@ -36,34 +36,45 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        do{
-            let inputDevice = try AVCaptureDeviceInput(device: captureDevice)
+        createHistoryBarButton()
+        
+        if(!Platform.isSimulator){
+            let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+            do{
+                let inputDevice = try AVCaptureDeviceInput(device: captureDevice)
+                
+                session.addInput(inputDevice)
+                addPreviewLayer()
+            }
+            catch _{
+                print("Cannot find the capture device. You may be running this in the simulator");
+            }
             
-            session.addInput(inputDevice)
-            addPreviewLayer()
+            
+            /* Check for metadata */
+            let output = AVCaptureMetadataOutput()
+            session.addOutput(output)
+            output.metadataObjectTypes = [
+                AVMetadataObjectTypeEAN8Code,
+                AVMetadataObjectTypeUPCECode,
+                AVMetadataObjectTypeEAN13Code]
+          
+            output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         }
-        catch _{
-        }
-        
-        
-        /* Check for metadata */
-        let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
-        output.metadataObjectTypes = [
-            AVMetadataObjectTypeEAN8Code,
-            AVMetadataObjectTypeUPCECode,
-            AVMetadataObjectTypeEAN13Code]
-      
-        output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
     }
     
     override func viewDidAppear(animated: Bool) {
-        updateCameraFeed()
+        if(!Platform.isSimulator){
+            updateCameraFeed() 
+        }
+    }
+    
+    func createHistoryBarButton(){
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = UIColor.flatGreenColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
 
         processingNetworkRequest = false
         session.startRunning()
@@ -89,9 +100,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         for data in metadataObjects {
             let barcode = data as! AVMetadataMachineReadableCodeObject
  
-            NetworkManager.getItemForUPC(barcode.stringValue){data in
+            NetworkManager.getItemForUPC(barcode.stringValue){movieInfo in
                 let detailView = self.storyboard?.instantiateViewControllerWithIdentifier("detailViewController") as! DetailViewController
-                detailView.movieTitle = data
+                detailView.movieInfo = movieInfo
                 self.navigationController?.pushViewController(detailView, animated: true)
             }
             processingNetworkRequest = true

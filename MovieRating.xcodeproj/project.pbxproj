@@ -15,6 +15,13 @@
 		18BAF99A1D0C9067001CC185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BAF9991D0C9067001CC185 /* Assets.xcassets */; };
 		18BAF99D1D0C9067001CC185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */; };
 		18CC69E61D0DDF4A0073E5FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */; };
+		18F2591A1D1B5A970054794F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F259191D1B5A970054794F /* HistoryViewController.swift */; };
+		18F2591C1D1B5E8A0054794F /* PlatformUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */; };
+		18F2591E1D1B60280054794F /* BarcodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2591D1D1B60280054794F /* BarcodeStore.swift */; };
+		18F259201D1B61710054794F /* BarcodeStoreDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2591F1D1B61710054794F /* BarcodeStoreDatasource.swift */; };
+		18F259221D1B62AA0054794F /* BarcodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F259211D1B62AA0054794F /* BarcodeData.swift */; };
+		18F259251D1CD1610054794F /* BarcodeData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F259231D1CD1610054794F /* BarcodeData.xcdatamodeld */; };
+		18F259271D1CD1B50054794F /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F259261D1CD1B50054794F /* CoreDataController.swift */; };
 		A47F17AD891899C9D3928771 /* Pods_MovieRating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5E568FF48E0F3C9A018EEC /* Pods_MovieRating.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +36,13 @@
 		18BAF99C1D0C9067001CC185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18BAF99E1D0C9067001CC185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		18F259191D1B5A970054794F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformUtils.swift; sourceTree = "<group>"; };
+		18F2591D1D1B60280054794F /* BarcodeStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeStore.swift; sourceTree = "<group>"; };
+		18F2591F1D1B61710054794F /* BarcodeStoreDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeStoreDatasource.swift; sourceTree = "<group>"; };
+		18F259211D1B62AA0054794F /* BarcodeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeData.swift; sourceTree = "<group>"; };
+		18F259241D1CD1610054794F /* BarcodeData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BarcodeData.xcdatamodel; sourceTree = "<group>"; };
+		18F259261D1CD1B50054794F /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		1C5E568FF48E0F3C9A018EEC /* Pods_MovieRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6A970F490F2F463A3B4652 /* Pods-MovieRating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieRating.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieRating/Pods-MovieRating.release.xcconfig"; sourceTree = "<group>"; };
 		FC5692C931989E52C34F108C /* Pods-MovieRating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieRating.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieRating/Pods-MovieRating.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,17 +81,56 @@
 		18BAF9911D0C9066001CC185 /* MovieRating */ = {
 			isa = PBXGroup;
 			children = (
+				18F2592B1D1CE3510054794F /* Utils */,
+				18F2592A1D1CE3190054794F /* View Controllers */,
+				18F259291D1CE2F60054794F /* Views */,
+				18F259281D1CE2370054794F /* Persistence */,
 				18BAF9921D0C9066001CC185 /* AppDelegate.swift */,
-				18BAF9941D0C9066001CC185 /* ViewController.swift */,
-				18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */,
-				180688541D0DA397002F94E6 /* NetworkManager.swift */,
-				18BAF9961D0C9067001CC185 /* Main.storyboard */,
+				18F2591F1D1B61710054794F /* BarcodeStoreDatasource.swift */,
 				18BAF9991D0C9067001CC185 /* Assets.xcassets */,
-				18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */,
 				18BAF99E1D0C9067001CC185 /* Info.plist */,
 				183FCCCA1D103E3600E4ADC8 /* MovieInfo.swift */,
 			);
 			path = MovieRating;
+			sourceTree = "<group>";
+		};
+		18F259281D1CE2370054794F /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				18F2591D1D1B60280054794F /* BarcodeStore.swift */,
+				18F259211D1B62AA0054794F /* BarcodeData.swift */,
+				18F259231D1CD1610054794F /* BarcodeData.xcdatamodeld */,
+				18F259261D1CD1B50054794F /* CoreDataController.swift */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		18F259291D1CE2F60054794F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */,
+				18BAF9961D0C9067001CC185 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		18F2592A1D1CE3190054794F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18BAF9941D0C9066001CC185 /* ViewController.swift */,
+				18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */,
+				18F259191D1B5A970054794F /* HistoryViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		18F2592B1D1CE3510054794F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */,
+				180688541D0DA397002F94E6 /* NetworkManager.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		29FA62F47525D36D2CAE8514 /* Pods */ = {
@@ -221,7 +274,14 @@
 			files = (
 				180688551D0DA397002F94E6 /* NetworkManager.swift in Sources */,
 				18BAF9951D0C9066001CC185 /* ViewController.swift in Sources */,
+				18F259271D1CD1B50054794F /* CoreDataController.swift in Sources */,
+				18F259221D1B62AA0054794F /* BarcodeData.swift in Sources */,
+				18F259201D1B61710054794F /* BarcodeStoreDatasource.swift in Sources */,
+				18F2591E1D1B60280054794F /* BarcodeStore.swift in Sources */,
 				18CC69E61D0DDF4A0073E5FD /* DetailViewController.swift in Sources */,
+				18F259251D1CD1610054794F /* BarcodeData.xcdatamodeld in Sources */,
+				18F2591A1D1B5A970054794F /* HistoryViewController.swift in Sources */,
+				18F2591C1D1B5E8A0054794F /* PlatformUtils.swift in Sources */,
 				18BAF9931D0C9066001CC185 /* AppDelegate.swift in Sources */,
 				183FCCCB1D103E3600E4ADC8 /* MovieInfo.swift in Sources */,
 			);
@@ -378,6 +438,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18F259231D1CD1610054794F /* BarcodeData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18F259241D1CD1610054794F /* BarcodeData.xcdatamodel */,
+			);
+			currentVersion = 18F259241D1CD1610054794F /* BarcodeData.xcdatamodel */;
+			path = BarcodeData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18BAF9871D0C9065001CC185 /* Project object */;
 }

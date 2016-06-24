@@ -8,7 +8,7 @@
 
 import Foundation
 class NetworkManager{
-    class func getItemForUPC(code: String, callback: (data: String) -> Void){
+    class func getItemForUPC(code: String, callback: (data: MovieInfo) -> Void){
         let url = NSURL(string: "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
             do{
@@ -16,9 +16,11 @@ class NetworkManager{
                 
                 let item = str["0"]! as! [String:String]
                 print(item)
-                let productName = item["productname"]!
+                var movieInfo = MovieInfo()
+                movieInfo.title = item["productname"]!
+                movieInfo.detail = item["description"]!
                 dispatch_async(dispatch_get_main_queue()){
-                    callback(data: productName)
+                    callback(data: movieInfo)
                 }
             }
             catch {

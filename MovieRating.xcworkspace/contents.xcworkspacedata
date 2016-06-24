@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:BarcodeData+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:BarcodeData+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
       location = "group:MovieRating.xcodeproj">
    </FileRef>
    <FileRef

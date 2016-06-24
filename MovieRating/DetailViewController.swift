@@ -13,6 +13,7 @@ import ChameleonFramework
 
 class DetailViewController: UIViewController{
     var movieTitle: String?
+    var movieInfo: MovieInfo?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imdbRating: CosmosView!
@@ -29,6 +30,7 @@ class DetailViewController: UIViewController{
                     self.imdbRating.hidden = false
                     let imdbDouble = imdb.doubleValue
                     self.imdbRating.rating = imdbDouble
+                    self.movieInfo?.imdbRating = imdbDouble
                     
                 }else{
                     self.imdbRating.hidden = true
@@ -38,6 +40,7 @@ class DetailViewController: UIViewController{
                     self.metaRating.hidden = false
                     let metaDouble = meta.doubleValue / 10.0
                     self.metaRating.rating = metaDouble
+                    self.movieInfo?.metaRating = metaDouble
                     
                 }else{
                     self.metaRating.hidden = true
@@ -47,10 +50,13 @@ class DetailViewController: UIViewController{
                     self.rottenTomatoesRating.hidden = false
                     let tomatoDouble = tomato.doubleValue
                     self.rottenTomatoesRating.rating = tomatoDouble
+                    self.movieInfo?.rottenRating = tomatoDouble
                     
                 }else{
                     self.rottenTomatoesRating.hidden = true
                 }
+                
+                BarcodeStore().saveBarcode(self.movieInfo!)
                 
                 if self.imdbRating.rating < 6.0{
                     self.navigationController?.navigationBar.barTintColor = UIColor.flatRedColor()
