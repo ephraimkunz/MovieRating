@@ -16,6 +16,7 @@ class BarcodeStore{
     }
     
     func getHistory() -> [BarcodeData]{
+        
         let moc = CoreDataController().managedObjectContext
         let histFetch = NSFetchRequest(entityName: "BarcodeData")
         let sort = NSSortDescriptor(key: "timestamp", ascending: false)
@@ -29,6 +30,7 @@ class BarcodeStore{
             fatalError("Error fetching history from CoreData")
         }
     }
+    
     
     func saveBarcode(movieInfo: MovieInfo){
         if movieInfo.title == nil || movieInfo.title! == " " {

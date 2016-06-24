@@ -19,7 +19,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate{
         dataSource = barcodeStore.tableViewDataSource()
         historyTableView.dataSource = dataSource
         historyTableView.delegate = self
-        historyTableView.reloadData()
     }
     
     @IBAction func cameraButtonTapped(sender: AnyObject) {
@@ -29,9 +28,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         let detailView = self.storyboard?.instantiateViewControllerWithIdentifier("detailViewController") as! DetailViewController
-        detailView.movieInfo = barcodeStore.getHistoryByBarcode(cell!.detailTextLabel!.text!).toMovieInfo()
+        detailView.movieInfo = barcodeStore.getHistoryByBarcode(cell!.detailTextLabel!.text!)!.toMovieInfo()
         self.navigationController?.pushViewController(detailView, animated: true)
     }
     
+    override func viewDidAppear(animated: Bool){
+        self.tableView.indexPathsForSelectedRows?.forEach{
+            self.tableView.deselectRowAtIndexPath($0, animated: true)
+        }
+        
+    }
 }
 
