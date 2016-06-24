@@ -31,8 +31,20 @@ class BarcodeStore{
     }
     
     func saveBarcode(movieInfo: MovieInfo){
-        let moc = CoreDataController().managedObjectContext
-        let entity = NSEntityDescription.insertNewObjectForEntityForName("BarcodeData", inManagedObjectContext: moc) as! BarcodeData
+        guard movieInfo.title != nil else{
+            return //Don't save with no title: this means there is no other useful info
+        }
+        
+         let moc = CoreDataController().managedObjectContext
+        
+        //Check for if this is an update. If so, update the object, don't create a new one
+        let entity: BarcodeData
+        if getHistoryByBarcode(movieInfo.barcode!).timestamp != nil{
+            entity = getHistoryByBarcode(movieInfo.barcode!)
+        }
+        else{
+            entity = NSEntityDescription.insertNewObjectForEntityForName("BarcodeData", inManagedObjectContext: moc) as! BarcodeData
+        }
         
         entity.title = movieInfo.title
         entity.detail = movieInfo.detail
@@ -40,6 +52,7 @@ class BarcodeStore{
         entity.metaRating = movieInfo.metaRating
         entity.rottenRating = movieInfo.rottenRating
         entity.timestamp = NSDate().timeIntervalSince1970
+        entity.barcode = movieInfo.barcode
         
         do{
             try moc.save()
@@ -50,10 +63,10 @@ class BarcodeStore{
         
     }
     
-    func getHistoryByTimestamp(timestamp: Int64) -> BarcodeData{
+    func getHistoryByBarcode(barcode: String) -> BarcodeData{
         let moc = CoreDataController().managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "BarcodeData")
-        let predicate = NSPredicate(format: "%K = %@", "timestamp", timestamp)
+        let predicate = NSPredicate(format: "%K = %@", "barcode", barcode)
         fetchRequest.predicate = predicate
         
         do{
@@ -65,7 +78,7 @@ class BarcodeStore{
             }
         }
         catch{
-            fatalError("Error fetching item with timestamp \(timestamp) from Core Data")
+            fatalError("Error fetching item with barcode \(barcode) from Core Data")
         }
     }
 }

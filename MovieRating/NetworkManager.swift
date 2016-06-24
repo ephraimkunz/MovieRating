@@ -17,8 +17,9 @@ class NetworkManager{
                 let item = str["0"]! as! [String:String]
                 print(item)
                 var movieInfo = MovieInfo()
-                movieInfo.title = item["productname"]!
-                movieInfo.detail = item["description"]!
+                movieInfo.title = item["productname"]
+                movieInfo.detail = item["imageurl"]
+                movieInfo.barcode = code
                 dispatch_async(dispatch_get_main_queue()){
                     callback(data: movieInfo)
                 }

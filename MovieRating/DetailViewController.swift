@@ -12,7 +12,6 @@ import Cosmos
 import ChameleonFramework
 
 class DetailViewController: UIViewController{
-    var movieTitle: String?
     var movieInfo: MovieInfo?
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,7 +21,7 @@ class DetailViewController: UIViewController{
    
     
     override func viewDidLoad() {
-        if let movieTitle = movieTitle{
+        if let movieTitle = movieInfo?.title{
 
             titleLabel.text = movieTitle
             NetworkManager.getRatingForItemTitle(movieTitle){ json in

@@ -13,4 +13,5 @@ struct MovieInfo{
     var metaRating: Double?
     var rottenRating: Double?
     var detail: String?
+    var barcode: String?
 }

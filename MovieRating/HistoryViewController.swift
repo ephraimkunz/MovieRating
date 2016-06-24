@@ -26,5 +26,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate{
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let detailView = self.storyboard?.instantiateViewControllerWithIdentifier("detailViewController") as! DetailViewController
+        detailView.movieInfo = barcodeStore.getHistoryByBarcode(cell!.detailTextLabel!.text!).toMovieInfo()
+        self.navigationController?.pushViewController(detailView, animated: true)
+    }
+    
 }
 
