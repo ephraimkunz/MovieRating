@@ -31,7 +31,7 @@ class BarcodeStore{
     }
     
     func saveBarcode(movieInfo: MovieInfo){
-        guard movieInfo.title != nil else{
+        if movieInfo.title == nil || movieInfo.title! == " " {
             return //Don't save with no title: this means there is no other useful info
         }
         
@@ -39,8 +39,8 @@ class BarcodeStore{
         
         //Check for if this is an update. If so, update the object, don't create a new one
         let entity: BarcodeData
-        if getHistoryByBarcode(movieInfo.barcode!).timestamp != nil{
-            entity = getHistoryByBarcode(movieInfo.barcode!)
+        if let exists = getHistoryByBarcode(movieInfo.barcode!){
+            entity = exists
         }
         else{
             entity = NSEntityDescription.insertNewObjectForEntityForName("BarcodeData", inManagedObjectContext: moc) as! BarcodeData
@@ -63,7 +63,7 @@ class BarcodeStore{
         
     }
     
-    func getHistoryByBarcode(barcode: String) -> BarcodeData{
+    func getHistoryByBarcode(barcode: String) -> BarcodeData?{
         let moc = CoreDataController().managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "BarcodeData")
         let predicate = NSPredicate(format: "%K = %@", "barcode", barcode)
@@ -74,7 +74,7 @@ class BarcodeStore{
                 return histItem
             }
             else{
-                return BarcodeData()
+                return nil
             }
         }
         catch{
