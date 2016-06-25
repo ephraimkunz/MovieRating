@@ -11,4 +11,36 @@ import UIKit
 
 class HistoryTableCell: UITableViewCell{
     
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var barcode: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var ratingIcon: UIImageView!
+    @IBOutlet weak var ratingIconHeight: NSLayoutConstraint!
+    
+    func setData(data: BarcodeData){
+        title.text = data.title
+        barcode.text = data.barcode
+        date.text = getDateText(data.timestamp!)
+        
+        if let ratingData = data.imdbRating{
+            rating.text = String(ratingData)
+            rating.hidden = false
+            ratingIcon.hidden = false
+            ratingIconHeight.constant = 25
+        }
+        else{
+            rating.hidden = true
+            ratingIcon.hidden = true
+            ratingIconHeight.constant = 0 //Don't leave space in the cell for it if we won't show it
+        }
+    }
+    
+    func getDateText(millis: NSNumber) -> String{
+        let date = NSDate(timeIntervalSince1970: NSTimeInterval(millis.doubleValue))
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
+        return formatter.stringFromDate(date)
+    }
 }

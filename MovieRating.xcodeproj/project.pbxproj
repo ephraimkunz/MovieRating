@@ -87,13 +87,13 @@
 		18BAF9911D0C9066001CC185 /* MovieRating */ = {
 			isa = PBXGroup;
 			children = (
-				18E865751D1F021800340FF6 /* HistoryTableCell.swift */,
 				18F2592B1D1CE3510054794F /* Utils */,
 				18F2592A1D1CE3190054794F /* View Controllers */,
 				18F259291D1CE2F60054794F /* Views */,
 				18F259281D1CE2370054794F /* Persistence */,
 				18BAF9921D0C9066001CC185 /* AppDelegate.swift */,
 				18F2591F1D1B61710054794F /* BarcodeStoreDatasource.swift */,
+				18E865751D1F021800340FF6 /* HistoryTableCell.swift */,
 				18BAF9991D0C9067001CC185 /* Assets.xcassets */,
 				18BAF99E1D0C9067001CC185 /* Info.plist */,
 				183FCCCA1D103E3600E4ADC8 /* MovieInfo.swift */,

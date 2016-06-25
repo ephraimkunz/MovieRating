@@ -104,10 +104,12 @@ class BarcodeStore{
         fetchRequest.predicate = predicate
         
         do{
-            if let histItem = (try BarcodeStore.moc.executeFetchRequest(fetchRequest) as! [BarcodeData]).first{
-                return histItem
+            let histItems = try BarcodeStore.moc.executeFetchRequest(fetchRequest)
+            let items = histItems as! [BarcodeData]
+            if let item = items.first{
+                return item
             }
-            else{
+            else {
                 return nil
             }
         }

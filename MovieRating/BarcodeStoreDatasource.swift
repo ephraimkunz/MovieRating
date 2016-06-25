@@ -24,9 +24,8 @@ class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsC
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellData = fetchedController.objectAtIndexPath(indexPath) as! BarcodeData;
-        let cell = tableView.dequeueReusableCellWithIdentifier("historyCell")!
-        cell.textLabel?.text = cellData.title
-        cell.detailTextLabel?.text = cellData.barcode
+        let cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as! HistoryTableCell
+        cell.setData(cellData)
         return cell
     }
     

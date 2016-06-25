@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHasDataProtocol{
     
@@ -15,11 +16,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHas
     
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var trashButton: UIBarButtonItem!
+
     
     override func viewDidLoad() {
         dataSource = barcodeStore.tableViewDataSource(tableView: historyTableView, delegate: self)
         historyTableView.dataSource = dataSource
         historyTableView.delegate = self
+        historyTableView.rowHeight = UITableViewAutomaticDimension
+        historyTableView.estimatedRowHeight = 150
+        historyTableView.separatorColor = UIColor.flatMintColor()
     }
     
     func tableViewHasData(data: Bool) {
@@ -44,9 +49,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHas
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! HistoryTableCell
         let detailView = self.storyboard?.instantiateViewControllerWithIdentifier("detailViewController") as! DetailViewController
-        detailView.movieInfo = barcodeStore.getHistoryByBarcode(cell!.detailTextLabel!.text!)!.toMovieInfo()
+        detailView.movieInfo = barcodeStore.getHistoryByBarcode(cell.barcode!.text!)!.toMovieInfo()
         self.navigationController?.pushViewController(detailView, animated: true)
     }
     
