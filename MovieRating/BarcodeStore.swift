@@ -11,14 +11,26 @@ import CoreData
 
 class BarcodeStore{
     
-    func tableViewDataSource() -> UITableViewDataSource{
-        return BarcodeStoreDatasource();
+    private func historyFetchRequest() -> NSFetchRequest{
+        return NSFetchRequest(entityName: "BarcodeData")
+    }
+    
+    func tableViewDataSource(tableView refTableView: UITableView, delegate: TableViewHasDataProtocol?) -> UITableViewDataSource{
+        return BarcodeStoreDatasource(tableView: refTableView, delegate: delegate);
+    }
+    
+    func historyFetchedResultsController() -> NSFetchedResultsController{
+        let request = historyFetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+
+        let fetched = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataController().managedObjectContext, sectionNameKeyPath: nil, cacheName: "historyCache")
+        return fetched
     }
     
     func getHistory() -> [BarcodeData]{
         
         let moc = CoreDataController().managedObjectContext
-        let histFetch = NSFetchRequest(entityName: "BarcodeData")
+        let histFetch = historyFetchRequest()
         let sort = NSSortDescriptor(key: "timestamp", ascending: false)
         histFetch.sortDescriptors = [sort]
         
@@ -65,10 +77,26 @@ class BarcodeStore{
         
     }
     
+    func removeHistory(){
+        let moc = CoreDataController().managedObjectContext
+        let fetchRequest = historyFetchRequest()
+        fetchRequest.returnsObjectsAsFaults = false
+        do{
+            let results = try moc.executeFetchRequest(fetchRequest)
+            for managedObject in results{
+                moc.deleteObject(managedObject as! NSManagedObject)
+            }
+            try moc.save()
+        }
+        catch{
+            fatalError("Error removing all history from Core Data")
+        }
+    }
+    
     func getHistoryByBarcode(barcode: String) -> BarcodeData?{
         let moc = CoreDataController().managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "BarcodeData")
-        let predicate = NSPredicate(format: "%K = %@", "barcode", barcode)
+        let fetchRequest = historyFetchRequest()
+        let predicate = NSPredicate(format: "barcode = %@", barcode)
         fetchRequest.predicate = predicate
         
         do{
@@ -82,5 +110,23 @@ class BarcodeStore{
         catch{
             fatalError("Error fetching item with barcode \(barcode) from Core Data")
         }
+    }
+    
+    func removeHistoryByBarcode(barcode: String){
+        let moc = CoreDataController().managedObjectContext
+        let fetchRequest = historyFetchRequest()
+        let predicate = NSPredicate(format: "barcode = %@", barcode)
+        fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.predicate = predicate
+        
+        do{
+            let results = try moc.executeFetchRequest(fetchRequest)
+            moc.deleteObject(results.first as! NSManagedObject)
+            try moc.save()
+        }
+        catch{
+            fatalError("Error removing all history from Core Data")
+        }
+
     }
 }

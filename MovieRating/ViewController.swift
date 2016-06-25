@@ -36,8 +36,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createHistoryBarButton()
-        
         if(!Platform.isSimulator){
             let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             do{
@@ -67,10 +65,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         if(!Platform.isSimulator){
             updateCameraFeed() 
         }
-    }
-    
-    func createHistoryBarButton(){
-        
     }
     
     override func viewWillAppear(animated: Bool) {

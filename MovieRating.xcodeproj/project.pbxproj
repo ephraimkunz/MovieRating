@@ -15,6 +15,8 @@
 		18BAF99A1D0C9067001CC185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BAF9991D0C9067001CC185 /* Assets.xcassets */; };
 		18BAF99D1D0C9067001CC185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */; };
 		18CC69E61D0DDF4A0073E5FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */; };
+		18E865721D1EE2E900340FF6 /* TableViewHasDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */; };
+		18E865741D1EE6BE00340FF6 /* NoDataLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */; };
 		18F2591A1D1B5A970054794F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F259191D1B5A970054794F /* HistoryViewController.swift */; };
 		18F2591C1D1B5E8A0054794F /* PlatformUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */; };
 		18F2591E1D1B60280054794F /* BarcodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2591D1D1B60280054794F /* BarcodeStore.swift */; };
@@ -36,6 +38,8 @@
 		18BAF99C1D0C9067001CC185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18BAF99E1D0C9067001CC185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHasDataProtocol.swift; sourceTree = "<group>"; };
+		18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataLabel.xib; sourceTree = "<group>"; };
 		18F259191D1B5A970054794F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformUtils.swift; sourceTree = "<group>"; };
 		18F2591D1D1B60280054794F /* BarcodeStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeStore.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				18BAF9991D0C9067001CC185 /* Assets.xcassets */,
 				18BAF99E1D0C9067001CC185 /* Info.plist */,
 				183FCCCA1D103E3600E4ADC8 /* MovieInfo.swift */,
+				18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */,
 			);
 			path = MovieRating;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			children = (
 				18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */,
 				18BAF9961D0C9067001CC185 /* Main.storyboard */,
+				18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 				18BAF99D1D0C9067001CC185 /* LaunchScreen.storyboard in Resources */,
 				18BAF99A1D0C9067001CC185 /* Assets.xcassets in Resources */,
 				18BAF9981D0C9067001CC185 /* Main.storyboard in Resources */,
+				18E865741D1EE6BE00340FF6 /* NoDataLabel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180688551D0DA397002F94E6 /* NetworkManager.swift in Sources */,
+				18E865721D1EE2E900340FF6 /* TableViewHasDataProtocol.swift in Sources */,
 				18BAF9951D0C9066001CC185 /* ViewController.swift in Sources */,
 				18F259271D1CD1B50054794F /* CoreDataController.swift in Sources */,
 				18F259221D1B62AA0054794F /* BarcodeData.swift in Sources */,
