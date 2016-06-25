@@ -22,7 +22,7 @@ class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsC
         fetchedController.delegate = self
         self.delegate = delegate
     }
-    @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellData = fetchedController.objectAtIndexPath(indexPath) as! BarcodeData;
         let cell = tableView.dequeueReusableCellWithIdentifier("historyCell")!
         cell.textLabel?.text = cellData.title
@@ -30,21 +30,37 @@ class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsC
         return cell
     }
     
-    @objc func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let sections = fetchedController.sections{
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       if fetchedController.sections![section].numberOfObjects > 0{
             self.delegate?.tableViewHasData(true)
-            return sections[section].numberOfObjects
         }
         else{
             self.delegate?.tableViewHasData(false)
-            return 0
         }
+        
+        return fetchedController.sections![section].numberOfObjects
     }
-    
+        
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         if type == .Delete{
             referencingTableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
         }
     }
     
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        referencingTableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        referencingTableView.endUpdates()
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true;
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let cellText = tableView.cellForRowAtIndexPath(indexPath)?.detailTextLabel?.text
+        BarcodeStore().removeHistoryByBarcode(cellText!)
+    }
 }

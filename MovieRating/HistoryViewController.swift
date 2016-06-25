@@ -41,7 +41,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHas
     }
     @IBAction func trashButtonTapped(sender: AnyObject) {
         barcodeStore.removeHistory()
-        historyTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

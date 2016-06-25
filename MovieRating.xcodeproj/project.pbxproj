@@ -17,6 +17,7 @@
 		18CC69E61D0DDF4A0073E5FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */; };
 		18E865721D1EE2E900340FF6 /* TableViewHasDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */; };
 		18E865741D1EE6BE00340FF6 /* NoDataLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */; };
+		18E865761D1F021800340FF6 /* HistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E865751D1F021800340FF6 /* HistoryTableCell.swift */; };
 		18F2591A1D1B5A970054794F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F259191D1B5A970054794F /* HistoryViewController.swift */; };
 		18F2591C1D1B5E8A0054794F /* PlatformUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */; };
 		18F2591E1D1B60280054794F /* BarcodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2591D1D1B60280054794F /* BarcodeStore.swift */; };
@@ -40,6 +41,7 @@
 		18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHasDataProtocol.swift; sourceTree = "<group>"; };
 		18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataLabel.xib; sourceTree = "<group>"; };
+		18E865751D1F021800340FF6 /* HistoryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableCell.swift; sourceTree = "<group>"; };
 		18F259191D1B5A970054794F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformUtils.swift; sourceTree = "<group>"; };
 		18F2591D1D1B60280054794F /* BarcodeStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeStore.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		18BAF9911D0C9066001CC185 /* MovieRating */ = {
 			isa = PBXGroup;
 			children = (
+				18E865751D1F021800340FF6 /* HistoryTableCell.swift */,
 				18F2592B1D1CE3510054794F /* Utils */,
 				18F2592A1D1CE3190054794F /* View Controllers */,
 				18F259291D1CE2F60054794F /* Views */,
@@ -288,6 +291,7 @@
 				18F2591E1D1B60280054794F /* BarcodeStore.swift in Sources */,
 				18CC69E61D0DDF4A0073E5FD /* DetailViewController.swift in Sources */,
 				18F259251D1CD1610054794F /* BarcodeData.xcdatamodeld in Sources */,
+				18E865761D1F021800340FF6 /* HistoryTableCell.swift in Sources */,
 				18F2591A1D1B5A970054794F /* HistoryViewController.swift in Sources */,
 				18F2591C1D1B5E8A0054794F /* PlatformUtils.swift in Sources */,
 				18BAF9931D0C9066001CC185 /* AppDelegate.swift in Sources */,
