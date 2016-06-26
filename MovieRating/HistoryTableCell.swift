@@ -23,8 +23,13 @@ class HistoryTableCell: UITableViewCell{
         barcode.text = data.barcode
         date.text = getDateText(data.timestamp!)
         
-        if let ratingData = data.imdbRating{
-            rating.text = String(ratingData)
+        if let imdb = data.imdbRating, rotten = data.rottenRating, meta = data.metaRating{
+            
+            //Take average
+            rating.text = formatRatingsText(
+                NSNumber.init(double:
+                    (imdb.doubleValue + meta.doubleValue + rotten.doubleValue) / 3
+                ))
             rating.hidden = false
             ratingIcon.hidden = false
             ratingIconHeight.constant = 25
@@ -34,6 +39,22 @@ class HistoryTableCell: UITableViewCell{
             ratingIcon.hidden = true
             ratingIconHeight.constant = 0 //Don't leave space in the cell for it if we won't show it
         }
+    }
+    
+    func formatRatingsText(ratingNumber: NSNumber) -> String{
+        let doubleVal = ratingNumber.doubleValue
+        if doubleVal < 5.0{
+            rating.textColor = UIColor.flatRedColor()
+        }
+        else if doubleVal >= 5 && doubleVal < 6.5{
+            rating.textColor = UIColor.flatOrangeColor()
+        }
+        else{
+            rating.textColor = UIColor.flatGreenColor()
+        }
+        let formatter = NSNumberFormatter()
+        formatter.positiveFormat = "0.#"
+        return formatter.stringFromNumber(ratingNumber)!
     }
     
     func getDateText(millis: NSNumber) -> String{

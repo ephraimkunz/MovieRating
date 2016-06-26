@@ -59,7 +59,7 @@ class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsC
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        let cellText = tableView.cellForRowAtIndexPath(indexPath)?.detailTextLabel?.text
+        let cellText = (tableView.cellForRowAtIndexPath(indexPath) as! HistoryTableCell).barcode?.text
         BarcodeStore().removeHistoryByBarcode(cellText!)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		180688551D0DA397002F94E6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180688541D0DA397002F94E6 /* NetworkManager.swift */; };
 		183FCCCB1D103E3600E4ADC8 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FCCCA1D103E3600E4ADC8 /* MovieInfo.swift */; };
+		188FF7671D1F502B0094D1E4 /* RatingsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FF7661D1F502B0094D1E4 /* RatingsCollection.swift */; };
 		18BAF9931D0C9066001CC185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BAF9921D0C9066001CC185 /* AppDelegate.swift */; };
 		18BAF9951D0C9066001CC185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BAF9941D0C9066001CC185 /* ViewController.swift */; };
 		18BAF9981D0C9067001CC185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BAF9961D0C9067001CC185 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		180688541D0DA397002F94E6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		183FCCCA1D103E3600E4ADC8 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		188FF7661D1F502B0094D1E4 /* RatingsCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsCollection.swift; sourceTree = "<group>"; };
 		18BAF98F1D0C9066001CC185 /* MovieRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BAF9921D0C9066001CC185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BAF9941D0C9066001CC185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,12 +94,10 @@
 				18F259291D1CE2F60054794F /* Views */,
 				18F259281D1CE2370054794F /* Persistence */,
 				18BAF9921D0C9066001CC185 /* AppDelegate.swift */,
-				18F2591F1D1B61710054794F /* BarcodeStoreDatasource.swift */,
+				18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */,
 				18E865751D1F021800340FF6 /* HistoryTableCell.swift */,
 				18BAF9991D0C9067001CC185 /* Assets.xcassets */,
 				18BAF99E1D0C9067001CC185 /* Info.plist */,
-				183FCCCA1D103E3600E4ADC8 /* MovieInfo.swift */,
-				18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */,
 			);
 			path = MovieRating;
 			sourceTree = "<group>";
@@ -105,6 +105,7 @@
 		18F259281D1CE2370054794F /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				18F2591F1D1B61710054794F /* BarcodeStoreDatasource.swift */,
 				18F2591D1D1B60280054794F /* BarcodeStore.swift */,
 				18F259211D1B62AA0054794F /* BarcodeData.swift */,
 				18F259231D1CD1610054794F /* BarcodeData.xcdatamodeld */,
@@ -118,6 +119,7 @@
 			children = (
 				18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */,
 				18BAF9961D0C9067001CC185 /* Main.storyboard */,
+				188FF7661D1F502B0094D1E4 /* RatingsCollection.swift */,
 				18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */,
 			);
 			name = Views;
@@ -138,6 +140,7 @@
 			children = (
 				18F2591B1D1B5E8A0054794F /* PlatformUtils.swift */,
 				180688541D0DA397002F94E6 /* NetworkManager.swift */,
+				183FCCCA1D103E3600E4ADC8 /* MovieInfo.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				18F2591A1D1B5A970054794F /* HistoryViewController.swift in Sources */,
 				18F2591C1D1B5E8A0054794F /* PlatformUtils.swift in Sources */,
 				18BAF9931D0C9066001CC185 /* AppDelegate.swift in Sources */,
+				188FF7671D1F502B0094D1E4 /* RatingsCollection.swift in Sources */,
 				183FCCCB1D103E3600E4ADC8 /* MovieInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
