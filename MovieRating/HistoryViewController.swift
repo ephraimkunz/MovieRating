@@ -60,5 +60,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHas
             historyTableView.deselectRowAtIndexPath($0, animated: true)
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
+    }
 }
 
