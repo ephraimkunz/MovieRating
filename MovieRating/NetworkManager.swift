@@ -19,7 +19,7 @@ class NetworkManager{
                 print(item)
                 var movieInfo = MovieInfo()
                 movieInfo.title = NetworkManager.parseRawTitle(item["productname"])
-                movieInfo.detail = item["imageurl"]
+                movieInfo.imageUrl = item["imageurl"]
                 
                 movieInfo.barcode = code
                 dispatch_async(dispatch_get_main_queue()){
@@ -32,6 +32,31 @@ class NetworkManager{
         })
         task.resume()
     }
+    
+//    class func getItemForUPC(code: String, callback: (data: MovieInfo) -> Void){
+//        let url = NSURL(string: "https://api.outpan.com/v2/products/\(code)?apikey=b413fba7c4cf0dd59aac40f3d75de524")
+//        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+//            do{
+//                let str = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
+//                
+//                let item = str
+//                print(item)
+//                var movieInfo = MovieInfo()
+//                movieInfo.title = NetworkManager.parseRawTitle(item["name"])
+//                //movieInfo.imageUrl = item["imageurl"]
+//                
+//                movieInfo.barcode = code
+//                dispatch_async(dispatch_get_main_queue()){
+//                    callback(data: movieInfo)
+//                }
+//            }
+//            catch {
+//                print("json error: \(error)")
+//            }
+//        })
+//        task.resume()
+//    }
+
     
     class func parseRawTitle(raw: String?) -> String?{
         //Remove items in brackets or parenthesis, along with brackets or parenthesis

@@ -67,12 +67,16 @@ class BarcodeStore{
         }
         
         entity.title = movieInfo.title
-        entity.detail = movieInfo.detail
         entity.imdbRating = movieInfo.imdbRating
         entity.metaRating = movieInfo.metaRating
         entity.rottenRating = movieInfo.rottenRating
         entity.timestamp = NSDate().timeIntervalSince1970
         entity.barcode = movieInfo.barcode
+        entity.imdbId = movieInfo.imdbId
+        entity.rottenUrl = movieInfo.rottenUrl
+        entity.descriptionText = movieInfo.description
+        entity.year = movieInfo.year
+        entity.mpaaRating = movieInfo.mpaaRating
         
         do{
             try BarcodeStore.moc.save()

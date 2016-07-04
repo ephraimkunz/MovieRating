@@ -55,13 +55,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHas
         self.navigationController?.pushViewController(detailView, animated: true)
     }
     
-    override func viewDidAppear(animated: Bool){
-        historyTableView.indexPathsForSelectedRows?.forEach{
-            historyTableView.deselectRowAtIndexPath($0, animated: true)
-        }
-    }
-    
     override func viewWillAppear(animated: Bool) {
+        if let row = self.historyTableView.indexPathForSelectedRow{
+            self.historyTableView.deselectRowAtIndexPath(row, animated: animated)
+        }
         self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
     }
 }

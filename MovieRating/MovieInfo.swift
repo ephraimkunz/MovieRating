@@ -12,10 +12,11 @@ struct MovieInfo{
     var imdbRating: Double?
     var metaRating: Double?
     var rottenRating: Double?
-    var detail: String?
     var barcode: String?
     var imageUrl: String?
     var description: String?
     var year: String?
     var mpaaRating: String?
+    var imdbId: String?
+    var rottenUrl: String?
 }

@@ -75,12 +75,34 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 200 //No special meaning to this, but to autosize the height we need it
     }
     
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //Only cells selectable are the rating cells with urls
+        if indexPath.section == ratingSection{
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailRatingCell
+            cell.didSelect(movieInfo)
+        }
     }
     
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == descriptionSection || indexPath.section == titleSection{
+            return false
+        }
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailRatingCell
+        return cell.shouldHighlightRow()
+    }
+    
+    func deselectRow() {
+        if let row = self.detailTableView.indexPathForSelectedRow{
+            self.detailTableView.deselectRowAtIndexPath(row, animated: true)
+        }
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DetailViewController.deselectRow), name: UIApplicationWillEnterForegroundNotification, object: nil)
         
         detailTableView.rowHeight = UITableViewAutomaticDimension
         
@@ -119,6 +141,14 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.movieInfo.year = year
                 }
                 
+                if let imdbId = json["imdbID"] as? String{
+                    self.movieInfo.imdbId = imdbId
+                }
+                
+                if let rottenUrl = json["tomatoURL"] as? String{
+                    self.movieInfo.rottenUrl = rottenUrl
+                }
+                                
                 BarcodeStore().saveBarcode(self.movieInfo)
                 
                 if self.movieInfo.imdbRating < 6.0{

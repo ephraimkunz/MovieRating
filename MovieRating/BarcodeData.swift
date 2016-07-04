@@ -11,7 +11,6 @@ import CoreData
 
 class BarcodeData: NSManagedObject{
     @NSManaged var barcode: String?
-    @NSManaged var detail: String?
     @NSManaged var title: String?
     @NSManaged var rottenRating: NSNumber?
     @NSManaged var imdbRating: NSNumber?
@@ -21,13 +20,16 @@ class BarcodeData: NSManagedObject{
     @NSManaged var imageUrl: String?
     @NSManaged var year: String?
     @NSManaged var mpaaRating: String?
+    @NSManaged var imdbId: String?
+    @NSManaged var rottenUrl: String?
     
     func toMovieInfo() -> MovieInfo{
         let imdbDouble = imdbRating?.doubleValue
         let rottenDouble = rottenRating?.doubleValue
         let metaDouble = metaRating?.doubleValue
 
-        let movieInfo = MovieInfo(title: title, imdbRating: imdbDouble, metaRating: metaDouble, rottenRating: rottenDouble, detail: detail, barcode: barcode, imageUrl: detail, description: detail, year: detail, mpaaRating: detail)
+        //FIXME: Fix this ugly stopgap measure
+        let movieInfo = MovieInfo(title: title, imdbRating: imdbDouble, metaRating: metaDouble, rottenRating: rottenDouble, barcode: barcode, imageUrl: imageUrl, description: descriptionText, year: year, mpaaRating: mpaaRating, imdbId: imdbId, rottenUrl: rottenUrl)
         
         return movieInfo
     }
