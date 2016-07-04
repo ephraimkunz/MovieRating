@@ -11,55 +11,89 @@ import UIKit
 import Cosmos
 import ChameleonFramework
 
-class DetailViewController: UIViewController{
+let titleSection = 0
+let ratingSection = 1;
+let descriptionSection = 2;
+
+let descriptionCellId = "detailDescriptionCell"
+let titleCellId = "detailTitleCell"
+let ratingCellId = "detailRatingCell"
+
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var movieInfo = MovieInfo() // Need to set this property when we instantiate this view controller
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imdbRating: CosmosView!
-    @IBOutlet weak var rottenTomatoesRating: CosmosView!
-    @IBOutlet weak var metaRating: CosmosView!
-   
+    @IBOutlet weak var detailTableView: UITableView!
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section{
+            case descriptionSection:
+                fallthrough
+            case titleSection:
+                return 1
+            case ratingSection:
+                return 3
+            default:
+                fatalError("numberOfRowsInSection called for unrecognized section: \(section)")
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: ConfigurableCell
+        switch indexPath.section{
+        case titleSection:
+            cell = detailTableView.dequeueReusableCellWithIdentifier(titleCellId) as! DetailTitleCell
+        case ratingSection:
+            cell = detailTableView.dequeueReusableCellWithIdentifier(ratingCellId) as! DetailRatingCell
+        case descriptionSection:
+            cell = detailTableView.dequeueReusableCellWithIdentifier(descriptionCellId) as! DetailDescriptionCell
+        default:
+            fatalError("Unrecognized section for cellForRowAtIndexPath: \(indexPath.section)")
+        }
+        cell.configure(indexPath.row)
+        return cell as! UITableViewCell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section{
+        case titleSection:
+            return "Information"
+        case ratingSection:
+            return "Ratings"
+        case descriptionSection:
+            return "Description"
+        default:
+            fatalError("Unrecognized section for titleForHeaderInSection: \(section)")
+        }
+    }
+    
     
     override func viewDidLoad() {
         if let movieTitle = movieInfo.title{
-
-            titleLabel.text = movieTitle
             NetworkManager.getRatingForItemTitle(movieTitle){ json in
                 if let imdb = json["imdbRating"] as? NSString{
-                    self.imdbRating.hidden = false
                     let imdbDouble = imdb.doubleValue
-                    self.imdbRating.rating = imdbDouble
                     self.movieInfo.imdbRating = imdbDouble
-                    
-                }else{
-                    self.imdbRating.hidden = true
                 }
                 
                 if let meta = json["Metascore"] as? NSString{
-                    self.metaRating.hidden = false
                     let metaDouble = meta.doubleValue / 10.0
-                    self.metaRating.rating = metaDouble
                     self.movieInfo.metaRating = metaDouble
-                    
-                }else{
-                    self.metaRating.hidden = true
                 }
                 
                 if let tomato = json["tomatoRating"] as? NSString{
-                    self.rottenTomatoesRating.hidden = false
                     let tomatoDouble = tomato.doubleValue
-                    self.rottenTomatoesRating.rating = tomatoDouble
                     self.movieInfo.rottenRating = tomatoDouble
-                    
-                }else{
-                    self.rottenTomatoesRating.hidden = true
                 }
                 
                 BarcodeStore().saveBarcode(self.movieInfo)
                 
-                if self.imdbRating.rating < 6.0{
+                if self.movieInfo.imdbRating < 6.0{
                     self.navigationController?.navigationBar.barTintColor = UIColor.flatRedColor()
-                    
                 }
             }
         }
