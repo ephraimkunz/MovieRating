@@ -12,8 +12,8 @@ import Cosmos
 import ChameleonFramework
 
 let titleSection = 0
-let ratingSection = 1;
-let descriptionSection = 2;
+let ratingSection = 1
+let descriptionSection = 2
 
 let descriptionCellId = "detailDescriptionCell"
 let titleCellId = "detailTitleCell"
@@ -54,7 +54,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         default:
             fatalError("Unrecognized section for cellForRowAtIndexPath: \(indexPath.section)")
         }
-        cell.configure(indexPath.row)
+        cell.configure(indexPath.row, data: self.movieInfo)
         return cell as! UITableViewCell
     }
     
@@ -71,8 +71,25 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 200 //No special meaning to this, but to autosize the height we need it
+    }
+    
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
     
     override func viewDidLoad() {
+        
+        detailTableView.rowHeight = UITableViewAutomaticDimension
+        
+        /* So why do we do this here. I'm glad you asked. A couple reasons. First, we want to switch from
+         the barcode scanning screen as quickly as possible after a scan happens so the user knows that it
+         worked. We want to give them any information we have as soon as we have it. Secondly, this method
+         will also run when the view is launched by the history tableView. Thus, we always get the latest
+         ratings and update the history with them.
+         */
         if let movieTitle = movieInfo.title{
             NetworkManager.getRatingForItemTitle(movieTitle){ json in
                 if let imdb = json["imdbRating"] as? NSString{
@@ -90,11 +107,24 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.movieInfo.rottenRating = tomatoDouble
                 }
                 
+                if let tomatoConsensus = json["tomatoConsensus"] as? String{
+                    self.movieInfo.description = tomatoConsensus
+                }
+                
+                if let mpaa = json["Rated"] as? String{
+                    self.movieInfo.mpaaRating = mpaa
+                }
+                
+                if let year = json["Year"] as? String{
+                    self.movieInfo.year = year
+                }
+                
                 BarcodeStore().saveBarcode(self.movieInfo)
                 
                 if self.movieInfo.imdbRating < 6.0{
                     self.navigationController?.navigationBar.barTintColor = UIColor.flatRedColor()
                 }
+                self.detailTableView.reloadData() //Now that we have all the raings, make sure we show them
             }
         }
     }

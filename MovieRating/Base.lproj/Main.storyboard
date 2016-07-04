@@ -198,12 +198,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRc-h8-Z8C">
-                                                    <rect key="frame" x="161" y="8" width="423" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arw-Rc-q47">
                                                     <rect key="frame" x="8" y="8" width="133" height="133"/>
                                                     <constraints>
@@ -211,19 +205,50 @@
                                                         <constraint firstAttribute="width" constant="133" id="uSf-4b-Rjl"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRc-h8-Z8C">
+                                                    <rect key="frame" x="151" y="8" width="433" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-2B-kje">
+                                                    <rect key="frame" x="215" y="38" width="43" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Year - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5w-la-qar">
+                                                    <rect key="frame" x="171" y="38" width="44" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cRc-h8-Z8C" firstAttribute="top" secondItem="m6g-JL-NbN" secondAttribute="top" constant="8" id="B6f-Kv-8H8"/>
-                                                <constraint firstItem="cRc-h8-Z8C" firstAttribute="leading" secondItem="arw-Rc-q47" secondAttribute="trailing" constant="20" id="JBl-k7-Bdz"/>
+                                                <constraint firstItem="CTw-2B-kje" firstAttribute="centerY" secondItem="p5w-la-qar" secondAttribute="centerY" id="FFW-cF-4cm"/>
+                                                <constraint firstItem="cRc-h8-Z8C" firstAttribute="leading" secondItem="arw-Rc-q47" secondAttribute="trailing" constant="10" id="JBl-k7-Bdz"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cRc-h8-Z8C" secondAttribute="trailing" constant="8" id="Pa2-Ya-6W8"/>
+                                                <constraint firstItem="CTw-2B-kje" firstAttribute="leading" secondItem="p5w-la-qar" secondAttribute="leading" id="Sqh-Gj-JDf"/>
                                                 <constraint firstItem="arw-Rc-q47" firstAttribute="top" secondItem="m6g-JL-NbN" secondAttribute="top" constant="8" id="UaH-oQ-apq"/>
                                                 <constraint firstAttribute="bottom" secondItem="arw-Rc-q47" secondAttribute="bottom" constant="8" id="Y81-8u-pIt"/>
+                                                <constraint firstItem="p5w-la-qar" firstAttribute="leading" secondItem="arw-Rc-q47" secondAttribute="trailing" constant="30" id="cnI-Kj-cma"/>
+                                                <constraint firstItem="CTw-2B-kje" firstAttribute="top" secondItem="p5w-la-qar" secondAttribute="bottom" constant="8" symbolic="YES" id="dVv-rl-osO"/>
                                                 <constraint firstItem="arw-Rc-q47" firstAttribute="leading" secondItem="m6g-JL-NbN" secondAttribute="leading" constant="8" id="hZt-uo-tOu"/>
+                                                <constraint firstItem="CTw-2B-kje" firstAttribute="leading" secondItem="p5w-la-qar" secondAttribute="trailing" id="rEN-yx-TJ4"/>
+                                                <constraint firstItem="p5w-la-qar" firstAttribute="top" secondItem="cRc-h8-Z8C" secondAttribute="bottom" constant="8" symbolic="YES" id="wm5-Hi-cfK"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Sqh-Gj-JDf"/>
+                                                    <exclude reference="dVv-rl-osO"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="infoImage" destination="arw-Rc-q47" id="kEC-55-KfZ"/>
                                             <outlet property="infoTitle" destination="cRc-h8-Z8C" id="2be-cJ-Mp6"/>
+                                            <outlet property="mpaaRatingLabel" destination="CTw-2B-kje" id="GwM-Oj-xwN"/>
+                                            <outlet property="yearLabel" destination="p5w-la-qar" id="b6J-fU-yEB"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailRatingCell" rowHeight="123" id="RQK-VK-rnC" customClass="DetailRatingCell" customModule="MovieRating" customModuleProvider="target">
@@ -233,13 +258,59 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1w-6d-Peq">
-                                                    <rect key="frame" x="8" y="8" width="106" height="106"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1w-6d-Peq">
+                                                    <rect key="frame" x="20" y="48" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="oTn-br-Fr8"/>
+                                                        <constraint firstAttribute="height" constant="25" id="xNh-BQ-yYw"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uW1-NQ-4So" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="60" y="53" width="205" height="16"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="6.7000000000000002"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                            <color key="value" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                            <color key="value" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LL-Zt-5nd">
+                                                    <rect key="frame" x="556" y="51" width="24" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="N1w-6d-Peq" firstAttribute="leading" secondItem="m1Z-1j-WI6" secondAttribute="leading" constant="20" symbolic="YES" id="0MW-h4-0kT"/>
+                                                <constraint firstItem="2LL-Zt-5nd" firstAttribute="centerY" secondItem="m1Z-1j-WI6" secondAttribute="centerY" id="EUS-cS-CGn"/>
+                                                <constraint firstItem="uW1-NQ-4So" firstAttribute="centerY" secondItem="m1Z-1j-WI6" secondAttribute="centerY" id="iqb-Bg-00w"/>
+                                                <constraint firstAttribute="trailing" secondItem="2LL-Zt-5nd" secondAttribute="trailing" constant="20" symbolic="YES" id="lq3-aH-Qef"/>
+                                                <constraint firstItem="uW1-NQ-4So" firstAttribute="leading" secondItem="N1w-6d-Peq" secondAttribute="trailing" constant="15" id="qou-Fq-x6i"/>
+                                                <constraint firstItem="N1w-6d-Peq" firstAttribute="centerY" secondItem="m1Z-1j-WI6" secondAttribute="centerY" id="smo-zU-fCH"/>
+                                                <constraint firstItem="2LL-Zt-5nd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uW1-NQ-4So" secondAttribute="trailing" constant="8" symbolic="YES" id="tpE-K4-nEp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ratingIcon" destination="N1w-6d-Peq" id="7TV-sP-Bwy"/>
+                                            <outlet property="iconImage" destination="N1w-6d-Peq" id="9O2-PV-WfR"/>
+                                            <outlet property="ratingStars" destination="uW1-NQ-4So" id="HGz-a2-t4w"/>
+                                            <outlet property="ratingValue" destination="2LL-Zt-5nd" id="adr-pu-l0F"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailDescriptionCell" rowHeight="120" id="JPq-xq-aJE" customClass="DetailDescriptionCell" customModule="MovieRating" customModuleProvider="target">

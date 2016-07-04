@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 class NetworkManager{
     class func getItemForUPC(code: String, callback: (data: MovieInfo) -> Void){
         let url = NSURL(string: "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
@@ -19,6 +20,7 @@ class NetworkManager{
                 var movieInfo = MovieInfo()
                 movieInfo.title = NetworkManager.parseRawTitle(item["productname"])
                 movieInfo.detail = item["imageurl"]
+                
                 movieInfo.barcode = code
                 dispatch_async(dispatch_get_main_queue()){
                     callback(data: movieInfo)
@@ -60,5 +62,18 @@ class NetworkManager{
             }
         })
         task.resume()
+    }
+    
+    class func getImageForUrl(imageUrl: String, callback: (image: UIImage) -> Void){
+        let url = NSURL(string: imageUrl)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+                if let data = data, image = UIImage(data: data){
+                    dispatch_async(dispatch_get_main_queue()){
+                        callback(image: image)
+                    }
+                }
+        })
+        task.resume()
+
     }
 }

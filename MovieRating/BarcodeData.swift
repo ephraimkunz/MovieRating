@@ -17,13 +17,17 @@ class BarcodeData: NSManagedObject{
     @NSManaged var imdbRating: NSNumber?
     @NSManaged var metaRating: NSNumber?
     @NSManaged var timestamp: NSNumber?
+    @NSManaged var descriptionText: String?
+    @NSManaged var imageUrl: String?
+    @NSManaged var year: String?
+    @NSManaged var mpaaRating: String?
     
     func toMovieInfo() -> MovieInfo{
         let imdbDouble = imdbRating?.doubleValue
         let rottenDouble = rottenRating?.doubleValue
         let metaDouble = metaRating?.doubleValue
 
-        let movieInfo = MovieInfo(title: title, imdbRating: imdbDouble, metaRating: metaDouble, rottenRating: rottenDouble, detail: detail, barcode: barcode)
+        let movieInfo = MovieInfo(title: title, imdbRating: imdbDouble, metaRating: metaDouble, rottenRating: rottenDouble, detail: detail, barcode: barcode, imageUrl: detail, description: detail, year: detail, mpaaRating: detail)
         
         return movieInfo
     }
