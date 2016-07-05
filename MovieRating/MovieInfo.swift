@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct MovieInfo{
+class MovieInfo{
     var title: String?
     var imdbRating: Double?
     var metaRating: Double?

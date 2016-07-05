@@ -28,9 +28,19 @@ class BarcodeData: NSManagedObject{
         let rottenDouble = rottenRating?.doubleValue
         let metaDouble = metaRating?.doubleValue
 
-        //FIXME: Fix this ugly stopgap measure
-        let movieInfo = MovieInfo(title: title, imdbRating: imdbDouble, metaRating: metaDouble, rottenRating: rottenDouble, barcode: barcode, imageUrl: imageUrl, description: descriptionText, year: year, mpaaRating: mpaaRating, imdbId: imdbId, rottenUrl: rottenUrl)
-        
+        let movieInfo = MovieInfo()
+        movieInfo.title = title
+        movieInfo.barcode = barcode
+        movieInfo.rottenRating = rottenDouble
+        movieInfo.imdbRating = imdbDouble
+        movieInfo.metaRating = metaDouble
+        movieInfo.description = descriptionText
+        movieInfo.imageUrl = imageUrl
+        movieInfo.year = year
+        movieInfo.mpaaRating = mpaaRating
+        movieInfo.imdbId = imdbId
+        movieInfo.rottenUrl = rottenUrl
+    
         return movieInfo
     }
 }

@@ -133,6 +133,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.movieInfo.description = tomatoConsensus
                 }
                 
+                if let imageUrl = json["Poster"] as? String{
+                    self.movieInfo.imageUrl = imageUrl
+                }
+                
                 if let mpaa = json["Rated"] as? String{
                     self.movieInfo.mpaaRating = mpaa
                 }

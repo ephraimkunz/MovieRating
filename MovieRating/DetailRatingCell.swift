@@ -30,16 +30,20 @@ class DetailRatingCell: UITableViewCell, ConfigurableCell{
             if let rating = data.imdbRating{
                 ratingStars.rating = rating
                 ratingValue.text = String(rating)
+                self.accessoryType = .DisclosureIndicator
+            }else{
+                self.accessoryType = .None
             }
-            self.accessoryType = .DisclosureIndicator
         case rottenRow:
             type = RatingType.Rotten
             iconImage.image = UIImage(named: "rottenIcon")
             if let rating = data.rottenRating{
                 ratingStars.rating = rating
                 ratingValue.text = String(rating)
+                self.accessoryType = .DisclosureIndicator
+            }else{
+                self.accessoryType = .None
             }
-            self.accessoryType = .DisclosureIndicator
         case metaRow:
             type = RatingType.Meta
             iconImage.image = UIImage(named: "metaIcon")
@@ -54,20 +58,25 @@ class DetailRatingCell: UITableViewCell, ConfigurableCell{
     }
     
     func shouldHighlightRow() -> Bool{
-        return type != RatingType.Meta
+        return self.accessoryType != .None
     }
     
     func didSelect(data: MovieInfo){
         let url: NSURL
         switch type {
         case .Imdb:
-            url = NSURL(string: imdbUrlScheme + data.imdbId!)!
+            if let id = data.imdbId{
+                url = NSURL(string: imdbUrlScheme + id)!
+                UIApplication.sharedApplication().openURL(url)
+
+            }
         case .Rotten:
-            url = NSURL(string: data.rottenUrl!)!
+            if let rottenUrl = data.rottenUrl{
+                url = NSURL(string: rottenUrl)!
+                UIApplication.sharedApplication().openURL(url)
+            }
         default:
             fatalError("User selected row that should never have been selected")
         }
-        
-        UIApplication.sharedApplication().openURL(url)
     }
 }

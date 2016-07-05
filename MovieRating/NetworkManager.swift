@@ -9,41 +9,17 @@
 import Foundation
 import UIKit
 class NetworkManager{
-    class func getItemForUPC(code: String, callback: (data: MovieInfo) -> Void){
-        let url = NSURL(string: "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
-            do{
-                let str = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
-                
-                let item = str["0"]! as! [String:String]
-                print(item)
-                var movieInfo = MovieInfo()
-                movieInfo.title = NetworkManager.parseRawTitle(item["productname"])
-                movieInfo.imageUrl = item["imageurl"]
-                
-                movieInfo.barcode = code
-                dispatch_async(dispatch_get_main_queue()){
-                    callback(data: movieInfo)
-                }
-            }
-            catch {
-                print("json error: \(error)")
-            }
-        })
-        task.resume()
-    }
-    
 //    class func getItemForUPC(code: String, callback: (data: MovieInfo) -> Void){
-//        let url = NSURL(string: "https://api.outpan.com/v2/products/\(code)?apikey=b413fba7c4cf0dd59aac40f3d75de524")
+//        let url = NSURL(string: "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
 //        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
 //            do{
 //                let str = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
 //                
-//                let item = str
+//                let item = str["0"]! as! [String:String]
 //                print(item)
 //                var movieInfo = MovieInfo()
-//                movieInfo.title = NetworkManager.parseRawTitle(item["name"])
-//                //movieInfo.imageUrl = item["imageurl"]
+//                movieInfo.title = NetworkManager.parseRawTitle(item["productname"])
+//                movieInfo.imageUrl = item["imageurl"]
 //                
 //                movieInfo.barcode = code
 //                dispatch_async(dispatch_get_main_queue()){
@@ -56,6 +32,30 @@ class NetworkManager{
 //        })
 //        task.resume()
 //    }
+
+    class func getItemForUPC(code: String, callback: (data: MovieInfo) -> Void){
+        let url = NSURL(string: "http://api.upcdatabase.org/json/82a4b5ee8dbaf3d18a653a0a74aeff66/\(code)")
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+            do{
+                let str = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
+                
+                let item = str as! [String: AnyObject]
+                print(item)
+                let movieInfo = MovieInfo()
+                movieInfo.title = NetworkManager.parseRawTitle(item["itemname"] as? String)
+                //movieInfo.imageUrl = item["imageurl"]
+                
+                movieInfo.barcode = code
+                dispatch_async(dispatch_get_main_queue()){
+                    callback(data: movieInfo)
+                }
+            }
+            catch {
+                print("json error: \(error)")
+            }
+        })
+        task.resume()
+    }
 
     
     class func parseRawTitle(raw: String?) -> String?{
