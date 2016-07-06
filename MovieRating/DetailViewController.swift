@@ -133,9 +133,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.movieInfo.description = tomatoConsensus
                 }
                 
-                if let imageUrl = json["Poster"] as? String{
-                    self.movieInfo.imageUrl = imageUrl
-                }
+//                if let imageUrl = json["Poster"] as? String{
+//                    self.movieInfo.imageUrl = imageUrl
+//                }
                 
                 if let mpaa = json["Rated"] as? String{
                     self.movieInfo.mpaaRating = mpaa
@@ -155,8 +155,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 
                 BarcodeStore().saveBarcode(self.movieInfo)
                 
-                if self.movieInfo.imdbRating < 6.0{
-                    self.navigationController?.navigationBar.barTintColor = UIColor.flatRedColor()
+                if let rating = self.movieInfo.imdbRating{
+                    if rating < NSUserDefaults().doubleForKey("badMovieThreshold"){
+                        self.navigationController?.navigationBar.barTintColor = UIColor.flatRedColor()
+                    }
                 }
                 self.detailTableView.reloadData() //Now that we have all the raings, make sure we show them
             }

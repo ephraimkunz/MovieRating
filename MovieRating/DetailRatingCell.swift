@@ -30,6 +30,8 @@ class DetailRatingCell: UITableViewCell, ConfigurableCell{
             if let rating = data.imdbRating{
                 ratingStars.rating = rating
                 ratingValue.text = String(rating)
+            }
+            if data.imdbId != nil{
                 self.accessoryType = .DisclosureIndicator
             }else{
                 self.accessoryType = .None
@@ -40,11 +42,14 @@ class DetailRatingCell: UITableViewCell, ConfigurableCell{
             if let rating = data.rottenRating{
                 ratingStars.rating = rating
                 ratingValue.text = String(rating)
+            }
+            if data.rottenUrl != nil{
                 self.accessoryType = .DisclosureIndicator
             }else{
                 self.accessoryType = .None
             }
-        case metaRow:
+
+            case metaRow:
             type = RatingType.Meta
             iconImage.image = UIImage(named: "metaIcon")
             if let rating = data.metaRating{
