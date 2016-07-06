@@ -25,7 +25,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var detailTableView: UITableView!
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        if(movieInfo.imdbRating != nil){
+            if(movieInfo.description != nil){
+                return 3
+            }
+            return 2
+        }
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

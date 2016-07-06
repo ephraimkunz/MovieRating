@@ -43,7 +43,6 @@ class NetworkManager{
 //                print(item)
 //                let movieInfo = MovieInfo()
 //                movieInfo.title = NetworkManager.parseRawTitle(item["itemname"] as? String)
-//                //movieInfo.imageUrl = item["imageurl"]
 //                
 //                movieInfo.barcode = code
 //                dispatch_async(dispatch_get_main_queue()){

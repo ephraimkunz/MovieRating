@@ -77,6 +77,7 @@ class BarcodeStore{
         entity.descriptionText = movieInfo.description
         entity.year = movieInfo.year
         entity.mpaaRating = movieInfo.mpaaRating
+        entity.imageUrl = movieInfo.imageUrl
         
         do{
             try BarcodeStore.moc.save()
