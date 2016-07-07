@@ -11,18 +11,18 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items have been scanned yet. Scan a DVD barcode to get ratings!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-wT-UwW">
-                    <rect key="frame" x="20" y="290" width="560" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieRating was created and is maintained by Ephraim Kunz and is free as a courtesy to you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rl5-zo-Otx">
+                    <rect key="frame" x="20" y="20" width="560" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="bG8-wT-UwW" secondAttribute="trailing" constant="20" symbolic="YES" id="1L9-1W-rgP"/>
-                <constraint firstItem="bG8-wT-UwW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="9E7-ma-NhQ"/>
-                <constraint firstItem="bG8-wT-UwW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HmY-en-YLE"/>
+                <constraint firstItem="Rl5-zo-Otx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="QSh-71-xE2"/>
+                <constraint firstItem="Rl5-zo-Otx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="YQQ-tk-wZG"/>
+                <constraint firstAttribute="trailing" secondItem="Rl5-zo-Otx" secondAttribute="trailing" constant="20" symbolic="YES" id="e5F-tX-dtX"/>
             </constraints>
         </view>
     </objects>

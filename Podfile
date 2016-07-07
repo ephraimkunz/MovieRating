@@ -8,4 +8,6 @@ target 'MovieRating' do
   # Pods for MovieRating
 pod 'Cosmos'
 pod 'ChameleonFramework'
+pod 'TTRangeSlider'
+
 end

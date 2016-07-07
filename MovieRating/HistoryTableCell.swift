@@ -43,15 +43,8 @@ class HistoryTableCell: UITableViewCell{
     
     func formatRatingsText(ratingNumber: NSNumber) -> String{
         let doubleVal = ratingNumber.doubleValue
-        if doubleVal < NSUserDefaults().doubleForKey("badMovieThreshold"){
-            rating.textColor = UIColor.flatRedColor()
-        }
-        else if doubleVal < NSUserDefaults().doubleForKey("okMovieThreshold"){
-            rating.textColor = UIColor.flatOrangeColor()
-        }
-        else{
-            rating.textColor = UIColor.flatGreenColor()
-        }
+        rating.textColor = Platform.getColorForRating(doubleVal)
+        
         let formatter = NSNumberFormatter()
         formatter.positiveFormat = "0.#"
         return formatter.stringFromNumber(ratingNumber)!

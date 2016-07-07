@@ -52,7 +52,7 @@ class BarcodeStore{
     }
     
     
-    func saveBarcode(movieInfo: MovieInfo){
+    func saveBarcode(movieInfo: MovieInfo, saveTimestamp: Bool){
         if movieInfo.title == nil || movieInfo.title! == " " {
             return //Don't save with no title: this means there is no other useful info
         }
@@ -66,11 +66,13 @@ class BarcodeStore{
             entity = NSEntityDescription.insertNewObjectForEntityForName(BARCODE_NAME, inManagedObjectContext: BarcodeStore.moc) as! BarcodeData
         }
         
+        if(saveTimestamp){
+            entity.timestamp = NSDate().timeIntervalSince1970
+        }
         entity.title = movieInfo.title
         entity.imdbRating = movieInfo.imdbRating
         entity.metaRating = movieInfo.metaRating
         entity.rottenRating = movieInfo.rottenRating
-        entity.timestamp = NSDate().timeIntervalSince1970
         entity.barcode = movieInfo.barcode
         entity.imdbId = movieInfo.imdbId
         entity.rottenUrl = movieInfo.rottenUrl

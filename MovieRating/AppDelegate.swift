@@ -15,9 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        NSUserDefaults().setDouble(5.0, forKey: "badMovieThreshold")
-        NSUserDefaults().setDouble(6.5, forKey: "okMovieThreshold")
+        NSUserDefaults().registerDefaults([
+            "badMovieThreshold": 5.0,
+            "okMovieThreshold": 6.5
+            ])
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
 

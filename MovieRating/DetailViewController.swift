@@ -158,13 +158,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if let rottenUrl = json["tomatoURL"] as? String{
                     self.movieInfo.rottenUrl = rottenUrl
                 }
-                                
-                BarcodeStore().saveBarcode(self.movieInfo)
+                
+                let parent = self.navigationController!.viewControllers.first!
+                BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKindOfClass(ViewController))
                 
                 if let rating = self.movieInfo.imdbRating{
-                    if rating < NSUserDefaults().doubleForKey("badMovieThreshold"){
-                        self.navigationController?.navigationBar.barTintColor = UIColor.flatRedColor()
-                    }
+                    self.navigationController?.navigationBar.barTintColor = Platform.getColorForRating(rating)
                 }
                 self.detailTableView.reloadData() //Now that we have all the raings, make sure we show them
             }

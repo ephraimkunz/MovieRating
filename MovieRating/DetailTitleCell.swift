@@ -15,12 +15,15 @@ class DetailTitleCell: UITableViewCell, ConfigurableCell{
     @IBOutlet weak var infoTitle: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var mpaaRatingLabel: UILabel!
+    @IBOutlet weak var yearRatingLabelsBottomPadding: NSLayoutConstraint!
     
     func configure(row: Int, data: MovieInfo){
         if let imageUrl = data.imageUrl{
             NetworkManager.getImageForUrl(imageUrl){ image in
                 self.infoImage.image = image
             }
+        } else{
+          //  self.infoImage.image = UIImage(named: "imagePlaceholder")
         }
         if let title = data.title{
             infoTitle.text = title
@@ -31,6 +34,7 @@ class DetailTitleCell: UITableViewCell, ConfigurableCell{
             yearLabel.text = year + " • "
         }else{
             yearLabel.hidden = true
+            yearRatingLabelsBottomPadding.constant = 0
         }
         
         if let mpaaRating = data.mpaaRating{
