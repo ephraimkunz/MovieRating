@@ -26,7 +26,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if(movieInfo.imdbRating != nil){
-            if(movieInfo.description != nil){
+            if(movieInfo.description != nil && movieInfo.description != "N/A"){
                 return 3
             }
             return 2

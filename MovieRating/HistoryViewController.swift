@@ -45,7 +45,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHas
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func trashButtonTapped(sender: AnyObject) {
-        barcodeStore.removeHistory()
+        let alert = UIAlertController(title: "Delete History", message: "Are you sure you want to delete your scan history?", preferredStyle: .Alert)
+        let deleteAction = UIAlertAction(title: "Delete", style: .Destructive){
+            (action: UIAlertAction!) -> Void in
+            self.barcodeStore.removeHistory()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

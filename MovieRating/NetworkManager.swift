@@ -71,7 +71,7 @@ class NetworkManager{
     
     class func getRatingForItemTitle(title: String, callback: (data: NSDictionary) -> Void){
         let encodedTitle = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-        let url = NSURL(string: "http://www.omdbapi.com/?t=\(encodedTitle))&y=&plot=short&r=json&tomatoes=true")
+        let url = NSURL(string: "https://www.omdbapi.com/?t=\(encodedTitle)&y=&plot=short&r=json&tomatoes=true")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
             do{
                 let dict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSDictionary

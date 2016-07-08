@@ -23,13 +23,8 @@ class HistoryTableCell: UITableViewCell{
         barcode.text = data.barcode
         date.text = getDateText(data.timestamp!)
         
-        if let imdb = data.imdbRating, rotten = data.rottenRating, meta = data.metaRating{
-            
-            //Take average
-            rating.text = formatRatingsText(
-                NSNumber.init(double:
-                    (imdb.doubleValue + meta.doubleValue + rotten.doubleValue) / 3
-                ))
+        if let imdb = data.imdbRating{
+            rating.text = formatRatingsText(imdb)
             rating.hidden = false
             ratingIcon.hidden = false
             ratingIconHeight.constant = 25
