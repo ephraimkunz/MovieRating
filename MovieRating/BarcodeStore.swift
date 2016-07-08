@@ -54,7 +54,7 @@ class BarcodeStore{
     
     func saveBarcode(movieInfo: MovieInfo, saveTimestamp: Bool){
         if movieInfo.title == nil || movieInfo.title! == " " {
-            return //Don't save with no title: this means there is no other useful info
+            return //Don't save with no title: this means there is no other useful info. But we still need to allow the user to get to the detail screen so they know that.
         }
         
         //Check for if this is an update. If so, update the object, don't create a new one

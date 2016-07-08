@@ -44,6 +44,12 @@ class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsC
         if type == .Delete{
             referencingTableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
         }
+        else if type == .Insert{
+            referencingTableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
+        }
+        else if type == .Move{
+            referencingTableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+        }
     }
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {

@@ -111,6 +111,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DetailViewController.deselectRow), name: UIApplicationWillEnterForegroundNotification, object: nil)
         
         detailTableView.rowHeight = UITableViewAutomaticDimension
+        let parent = self.navigationController!.viewControllers.first! //Find this out here and save it so that we avoid the race condition where they press back before the url request completes.
+        
+        //Save the barcode basic info here. Sometimes the omdb lookup seems to timeout so no history is saved. By saving here, we can update it if the omdb api works.
+         BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKindOfClass(ViewController))
         
         /* So why do we do this here. I'm glad you asked. A couple reasons. First, we want to switch from
          the barcode scanning screen as quickly as possible after a scan happens so the user knows that it
@@ -119,6 +123,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
          ratings and update the history with them.
          */
         if let movieTitle = movieInfo.title{
+    
             NetworkManager.getRatingForItemTitle(movieTitle){ json in
                 if let imdb = json["imdbRating"] as? NSString{
                     let imdbDouble = imdb.doubleValue
@@ -159,7 +164,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.movieInfo.rottenUrl = rottenUrl
                 }
                 
-                let parent = self.navigationController!.viewControllers.first!
                 BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKindOfClass(ViewController))
                 
                 if let rating = self.movieInfo.imdbRating{

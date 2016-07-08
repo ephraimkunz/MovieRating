@@ -74,6 +74,10 @@ class NetworkManager{
         let url = NSURL(string: "https://www.omdbapi.com/?t=\(encodedTitle)&y=&plot=short&r=json&tomatoes=true")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
             do{
+                guard error == nil else{
+                    print("Error fetching ratings: \(error)")
+                    return
+                }
                 let dict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSDictionary
                 
                 print("Ratings fetch \(dict.description)")

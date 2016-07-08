@@ -178,7 +178,7 @@
         <!--Settings-->
         <scene sceneID="dgw-Us-iKg">
             <objects>
-                <tableViewController id="EXq-A9-ozV" customClass="SettingsTableViewController" customModule="MovieRating" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settingsController" id="EXq-A9-ozV" customClass="SettingsTableViewController" customModule="MovieRating" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="236" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lzz-xl-OUw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,52 +280,67 @@
                                                         <constraint firstAttribute="width" constant="133" id="uSf-4b-Rjl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRc-h8-Z8C">
-                                                    <rect key="frame" x="151" y="8" width="433" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-2B-kje">
-                                                    <rect key="frame" x="214" y="38" width="41" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5w-la-qar">
-                                                    <rect key="frame" x="171" y="38" width="43" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-Vq-gCU">
+                                                    <rect key="frame" x="149" y="8" width="443" height="133"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRc-h8-Z8C">
+                                                            <rect key="frame" x="0.0" y="0.0" width="443" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-zB-jGh">
+                                                            <rect key="frame" x="180" y="108" width="84" height="17"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-2B-kje">
+                                                                    <rect key="frame" x="43" y="0.0" width="41" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5w-la-qar">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="CTw-2B-kje" firstAttribute="centerY" secondItem="p5w-la-qar" secondAttribute="centerY" id="0QF-vT-AFE"/>
+                                                                <constraint firstAttribute="bottom" secondItem="CTw-2B-kje" secondAttribute="bottom" id="Cz3-NM-03W"/>
+                                                                <constraint firstItem="CTw-2B-kje" firstAttribute="top" secondItem="bNz-zB-jGh" secondAttribute="top" id="KJ0-V4-9eh"/>
+                                                                <constraint firstAttribute="trailing" secondItem="CTw-2B-kje" secondAttribute="trailing" id="LLH-Y8-G2b"/>
+                                                                <constraint firstItem="p5w-la-qar" firstAttribute="leading" secondItem="bNz-zB-jGh" secondAttribute="leading" id="R6f-6H-NfF"/>
+                                                                <constraint firstItem="CTw-2B-kje" firstAttribute="leading" secondItem="p5w-la-qar" secondAttribute="trailing" id="zRM-hF-ikk"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="cRc-h8-Z8C" firstAttribute="leading" secondItem="bNN-Vq-gCU" secondAttribute="leading" id="6Z5-lM-Ev5"/>
+                                                        <constraint firstItem="cRc-h8-Z8C" firstAttribute="top" secondItem="bNN-Vq-gCU" secondAttribute="top" id="8pS-aG-3Zd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bNz-zB-jGh" secondAttribute="bottom" constant="8" id="LzC-0x-fTd"/>
+                                                        <constraint firstItem="bNz-zB-jGh" firstAttribute="centerX" secondItem="bNN-Vq-gCU" secondAttribute="centerX" id="b4Y-az-5pt"/>
+                                                        <constraint firstItem="bNz-zB-jGh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cRc-h8-Z8C" secondAttribute="bottom" constant="8" symbolic="YES" id="ll9-s4-UhR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cRc-h8-Z8C" secondAttribute="trailing" id="r70-4y-TEu"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cRc-h8-Z8C" firstAttribute="top" secondItem="m6g-JL-NbN" secondAttribute="top" constant="8" id="B6f-Kv-8H8"/>
-                                                <constraint firstItem="CTw-2B-kje" firstAttribute="centerY" secondItem="p5w-la-qar" secondAttribute="centerY" id="FFW-cF-4cm"/>
-                                                <constraint firstItem="cRc-h8-Z8C" firstAttribute="leading" secondItem="arw-Rc-q47" secondAttribute="trailing" constant="10" id="JBl-k7-Bdz"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cRc-h8-Z8C" secondAttribute="trailing" constant="8" id="Pa2-Ya-6W8"/>
-                                                <constraint firstItem="CTw-2B-kje" firstAttribute="leading" secondItem="p5w-la-qar" secondAttribute="leading" id="Sqh-Gj-JDf"/>
                                                 <constraint firstItem="arw-Rc-q47" firstAttribute="top" secondItem="m6g-JL-NbN" secondAttribute="top" constant="8" id="UaH-oQ-apq"/>
+                                                <constraint firstAttribute="trailing" secondItem="bNN-Vq-gCU" secondAttribute="trailing" constant="8" id="W0t-te-4RE"/>
                                                 <constraint firstAttribute="bottom" secondItem="arw-Rc-q47" secondAttribute="bottom" constant="8" id="Y81-8u-pIt"/>
-                                                <constraint firstItem="p5w-la-qar" firstAttribute="leading" secondItem="arw-Rc-q47" secondAttribute="trailing" constant="30" id="cnI-Kj-cma"/>
-                                                <constraint firstItem="CTw-2B-kje" firstAttribute="top" secondItem="p5w-la-qar" secondAttribute="bottom" constant="8" symbolic="YES" id="dVv-rl-osO"/>
+                                                <constraint firstItem="bNN-Vq-gCU" firstAttribute="top" secondItem="m6g-JL-NbN" secondAttribute="top" constant="8" id="fLS-Ec-Y2v"/>
+                                                <constraint firstItem="bNN-Vq-gCU" firstAttribute="leading" secondItem="arw-Rc-q47" secondAttribute="trailing" constant="8" id="g1f-eJ-mtF"/>
                                                 <constraint firstItem="arw-Rc-q47" firstAttribute="leading" secondItem="m6g-JL-NbN" secondAttribute="leading" constant="8" id="hZt-uo-tOu"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CTw-2B-kje" secondAttribute="bottom" constant="20" symbolic="YES" id="k8e-EG-sKr"/>
-                                                <constraint firstItem="CTw-2B-kje" firstAttribute="leading" secondItem="p5w-la-qar" secondAttribute="trailing" id="rEN-yx-TJ4"/>
-                                                <constraint firstItem="p5w-la-qar" firstAttribute="top" secondItem="cRc-h8-Z8C" secondAttribute="bottom" constant="8" symbolic="YES" id="wm5-Hi-cfK"/>
+                                                <constraint firstAttribute="bottom" secondItem="bNN-Vq-gCU" secondAttribute="bottom" constant="8" id="mia-K3-Jfx"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Sqh-Gj-JDf"/>
-                                                    <exclude reference="dVv-rl-osO"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="infoImage" destination="arw-Rc-q47" id="kEC-55-KfZ"/>
                                             <outlet property="infoTitle" destination="cRc-h8-Z8C" id="2be-cJ-Mp6"/>
                                             <outlet property="mpaaRatingLabel" destination="CTw-2B-kje" id="GwM-Oj-xwN"/>
                                             <outlet property="yearLabel" destination="p5w-la-qar" id="b6J-fU-yEB"/>
-                                            <outlet property="yearRatingLabelsBottomPadding" destination="k8e-EG-sKr" id="suG-2G-KDG"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailRatingCell" rowHeight="123" id="RQK-VK-rnC" customClass="DetailRatingCell" customModule="MovieRating" customModuleProvider="target">
