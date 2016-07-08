@@ -2,19 +2,26 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
-  - Cosmos (1.2.2)
-  - TTRangeSlider (1.0.3)
+  - Cosmos (1.2.3)
+  - Crashlytics (3.7.2):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
+  - TTRangeSlider (1.0.4)
 
 DEPENDENCIES:
   - ChameleonFramework
-  - Cosmos
+  - Cosmos (~> 1.2)
+  - Crashlytics
+  - Fabric
   - TTRangeSlider
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Cosmos: 87c49100c69d2cb2eebfa4eb8d1e801fe29ff774
-  TTRangeSlider: a12d0ac242a785cf96d4c7dacfe07e42a161251e
+  Cosmos: efddd01b729956ad6335bc58bc92e5735a1d12a3
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  TTRangeSlider: 7c04d9cf84cd5fba96e86b3ded8e5e0b534758b0
 
-PODFILE CHECKSUM: 7199ca5904c5e6d8426ae9cb26570500c8622b4a
+PODFILE CHECKSUM: 6fbc8eb78b7be3ede70d82e1e17f21a8caa6d1c1
 
 COCOAPODS: 1.0.0

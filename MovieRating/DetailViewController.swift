@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Cosmos
 import ChameleonFramework
+import Crashlytics
 
 let titleSection = 0
 let ratingSection = 1
@@ -113,6 +114,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         detailTableView.rowHeight = UITableViewAutomaticDimension
         let parent = self.navigationController!.viewControllers.first! //Find this out here and save it so that we avoid the race condition where they press back before the url request completes.
         
+        
         //Save the barcode basic info here. Sometimes the omdb lookup seems to timeout so no history is saved. By saving here, we can update it if the omdb api works.
          BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKindOfClass(ViewController))
         
@@ -123,6 +125,14 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
          ratings and update the history with them.
          */
         if let movieTitle = movieInfo.title{
+            // Log for analytics
+            let contentType = parent.isKindOfClass(ViewController) ? "New scan" : "History"
+            Answers.logContentViewWithName("Viewing Detail Page For Barcode",
+                                           contentType: contentType,
+                                           contentId: movieInfo.barcode!,
+                                           customAttributes: [
+                                            "title": movieInfo.title!
+                ])
     
             NetworkManager.getRatingForItemTitle(movieTitle){ json in
                 if let imdb = json["imdbRating"] as? NSString{

@@ -212,6 +212,7 @@
 				18BAF98D1D0C9065001CC185 /* Resources */,
 				64CC2D631395707A74519495 /* 📦 Embed Pods Frameworks */,
 				05F8F4B39B200248F610C1EB /* 📦 Copy Pods Resources */,
+				187035021D2FF34000606903 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,6 +286,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieRating/Pods-MovieRating-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		187035021D2FF34000606903 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" abd7e04d91a9cd3680a3cac4718edbb8b6044ad8 0b7f30e6caca457e72ae2610360cae3ce53bed94b81a4fa41b590d5277d38b34";
 		};
 		64CC2D631395707A74519495 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -457,6 +471,7 @@
 			baseConfigurationReference = FC5692C931989E52C34F108C /* Pods-MovieRating.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = MovieRating/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ephraimhowardkunz.MovieRating;

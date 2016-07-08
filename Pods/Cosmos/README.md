@@ -12,7 +12,7 @@
 This is a UI control for iOS and tvOS written in Swift. It shows a star rating and takes rating input from the user. Cosmos is a subclass of a UIView that will allow your users post those inescapable 1-star reviews!
 
 * Shows star rating with an optional text label.
-* Can be used as a rating input control.
+* Can be used as a rating input control (iOS only).
 * Cosmos view can be customized in the Storyboard without writing code.
 * Includes different star filling modes: full, half-filled and precise.
 * Cosmos is accessible and works with voice-over.
@@ -28,7 +28,7 @@ This is a UI control for iOS and tvOS written in Swift. It shows a star rating a
 
 There are three ways you can add Cosmos to your Xcode project.
 
-**Add source (iOS 7+)**
+**Add source (iOS 8+)**
 
 Simply add [CosmosDistrib.swift](https://github.com/marketplacer/Cosmos/blob/master/Distrib/CosmosDistrib.swift) file into your Xcode project.
 
@@ -41,11 +41,18 @@ Alternatively, add `github "marketplacer/Cosmos" ~> 1.2` to your Cartfile and ru
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
-    pod 'Cosmos', '~> 1.2'
+    
+    target "Your app target name" do
+      pod 'Cosmos', '~> 1.2'
+    end
 
 **Setup in Xcode 6 / Swift 1.2 project**
 
 Cosmos is written in Swift 2.0 and requires Xcode 7 or newer. Use the [previous version of the library](https://github.com/marketplacer/Cosmos/wiki/Swift-1.2-setup) in Xcode 6 projects.
+
+**iOS 7 support**
+
+Please use the [separate iOS 7 setup method](https://github.com/marketplacer/Cosmos/wiki/iOS-7-support) if you need to support iOS 7.
 
 ## Usage
 
@@ -60,6 +67,8 @@ Cosmos is written in Swift 2.0 and requires Xcode 7 or newer. Use the [previous 
 
 
 <img src='https://raw.githubusercontent.com/marketplacer/Cosmos/master/graphics/Screenshots/cosmos_storyboard_class_3.png' width='259' alt='Add Cosmos rating view to the storyboard'>
+
+*tvOS note*: read the collowing [setup instructions for tvOS](https://github.com/marketplacer/Cosmos/wiki/tvOS-CocoaPods-error) if you see build errors at this stage.
 
 
 3) Customize the Cosmos view appearance in the *Attributes Inspector*. If storyboard does not show the stars click **Refresh All Views** from the **Editor** menu.
@@ -99,6 +108,10 @@ cosmosView.didTouchCosmos = { rating in }
 One can customize Cosmos from code by changing its `settings`. See the [Cosmos configuration manual](https://github.com/marketplacer/Cosmos/wiki/Cosmos-configuration) for the complete list of configuration options.
 
 ```Swift
+// Do not change rating when touched.
+// Use if you need just to show the stars.
+cosmosView.settings.updateOnTouch = false
+
 // Show only fully filled stars
 cosmosView.settings.fillMode = .Full
 
@@ -116,10 +129,8 @@ cosmosView.settings.emptyBorderColor = UIColor.orangeColor()
 
 // Set the border color of a filled star
 cosmosView.settings.filledBorderColor = UIColor.orangeColor()
-
-// Change the rating when the view is touched
-cosmosView.settings.updateOnTouch = true
 ```
+
 
 ## Demo app
 
