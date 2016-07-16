@@ -18,7 +18,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func addPreviewLayer() {
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
         previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        //previewLayer?.bounds = self.view.bounds
         previewLayer?.position = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds))
         self.view.layer.addSublayer(previewLayer!)
         updateBracketSubview()
@@ -42,7 +41,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             previewLayerConnection?.videoOrientation = AVCaptureVideoOrientation.init(rawValue: UIApplication.sharedApplication().statusBarOrientation.rawValue)!
             previewLayer?.frame = self.view.bounds
         }
-
     }
     
     override func viewDidLoad() {
@@ -68,11 +66,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
           
             output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         }
-    }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
+        
         let firstTime = NSUserDefaults().boolForKey("firstTime")
         if(firstTime){
             NSUserDefaults().setBool(false, forKey: "firstTime")
@@ -82,7 +76,10 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             historyNavCtrl.viewControllers = [historyVC!]
             self.presentViewController(historyNavCtrl, animated: false, completion: nil)
         }
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
 
         processingNetworkRequest = false
         if(!Platform.isSimulator){
