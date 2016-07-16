@@ -21,6 +21,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         previewLayer?.bounds = self.view.bounds
         previewLayer?.position = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds))
         self.view.layer.addSublayer(previewLayer!)
+        
+        let bracket = UIImageView(image: UIImage(named: "overlayBracket"))
+        bracket.backgroundColor = UIColor.clearColor()
+        bracket.frame = self.view.frame
+        self.view.addSubview(bracket)
     }
     
     func updateCameraFeed(){
@@ -62,6 +67,16 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        let firstTime = NSUserDefaults().boolForKey("firstTime")
+        if(firstTime){
+            NSUserDefaults().setBool(false, forKey: "firstTime")
+            
+            let historyVC = self.storyboard?.instantiateViewControllerWithIdentifier("historyController")
+            let historyNavCtrl = self.storyboard?.instantiateViewControllerWithIdentifier("historyNavController") as! UINavigationController
+            historyNavCtrl.viewControllers = [historyVC!]
+            self.presentViewController(historyNavCtrl, animated: false, completion: nil)
+        }
+
         if(!Platform.isSimulator){
             updateCameraFeed() 
         }

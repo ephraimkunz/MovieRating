@@ -19,12 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NSUserDefaults().registerDefaults([
             "badMovieThreshold": 5.0,
-            "okMovieThreshold": 6.5
+            "okMovieThreshold": 6.5,
+            "firstTime": true
             ])
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         Fabric.with([Crashlytics.self])
+        
         return true
     }
 

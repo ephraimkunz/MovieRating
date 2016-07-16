@@ -30,4 +30,28 @@ struct Platform {
         }
 
     }
+    
+    static func systemVersion() -> String{
+        return UIDevice.currentDevice().systemVersion
+    }
+    
+    static func systemName() -> String{
+        return UIDevice.currentDevice().systemName
+    }
+    
+    static func appName() -> String{
+        let bundleDisplayName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleDisplayName")
+        if(bundleDisplayName != nil){
+            return bundleDisplayName as! String
+        }
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
+    }
+    
+    static func appVersion() -> String{
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+    }
+    
+    static func appBuild() -> String{
+        return NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as!String
+    }
 }

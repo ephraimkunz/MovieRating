@@ -7,190 +7,167 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E3A68D030F24BE47B99D1D1A1720E2 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9715BB5DC17CEE19924DFB3E91103 /* UIColor+ChameleonPrivate.m */; };
-		0617AC9E287B5037CCE413456C22F24E /* Pods-MovieRating-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C347C88FBA33CA3AACBD0737AA649AA /* Pods-MovieRating-dummy.m */; };
-		072BEEF7E71F00675E87028A9A668B84 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0438288F6187D26CE9F6E6389BDFCE /* UIImage+ChameleonPrivate.m */; };
+		00E3A68D030F24BE47B99D1D1A1720E2 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4BD32665BA87D6B78F4389CB6D78D /* UIColor+ChameleonPrivate.m */; };
+		072BEEF7E71F00675E87028A9A668B84 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = C437B6DB0A53DD98E63D639D19987818 /* UIImage+ChameleonPrivate.m */; };
 		0814AEFB3EFDF8D18ED8B40872C24220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BFCC5FCF20BECEF409508768C21E64 /* UIKit.framework */; };
 		0C6F052361FE462C51F2325A52366FE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3212D7BC0710FE50E49B5AD2D9C0D0F /* CoreGraphics.framework */; };
-		160634C0F5454A32E810DDF5BA9E5985 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 326F6C09CC61DF358019F8966D91562E /* NSArray+Chameleon.m */; };
-		1716FA0939818C49FE4BBE6A658E9834 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = B570803FA03C6483BB05BF0BDB6A0EBD /* UIButton+Chameleon.m */; };
-		1B9731964F6C025516C65BF80A2CA963 /* TTRangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9480CE472970BEC6127E995355CD64CA /* TTRangeSlider-dummy.m */; };
-		1DE26E57570167EE496080D68F855A01 /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CBDC7DA810EDA00E51E3F64505A4E4A /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2336A7F0F45440935556D3DDAC798E27 /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1678A61BB7DF536A49F55B6C96B806 /* CosmosLayerHelper.swift */; };
-		23795D7EC1AF274A6AFF4233B1E84C4C /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 293EB3468DFF56FAFFFFEFD94F1C749B /* UINavigationController+Chameleon.m */; };
-		299992941CFA463D0A7204190D39FA73 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350EE83267B58378DCF2044678FF7462 /* CosmosRating.swift */; };
-		2E2946436612A5B920BE18E09BF80CAF /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAD938E4969535ACCF731485F835449 /* UIViewController+Chameleon.m */; };
-		3132A9EBC1F85B6971B934C88914CD58 /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = C484A5913435B56BE5B65CADAB74FCD1 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		357DC56761361A12BF9BC219F3EC91F0 /* Pods-MovieRating-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BEF72420FF27786AAEA2714D74AE2CC /* Pods-MovieRating-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		363F6766DD6E758221960AD19289C7A9 /* TTRangeSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 430D7DD3B1A99AF0FDC827E99BF6A333 /* TTRangeSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3CCCC6F0C10F65283522C54CF1D6E761 /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = E742F7AEC44013FAAC1AA92DCBA76AB6 /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D1FF907F6AD5186FAF926C0F20083AE /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A2B6CF1C196D76EBCA8815FA59B03 /* Chameleon_.m */; };
-		3E73DB65BEC900EFC6EC35C5F2A526B3 /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7342F26E7CA89B9952EB05ACC68EF224 /* CosmosAccessibility.swift */; };
-		3EFCCC931EFB340108AB20B34C9FD626 /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34958D184C35A495FC47F9698C57AE4 /* CosmosTouch.swift */; };
-		419F81AC1C3D3731A99F526C598F8245 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D31AF728F56D0CAFFECA7DF51E2E0E6 /* Foundation.framework */; };
-		41E19345B5C2331DAA02119D782F4E5F /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2A387E62471125536A5726BD8EB756 /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		160634C0F5454A32E810DDF5BA9E5985 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0234E9F5749DC2E8DDA4075762C30F /* NSArray+Chameleon.m */; };
+		1716FA0939818C49FE4BBE6A658E9834 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DA17EEF964551976B7B9D2757B3D6C /* UIButton+Chameleon.m */; };
+		1DE26E57570167EE496080D68F855A01 /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5B07F291D8A0C8D80416810228F75C2 /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2336A7F0F45440935556D3DDAC798E27 /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A0E4E4560A22453EE7327E34B5A4EC /* CosmosLayerHelper.swift */; };
+		23795D7EC1AF274A6AFF4233B1E84C4C /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 646BBA9F9292FA7846063367C9AAB5F4 /* UINavigationController+Chameleon.m */; };
+		299992941CFA463D0A7204190D39FA73 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BC4BCD03A2BC05795B023435293FA /* CosmosRating.swift */; };
+		2E2946436612A5B920BE18E09BF80CAF /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FFF3523B233C571159B8BDF995322B /* UIViewController+Chameleon.m */; };
+		3132A9EBC1F85B6971B934C88914CD58 /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CE8A203E3D5760D05AFAD79565837A7 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CCCC6F0C10F65283522C54CF1D6E761 /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 724CE2363024DA0A7A2F652202C22CF5 /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D1FF907F6AD5186FAF926C0F20083AE /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = B920F8119095616B46058B60C2E22C20 /* Chameleon_.m */; };
+		3E73DB65BEC900EFC6EC35C5F2A526B3 /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA6420133CD32C551195C09E29D656 /* CosmosAccessibility.swift */; };
+		3EFCCC931EFB340108AB20B34C9FD626 /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A582BBB75907576A524D5E4D6A3946 /* CosmosTouch.swift */; };
+		41E19345B5C2331DAA02119D782F4E5F /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DD2D3D9A36DEBFB4AD0DEBB3068966AD /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42295A0C098BB044F391C174DA9D5859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D31AF728F56D0CAFFECA7DF51E2E0E6 /* Foundation.framework */; };
 		4325AB8E42E4CB176F8FFF81FFB6716E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA250D6AAA3D67B08752113FC8DF203 /* QuartzCore.framework */; };
-		4B181B0AC8894DE05050B3F6718D392C /* ChameleonConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7399D856CB4F1D1DDEE564DB0CDE078D /* ChameleonConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BC2BC0D45984D22B01FFC270FB5657E /* TTRangeSliderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C209454F92F53B69841CA345DAD8C4D4 /* TTRangeSliderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B181B0AC8894DE05050B3F6718D392C /* ChameleonConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ADFB13CCBBF0DC184168C16E694D8F6 /* ChameleonConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D7B87E23BD14E4515B42D40A29DD972 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D31AF728F56D0CAFFECA7DF51E2E0E6 /* Foundation.framework */; };
-		4E53C48294089DC928E3A7BD1C2DE4D7 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = E37E896A158373D540BA77EAC4FFFE66 /* UIColor+Chameleon.m */; };
-		5BF38591007E7E4ADAD878E405949598 /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B27741196706B34123AE8F7D8BC918FA /* ChameleonConstants.m */; };
-		606A219B918881A70A78CD91EACDA8F7 /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85451AC045DA1F341899B863D7DCD4D2 /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61E35193AFF56879C94011BF94E911BA /* TTRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75B738DC67ACC6B55643968FB9621C /* TTRangeSlider.m */; };
-		62A8CA31EA35172D3375E11586921F82 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334E5676C7A469D0741CDA045EFD32E /* CosmosTouchTarget.swift */; };
-		63ECC77E4E536666556C8D2791280861 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E277055277338EA186F2E2921F9166A /* StarLayer.swift */; };
-		7A8C05065D9F9BA2C218F75AD6B1F798 /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 11767073CBC83426A4639C2E9A301F30 /* UIAppearance+Swift.m */; };
-		7CCF424046BEED00EB99738D76C64132 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6DE3CFFABBAC3723D4365814C9114 /* StarFillMode.swift */; };
-		7EDDB8F47291F592694D7135A10DAFFF /* UIViewController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 17A424583EC6FD2382E40B2C152A4EF5 /* UIViewController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		883E1BE9856159DB1EBBEBEEA85D8199 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DFE3AB7A7510F1B0ADC9E2341F5A8 /* CosmosSize.swift */; };
-		94D500E9452A2B9CF2F13FD41E2C509A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D31AF728F56D0CAFFECA7DF51E2E0E6 /* Foundation.framework */; };
-		984ACF077007E44906F6A2F419E3D3C9 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C878983A4BA29C6F55D48FE6C25D3BC /* CosmosLayers.swift */; };
-		9D1D58A5ED379ABDA6BF567CE70A6372 /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D972926D4107C8E3AE4DAF4E4D27ADE /* Cosmos-dummy.m */; };
-		9EEBF7B1602C1C17236C4EA0DD9717E2 /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563F85CDEC51F406BBB2906A53968A6 /* UILabel+Chameleon.m */; };
-		A0C58A338DA547DC3EAA5CD10A7D305E /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22EB1FEAE29F35113B1AF5EDFB4C62 /* CosmosLocalizedRating.swift */; };
-		A84E190C472D28E1EB771327D55A0257 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F715F64FF5FC3D87A664DC8D98F3C13 /* CosmosView.swift */; };
-		B3429381360BE9C37D00301284E4B63A /* UIView+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B3996D3A8CFF9B0D8FBD42B559044B /* UIView+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C5D22B9D6600C31DC02CEC59BDA086B0 /* UIColor+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B66351BC6DAAB0DBA248EB2E93960A /* UIColor+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C61ED2CF225C6D9872D34F5455C945D4 /* NSArray+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 892F085BD18159504DE3E6873DF55374 /* NSArray+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C84DFC79CACF46C6275670861ADBA6D4 /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = A1C40B45C70FB8D5980F4349E2B213B2 /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC00126E443C3CEEFA221930E1B0CC54 /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B950F1EBF1DE9BD5F7CAE55CBBB6F5C /* CosmosDefaultSettings.swift */; };
-		CC51E5C010ABC87B9CAAA1CB721A6A94 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D7EE8C12E77C2C7D179517920E3FB3B2 /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4D8BBAC0B0F0F16A0F489DFA3364527 /* TTRangeSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CE8C890C921DD4F93D6D4C6280FDC9B /* TTRangeSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7453EEDB3CD57C33612C94FCBF8A57E /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113276D55CB31B9E776A5540BFBE6AB6 /* CosmosSettings.swift */; };
-		DDD470435EE37EBA46CD0FF081559295 /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE3F6B53271411B82640C606A42BF6 /* ChameleonFramework-dummy.m */; };
-		DF717A08CF1193FFCA4FE75041293A18 /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934620B2B29FFEABAD1DC83D40EB22C1 /* CosmosText.swift */; };
-		E04963F0C6D76377186361A0AF79A4C6 /* Chameleon_.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AE8540988FD52753F70DB768E12D9EF /* Chameleon_.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E53E2CD0E939A133E73880E7B3BB4DBF /* ChameleonEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = D073B41A3AD0A49DF055B37B4393F440 /* ChameleonEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F32D7BD1DA58639964C91FA86A002AB4 /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C24268016DC3D784F9DD66056EC227 /* UIView+ChameleonPrivate.m */; };
-		F5CC9B27F3CF472FE72A905E8C2D7A9D /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = FABBFFCDB8623CE0DEF9E206B2569185 /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F85099F6E9B7DB837BAB856EB61A6F07 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = A03AF25007BF0B1CBFA4808820169FD3 /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA90B7D6EBE7A289796856FF2B310FC0 /* ChameleonFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2AC1D007AD3757591E877D96447B589 /* ChameleonFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E53C48294089DC928E3A7BD1C2DE4D7 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C7DE46F37579C3E39502AF0795AFF /* UIColor+Chameleon.m */; };
+		5BF38591007E7E4ADAD878E405949598 /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE9039C5EB0CCCE4653EE2EF5A89D4A /* ChameleonConstants.m */; };
+		606A219B918881A70A78CD91EACDA8F7 /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F9AAA4311E8447A721484A55321CEEF /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62A8CA31EA35172D3375E11586921F82 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D75A6BB383CB458748327F7BEEFE9C /* CosmosTouchTarget.swift */; };
+		63ECC77E4E536666556C8D2791280861 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1185B6B88D389D2AB6B598635FACF629 /* StarLayer.swift */; };
+		7A8C05065D9F9BA2C218F75AD6B1F798 /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 3892C4692E560BF41C3C94E639241A6A /* UIAppearance+Swift.m */; };
+		7CCF424046BEED00EB99738D76C64132 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92DDB4011D190398EBF5AB66D40FEC /* StarFillMode.swift */; };
+		7EDDB8F47291F592694D7135A10DAFFF /* UIViewController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCEFF3DF148EA69DBC7C3B8C78B1DEE /* UIViewController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		883E1BE9856159DB1EBBEBEEA85D8199 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA7846A4DC7731BE28E3F39FDA975B5 /* CosmosSize.swift */; };
+		984ACF077007E44906F6A2F419E3D3C9 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0D9E767845AD02EAAC985BA4DB4A1 /* CosmosLayers.swift */; };
+		9D1D58A5ED379ABDA6BF567CE70A6372 /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3541E393EDF4B01E08FEB299836CAAEB /* Cosmos-dummy.m */; };
+		9EEBF7B1602C1C17236C4EA0DD9717E2 /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 53649A5B5DC1EC8A9FF206C30C3DE435 /* UILabel+Chameleon.m */; };
+		A0C58A338DA547DC3EAA5CD10A7D305E /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04CDEDDC50A3254FAD80001DCF835C /* CosmosLocalizedRating.swift */; };
+		A706DDD3C5420F5D16B1730F1C37A979 /* Pods-MovieRating-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BEF72420FF27786AAEA2714D74AE2CC /* Pods-MovieRating-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A84E190C472D28E1EB771327D55A0257 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B84CF306415A341067267E3AAA73 /* CosmosView.swift */; };
+		B3429381360BE9C37D00301284E4B63A /* UIView+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BEEEB73E90499612A7903AC1C8D4087 /* UIView+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5D22B9D6600C31DC02CEC59BDA086B0 /* UIColor+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = FBEA6F6A943BFC5BA3B129772556A484 /* UIColor+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C61ED2CF225C6D9872D34F5455C945D4 /* NSArray+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2693F6C3731373219F880A57EABEE06C /* NSArray+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C84DFC79CACF46C6275670861ADBA6D4 /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = ECAE5E2FE4219EA40B65F0E8E773411F /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAABDD5FD3A2B36D757CD771D1BF2106 /* Pods-MovieRating-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C347C88FBA33CA3AACBD0737AA649AA /* Pods-MovieRating-dummy.m */; };
+		CC00126E443C3CEEFA221930E1B0CC54 /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73F878508A9D517DBCC8D8A3D06F0EB /* CosmosDefaultSettings.swift */; };
+		CC51E5C010ABC87B9CAAA1CB721A6A94 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FB861FB0008D5729151341955E157669 /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7453EEDB3CD57C33612C94FCBF8A57E /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89F05427968CF89B8379964939C6B6 /* CosmosSettings.swift */; };
+		DDD470435EE37EBA46CD0FF081559295 /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AC480D92F6DE0DCC0643481B2C046D5A /* ChameleonFramework-dummy.m */; };
+		DF717A08CF1193FFCA4FE75041293A18 /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A72B150328BB24D6419EF3EC24D513 /* CosmosText.swift */; };
+		E04963F0C6D76377186361A0AF79A4C6 /* Chameleon_.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E16470E0CD0A6F4E76838B4A916321 /* Chameleon_.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E523E7BCC9A8AE5CDE4BC19F0299ACFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D31AF728F56D0CAFFECA7DF51E2E0E6 /* Foundation.framework */; };
+		E53E2CD0E939A133E73880E7B3BB4DBF /* ChameleonEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = E5E08BD9350FDF52ABD2669848B1F97D /* ChameleonEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F32D7BD1DA58639964C91FA86A002AB4 /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = C859436122A01C53F0B9F01B756E7410 /* UIView+ChameleonPrivate.m */; };
+		F5CC9B27F3CF472FE72A905E8C2D7A9D /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EC52DEC63C3D643F5D3E05708F25B9 /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F85099F6E9B7DB837BAB856EB61A6F07 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D9723C6299A0EF658CFEE87D5030DF2 /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA90B7D6EBE7A289796856FF2B310FC0 /* ChameleonFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 536C943DB83301EB188264F22B467A50 /* ChameleonFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		43A8E0794ED7D867C374B1003A690787 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 608B49B5DDACC601EE8044A1931993F9;
-			remoteInfo = Cosmos;
-		};
-		AC87C7D99407462C0BCFB4F753F912CF /* PBXContainerItemProxy */ = {
+		4ED3E719735BEDCD52E6C94B338453BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9B57F4EE4746045CEAE2D933A3C8EC9E;
 			remoteInfo = ChameleonFramework;
 		};
-		CFB5D0CC2CE28BD56A2D3223073479BE /* PBXContainerItemProxy */ = {
+		FF253FC8C20865F7BF17AACF7E0A8ACF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5DDAB2C1E7DF05477F1D128533DD026F;
-			remoteInfo = TTRangeSlider;
+			remoteGlobalIDString = 608B49B5DDACC601EE8044A1931993F9;
+			remoteInfo = Cosmos;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05E0E4CF7C8CF704E5E13FA57140802F /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
-		09B66351BC6DAAB0DBA248EB2E93960A /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
-		0E277055277338EA186F2E2921F9166A /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
-		113276D55CB31B9E776A5540BFBE6AB6 /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
-		11767073CBC83426A4639C2E9A301F30 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
-		1621533AE8D6A1B16AD5A4E65811BB22 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17A424583EC6FD2382E40B2C152A4EF5 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
-		1AB6DE3CFFABBAC3723D4365814C9114 /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
-		20099B1286C05F8EF11C6A601A8A95CA /* TTRangeSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTRangeSlider.xcconfig; sourceTree = "<group>"; };
-		2197BFF059C9B51065D22144DB81EBD1 /* ChameleonFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.xcconfig; sourceTree = "<group>"; };
-		293EB3468DFF56FAFFFFEFD94F1C749B /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
-		2DAD938E4969535ACCF731485F835449 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
-		326F6C09CC61DF358019F8966D91562E /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		034B32FC9999BDDD73E5119788C0A5A3 /* Cosmos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.xcconfig; sourceTree = "<group>"; };
+		0B92DDB4011D190398EBF5AB66D40FEC /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
+		0CE8A203E3D5760D05AFAD79565837A7 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
+		0F5BC4BCD03A2BC05795B023435293FA /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
+		1185B6B88D389D2AB6B598635FACF629 /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
+		1193252E3696E9DCA06F0E18BB40EA41 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
+		1ACA6AA6A4FDBED3316A29AE346100D7 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		1BEEEB73E90499612A7903AC1C8D4087 /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		2339051B0A79F567FAE10161588E6D8C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		2693F6C3731373219F880A57EABEE06C /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		29A582BBB75907576A524D5E4D6A3946 /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
+		2F9AAA4311E8447A721484A55321CEEF /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
 		32BFCC5FCF20BECEF409508768C21E64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		3334E5676C7A469D0741CDA045EFD32E /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
-		350EE83267B58378DCF2044678FF7462 /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
-		36BA165A0BD22A5CD4F0218A28BE27F6 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38FDAAF8CEF3FEE58A99BBAE6B5C9532 /* ChameleonFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ChameleonFramework.modulemap; sourceTree = "<group>"; };
-		3A82DD00EEA8B59A4FC02EEFBB7481BD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		430D7DD3B1A99AF0FDC827E99BF6A333 /* TTRangeSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTRangeSlider-umbrella.h"; sourceTree = "<group>"; };
-		470DFE3AB7A7510F1B0ADC9E2341F5A8 /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
-		4B0438288F6187D26CE9F6E6389BDFCE /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
-		506D6C058172FF8912E88E4351562458 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5563F85CDEC51F406BBB2906A53968A6 /* UILabel+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Chameleon.m"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.m"; sourceTree = "<group>"; };
-		5741D93B2EFD225D701EEE6CF0E00378 /* TTRangeSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTRangeSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B950F1EBF1DE9BD5F7CAE55CBBB6F5C /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
+		3541E393EDF4B01E08FEB299836CAAEB /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		3571C2688B7A8304537F78116F13B049 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3892C4692E560BF41C3C94E639241A6A /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
+		3B7B0254F7FC948E8B6C5F2710645CAD /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		3B89F05427968CF89B8379964939C6B6 /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
+		3D6764F6F3E017961FF70EB911DDF058 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45E44314419DC789346B0072E2E0ACB6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D9723C6299A0EF658CFEE87D5030DF2 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
+		53649A5B5DC1EC8A9FF206C30C3DE435 /* UILabel+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Chameleon.m"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.m"; sourceTree = "<group>"; };
+		536C943DB83301EB188264F22B467A50 /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
+		56E0D9E767845AD02EAAC985BA4DB4A1 /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
+		586C358111FA3D5E67AC189EA0135EA3 /* ChameleonFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.xcconfig; sourceTree = "<group>"; };
+		5AA7846A4DC7731BE28E3F39FDA975B5 /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
 		5BEF72420FF27786AAEA2714D74AE2CC /* Pods-MovieRating-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MovieRating-umbrella.h"; sourceTree = "<group>"; };
-		5E75B738DC67ACC6B55643968FB9621C /* TTRangeSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTRangeSlider.m; path = Pod/Classes/TTRangeSlider.m; sourceTree = "<group>"; };
-		6B4AF6655862EE9DFE2202CCE79C1E5E /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		6C878983A4BA29C6F55D48FE6C25D3BC /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
-		6D972926D4107C8E3AE4DAF4E4D27ADE /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		5FD4BD32665BA87D6B78F4389CB6D78D /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		63E16470E0CD0A6F4E76838B4A916321 /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
+		646BBA9F9292FA7846063367C9AAB5F4 /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
+		6D04CDEDDC50A3254FAD80001DCF835C /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
+		6EA329CF982001DC047DAD1160033213 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70E8904672CC249BA046553972AFD340 /* Pods-MovieRating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieRating.debug.xcconfig"; sourceTree = "<group>"; };
-		7342F26E7CA89B9952EB05ACC68EF224 /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
-		7399D856CB4F1D1DDEE564DB0CDE078D /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
+		70F94CFFE265582CF606CADAB8016EB9 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		724CE2363024DA0A7A2F652202C22CF5 /* UIButton+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Chameleon.h"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.h"; sourceTree = "<group>"; };
 		73F1785D88FFCE211EF1BD81D7B5A361 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		781142DF6AD9E13F6896EEFA525EF9A7 /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
-		78AC0D528548A6273CE2D08D62819C3D /* ChameleonFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-prefix.pch"; sourceTree = "<group>"; };
-		79CA0DF5A1A2B6727F574692D0DFB8E9 /* TTRangeSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTRangeSlider-prefix.pch"; sourceTree = "<group>"; };
-		7D2A387E62471125536A5726BD8EB756 /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
-		7FE70459E7B5C8D4C22149108F7CC195 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
-		804655459A7B4B83F9338F449ACAE373 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
-		85451AC045DA1F341899B863D7DCD4D2 /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
-		892F085BD18159504DE3E6873DF55374 /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
-		8AE8540988FD52753F70DB768E12D9EF /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
-		8CA35631831A3D090DE110C3C71D5F94 /* Pods_MovieRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CBDC7DA810EDA00E51E3F64505A4E4A /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		76AF51733057755639FD32E26566DB52 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		76DA17EEF964551976B7B9D2757B3D6C /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
+		7C61A52230ECF7CDFD0299704C5A90C3 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		8B93B84CF306415A341067267E3AAA73 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
 		8D31AF728F56D0CAFFECA7DF51E2E0E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8F715F64FF5FC3D87A664DC8D98F3C13 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
-		8F88E9AFE2593699C67FB8BEDF8320E4 /* TTRangeSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TTRangeSlider.modulemap; sourceTree = "<group>"; };
-		934620B2B29FFEABAD1DC83D40EB22C1 /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
+		8F9C7DE46F37579C3E39502AF0795AFF /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9480CE472970BEC6127E995355CD64CA /* TTRangeSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTRangeSlider-dummy.m"; sourceTree = "<group>"; };
-		9A35D3471A08B578C065C6E8D51E9C9A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		93ADEF46D162CD1C32526EB1EA62B8D0 /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cosmos.modulemap; sourceTree = "<group>"; };
+		96A0E4E4560A22453EE7327E34B5A4EC /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
+		9ADFB13CCBBF0DC184168C16E694D8F6 /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
 		9C347C88FBA33CA3AACBD0737AA649AA /* Pods-MovieRating-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MovieRating-dummy.m"; sourceTree = "<group>"; };
-		9CE8C890C921DD4F93D6D4C6280FDC9B /* TTRangeSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTRangeSlider.h; path = Pod/Classes/TTRangeSlider.h; sourceTree = "<group>"; };
-		9EEE3F6B53271411B82640C606A42BF6 /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
-		A03AF25007BF0B1CBFA4808820169FD3 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
-		A1C40B45C70FB8D5980F4349E2B213B2 /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
-		A54400ADDD27BCACCC297EC9DA4BE387 /* Cosmos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.xcconfig; sourceTree = "<group>"; };
-		AFB37C7181E1B5E0DC68AAB0789358B5 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
-		B27741196706B34123AE8F7D8BC918FA /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
-		B3B9715BB5DC17CEE19924DFB3E91103 /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
-		B570803FA03C6483BB05BF0BDB6A0EBD /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
-		BB7A2B6CF1C196D76EBCA8815FA59B03 /* Chameleon_.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Chameleon_.m; path = "Pod/Classes/Objective-C/Chameleon_.m"; sourceTree = "<group>"; };
-		C209454F92F53B69841CA345DAD8C4D4 /* TTRangeSliderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTRangeSliderDelegate.h; path = Pod/Classes/TTRangeSliderDelegate.h; sourceTree = "<group>"; };
-		C2AC1D007AD3757591E877D96447B589 /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
-		C484A5913435B56BE5B65CADAB74FCD1 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
-		C67FD68B605D1C8E03E1D85B4D732972 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0FFF3523B233C571159B8BDF995322B /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		A37C5775F796FA1875125DF01FCBEB98 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		A3D75A6BB383CB458748327F7BEEFE9C /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
+		A6EC52DEC63C3D643F5D3E05708F25B9 /* Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = "Pod/Classes/Objective-C/Chameleon.h"; sourceTree = "<group>"; };
+		AC480D92F6DE0DCC0643481B2C046D5A /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
+		B1754EC2DA72FDCD4FA06FE5517BB93B /* ChameleonFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-prefix.pch"; sourceTree = "<group>"; };
+		B5B07F291D8A0C8D80416810228F75C2 /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		B73F878508A9D517DBCC8D8A3D06F0EB /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
+		B920F8119095616B46058B60C2E22C20 /* Chameleon_.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Chameleon_.m; path = "Pod/Classes/Objective-C/Chameleon_.m"; sourceTree = "<group>"; };
+		BCE9039C5EB0CCCE4653EE2EF5A89D4A /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
+		C3EB5F598BD0AF5998AF6307FADF4885 /* Pods_MovieRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C437B6DB0A53DD98E63D639D19987818 /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
 		C709076A4CD91E23CF578B104E169FBB /* Pods-MovieRating-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MovieRating-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C7B26C4CDDBF2B7BAF736D48BB816F93 /* Pods-MovieRating-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MovieRating-acknowledgements.plist"; sourceTree = "<group>"; };
+		C859436122A01C53F0B9F01B756E7410 /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		C8FA6420133CD32C551195C09E29D656 /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
+		C9212F4099060D767441D78EF2ED3A45 /* ChameleonFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ChameleonFramework.modulemap; sourceTree = "<group>"; };
 		CAA250D6AAA3D67B08752113FC8DF203 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		CB22EB1FEAE29F35113B1AF5EDFB4C62 /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
-		CCE226B07BF2CDD49577FEF3124F36B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D073B41A3AD0A49DF055B37B4393F440 /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
-		D7EE8C12E77C2C7D179517920E3FB3B2 /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		D21707C7DCD09E95EB8895E9C5CD9F69 /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
 		DCA9CBFDD6A602D8E8690CE4C2594A0D /* Pods-MovieRating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovieRating.release.xcconfig"; sourceTree = "<group>"; };
-		DD1678A61BB7DF536A49F55B6C96B806 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
+		DD2D3D9A36DEBFB4AD0DEBB3068966AD /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
+		DF0234E9F5749DC2E8DDA4075762C30F /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
 		E3212D7BC0710FE50E49B5AD2D9C0D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		E37E896A158373D540BA77EAC4FFFE66 /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
-		E742F7AEC44013FAAC1AA92DCBA76AB6 /* UIButton+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Chameleon.h"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		E5E08BD9350FDF52ABD2669848B1F97D /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
+		E6A72B150328BB24D6419EF3EC24D513 /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
 		E7AAE7EA73F3CCB93064D57415F88241 /* Pods-MovieRating-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieRating-resources.sh"; sourceTree = "<group>"; };
-		F2E47C5407E49743F10867A29C4F2E90 /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cosmos.modulemap; sourceTree = "<group>"; };
-		F34958D184C35A495FC47F9698C57AE4 /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
-		F5E5A3E34A753F7357F9446767A19C59 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		ECAE5E2FE4219EA40B65F0E8E773411F /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
+		F29EF17756BCD34C0BDC2E82D4905E3B /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		F86E86C0BB1BEE6C16151CAAEE781E83 /* Pods-MovieRating.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MovieRating.modulemap"; sourceTree = "<group>"; };
-		F8B3996D3A8CFF9B0D8FBD42B559044B /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
-		F9C24268016DC3D784F9DD66056EC227 /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
-		FABBFFCDB8623CE0DEF9E206B2569185 /* Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = "Pod/Classes/Objective-C/Chameleon.h"; sourceTree = "<group>"; };
+		FB861FB0008D5729151341955E157669 /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		FBCEFF3DF148EA69DBC7C3B8C78B1DEE /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		FBEA6F6A943BFC5BA3B129772556A484 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
 		FE3EBC5D366CD211061A0531B12717F7 /* Pods-MovieRating-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovieRating-frameworks.sh"; sourceTree = "<group>"; };
-		FEE616D86A0A2FE1522C91483ABE5DC6 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2F7ABBFE7B9C75F5E6EE35A907663EA4 /* Frameworks */ = {
+		07894AAEE84AC25E9137803258F93FAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				419F81AC1C3D3731A99F526C598F8245 /* Foundation.framework in Frameworks */,
+				E523E7BCC9A8AE5CDE4BC19F0299ACFC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,14 +182,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72439B7524B795B3D95C19C70FD4C4B6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				94D500E9452A2B9CF2F13FD41E2C509A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDF29492FA055C53559A30D4C6E1EE1E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,18 +193,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05A47EEF126EEF10839EB48604F4BC92 /* Support Files */ = {
+		110637D808BF6A54231F72F7CEE96C35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F2E47C5407E49743F10867A29C4F2E90 /* Cosmos.modulemap */,
-				A54400ADDD27BCACCC297EC9DA4BE387 /* Cosmos.xcconfig */,
-				6D972926D4107C8E3AE4DAF4E4D27ADE /* Cosmos-dummy.m */,
-				781142DF6AD9E13F6896EEFA525EF9A7 /* Cosmos-prefix.pch */,
-				85451AC045DA1F341899B863D7DCD4D2 /* Cosmos-umbrella.h */,
-				1621533AE8D6A1B16AD5A4E65811BB22 /* Info.plist */,
+				2339051B0A79F567FAE10161588E6D8C /* Fabric.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Cosmos";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		135962C4648643744C90E398FADBF55A /* ChameleonFramework */ = {
+			isa = PBXGroup;
+			children = (
+				FBADF09EFD9A48C231FA228EEFE0F9CC /* Default */,
+				334C4944121FCE0347783B0953B4CD44 /* Support Files */,
+			);
+			path = ChameleonFramework;
 			sourceTree = "<group>";
 		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
@@ -246,40 +218,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		244121FE4FB9643268AB84071B5EB9E0 /* ChameleonFramework */ = {
+		334C4944121FCE0347783B0953B4CD44 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CEBEDFF6C78CD8FEBED8EF78DDB06309 /* Default */,
-				F9753CE420E6D70F18AAAE20894B4E00 /* Support Files */,
+				C9212F4099060D767441D78EF2ED3A45 /* ChameleonFramework.modulemap */,
+				586C358111FA3D5E67AC189EA0135EA3 /* ChameleonFramework.xcconfig */,
+				AC480D92F6DE0DCC0643481B2C046D5A /* ChameleonFramework-dummy.m */,
+				B1754EC2DA72FDCD4FA06FE5517BB93B /* ChameleonFramework-prefix.pch */,
+				536C943DB83301EB188264F22B467A50 /* ChameleonFramework-umbrella.h */,
+				45E44314419DC789346B0072E2E0ACB6 /* Info.plist */,
 			);
-			path = ChameleonFramework;
+			name = "Support Files";
+			path = "../Target Support Files/ChameleonFramework";
 			sourceTree = "<group>";
 		};
-		33C6EF603FFC390D93E3B6325433B771 /* Pods */ = {
+		48D6612CF49718CAF4C6A1CFE875279A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				244121FE4FB9643268AB84071B5EB9E0 /* ChameleonFramework */,
-				B9102C7FF65043C7587129EBDD321EE8 /* Cosmos */,
-				52849FD0B95E8EE587E06061AD0B600E /* Crashlytics */,
-				A8CDAEEDFABAAF75C9FB29A0556A581C /* Fabric */,
-				77AB361C3C108351055340F908EC6420 /* TTRangeSlider */,
+				3571C2688B7A8304537F78116F13B049 /* ChameleonFramework.framework */,
+				3D6764F6F3E017961FF70EB911DDF058 /* Cosmos.framework */,
+				C3EB5F598BD0AF5998AF6307FADF4885 /* Pods_MovieRating.framework */,
 			);
-			name = Pods;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		52849FD0B95E8EE587E06061AD0B600E /* Crashlytics */ = {
+		4CF8B0321F8BB608EC438E56D39FC46F /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				F5E5A3E34A753F7357F9446767A19C59 /* ANSCompatibility.h */,
-				05E0E4CF7C8CF704E5E13FA57140802F /* Answers.h */,
-				7FE70459E7B5C8D4C22149108F7CC195 /* CLSAttributes.h */,
-				AFB37C7181E1B5E0DC68AAB0789358B5 /* CLSLogging.h */,
-				804655459A7B4B83F9338F449ACAE373 /* CLSReport.h */,
-				FEE616D86A0A2FE1522C91483ABE5DC6 /* CLSStackFrame.h */,
-				6B4AF6655862EE9DFE2202CCE79C1E5E /* Crashlytics.h */,
-				8386E9FC5897A017102D7904E58C53FD /* Frameworks */,
+				110637D808BF6A54231F72F7CEE96C35 /* Frameworks */,
 			);
-			path = Crashlytics;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		5A13D0DFF053260F73580F7836028E35 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				93ADEF46D162CD1C32526EB1EA62B8D0 /* Cosmos.modulemap */,
+				034B32FC9999BDDD73E5119788C0A5A3 /* Cosmos.xcconfig */,
+				3541E393EDF4B01E08FEB299836CAAEB /* Cosmos-dummy.m */,
+				D21707C7DCD09E95EB8895E9C5CD9F69 /* Cosmos-prefix.pch */,
+				2F9AAA4311E8447A721484A55321CEEF /* Cosmos-umbrella.h */,
+				6EA329CF982001DC047DAD1160033213 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cosmos";
 			sourceTree = "<group>";
 		};
 		5F020E90E6FAA0C17811B913DD89DF79 /* Pods-MovieRating */ = {
@@ -300,42 +282,37 @@
 			path = "Target Support Files/Pods-MovieRating";
 			sourceTree = "<group>";
 		};
-		77AB361C3C108351055340F908EC6420 /* TTRangeSlider */ = {
-			isa = PBXGroup;
-			children = (
-				9CE8C890C921DD4F93D6D4C6280FDC9B /* TTRangeSlider.h */,
-				5E75B738DC67ACC6B55643968FB9621C /* TTRangeSlider.m */,
-				C209454F92F53B69841CA345DAD8C4D4 /* TTRangeSliderDelegate.h */,
-				FB7547BAE4F55762221BCE2640E8F71D /* Support Files */,
-			);
-			path = TTRangeSlider;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				33C6EF603FFC390D93E3B6325433B771 /* Pods */,
-				B3B0EAFC079A268BDB0403D18EB47138 /* Products */,
+				CFD91DAF9DC36B674BBA02B5136C472A /* Pods */,
+				48D6612CF49718CAF4C6A1CFE875279A /* Products */,
 				AE3CA0A8FEECE3C060E07ABADE0488EE /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8386E9FC5897A017102D7904E58C53FD /* Frameworks */ = {
+		A01738232B501C3FCC4A1D1D0A031B06 /* Cosmos */ = {
 			isa = PBXGroup;
 			children = (
-				3A82DD00EEA8B59A4FC02EEFBB7481BD /* Crashlytics.framework */,
+				C8FA6420133CD32C551195C09E29D656 /* CosmosAccessibility.swift */,
+				B73F878508A9D517DBCC8D8A3D06F0EB /* CosmosDefaultSettings.swift */,
+				96A0E4E4560A22453EE7327E34B5A4EC /* CosmosLayerHelper.swift */,
+				56E0D9E767845AD02EAAC985BA4DB4A1 /* CosmosLayers.swift */,
+				6D04CDEDDC50A3254FAD80001DCF835C /* CosmosLocalizedRating.swift */,
+				0F5BC4BCD03A2BC05795B023435293FA /* CosmosRating.swift */,
+				3B89F05427968CF89B8379964939C6B6 /* CosmosSettings.swift */,
+				5AA7846A4DC7731BE28E3F39FDA975B5 /* CosmosSize.swift */,
+				E6A72B150328BB24D6419EF3EC24D513 /* CosmosText.swift */,
+				29A582BBB75907576A524D5E4D6A3946 /* CosmosTouch.swift */,
+				A3D75A6BB383CB458748327F7BEEFE9C /* CosmosTouchTarget.swift */,
+				8B93B84CF306415A341067267E3AAA73 /* CosmosView.swift */,
+				0B92DDB4011D190398EBF5AB66D40FEC /* StarFillMode.swift */,
+				1185B6B88D389D2AB6B598635FACF629 /* StarLayer.swift */,
+				5A13D0DFF053260F73580F7836028E35 /* Support Files */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A8CDAEEDFABAAF75C9FB29A0556A581C /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				D48238E20C696A56E216FE990BF40B85 /* Frameworks */,
-			);
-			path = Fabric;
+			path = Cosmos;
 			sourceTree = "<group>";
 		};
 		AE3CA0A8FEECE3C060E07ABADE0488EE /* Targets Support Files */ = {
@@ -344,39 +321,6 @@
 				5F020E90E6FAA0C17811B913DD89DF79 /* Pods-MovieRating */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B3B0EAFC079A268BDB0403D18EB47138 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				506D6C058172FF8912E88E4351562458 /* ChameleonFramework.framework */,
-				36BA165A0BD22A5CD4F0218A28BE27F6 /* Cosmos.framework */,
-				8CA35631831A3D090DE110C3C71D5F94 /* Pods_MovieRating.framework */,
-				5741D93B2EFD225D701EEE6CF0E00378 /* TTRangeSlider.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B9102C7FF65043C7587129EBDD321EE8 /* Cosmos */ = {
-			isa = PBXGroup;
-			children = (
-				7342F26E7CA89B9952EB05ACC68EF224 /* CosmosAccessibility.swift */,
-				5B950F1EBF1DE9BD5F7CAE55CBBB6F5C /* CosmosDefaultSettings.swift */,
-				DD1678A61BB7DF536A49F55B6C96B806 /* CosmosLayerHelper.swift */,
-				6C878983A4BA29C6F55D48FE6C25D3BC /* CosmosLayers.swift */,
-				CB22EB1FEAE29F35113B1AF5EDFB4C62 /* CosmosLocalizedRating.swift */,
-				350EE83267B58378DCF2044678FF7462 /* CosmosRating.swift */,
-				113276D55CB31B9E776A5540BFBE6AB6 /* CosmosSettings.swift */,
-				470DFE3AB7A7510F1B0ADC9E2341F5A8 /* CosmosSize.swift */,
-				934620B2B29FFEABAD1DC83D40EB22C1 /* CosmosText.swift */,
-				F34958D184C35A495FC47F9698C57AE4 /* CosmosTouch.swift */,
-				3334E5676C7A469D0741CDA045EFD32E /* CosmosTouchTarget.swift */,
-				8F715F64FF5FC3D87A664DC8D98F3C13 /* CosmosView.swift */,
-				1AB6DE3CFFABBAC3723D4365814C9114 /* StarFillMode.swift */,
-				0E277055277338EA186F2E2921F9166A /* StarLayer.swift */,
-				05A47EEF126EEF10839EB48604F4BC92 /* Support Files */,
-			);
-			path = Cosmos;
 			sourceTree = "<group>";
 		};
 		BE9CAD94F3ADC0A91CD07526E38EDDFA /* iOS */ = {
@@ -390,94 +334,82 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CEBEDFF6C78CD8FEBED8EF78DDB06309 /* Default */ = {
+		CFD91DAF9DC36B674BBA02B5136C472A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FABBFFCDB8623CE0DEF9E206B2569185 /* Chameleon.h */,
-				8AE8540988FD52753F70DB768E12D9EF /* Chameleon_.h */,
-				BB7A2B6CF1C196D76EBCA8815FA59B03 /* Chameleon_.m */,
-				7399D856CB4F1D1DDEE564DB0CDE078D /* ChameleonConstants.h */,
-				B27741196706B34123AE8F7D8BC918FA /* ChameleonConstants.m */,
-				D073B41A3AD0A49DF055B37B4393F440 /* ChameleonEnums.h */,
-				7D2A387E62471125536A5726BD8EB756 /* ChameleonMacros.h */,
-				892F085BD18159504DE3E6873DF55374 /* NSArray+Chameleon.h */,
-				326F6C09CC61DF358019F8966D91562E /* NSArray+Chameleon.m */,
-				A03AF25007BF0B1CBFA4808820169FD3 /* UIAppearance+Swift.h */,
-				11767073CBC83426A4639C2E9A301F30 /* UIAppearance+Swift.m */,
-				E742F7AEC44013FAAC1AA92DCBA76AB6 /* UIButton+Chameleon.h */,
-				B570803FA03C6483BB05BF0BDB6A0EBD /* UIButton+Chameleon.m */,
-				09B66351BC6DAAB0DBA248EB2E93960A /* UIColor+Chameleon.h */,
-				E37E896A158373D540BA77EAC4FFFE66 /* UIColor+Chameleon.m */,
-				D7EE8C12E77C2C7D179517920E3FB3B2 /* UIColor+ChameleonPrivate.h */,
-				B3B9715BB5DC17CEE19924DFB3E91103 /* UIColor+ChameleonPrivate.m */,
-				8CBDC7DA810EDA00E51E3F64505A4E4A /* UIImage+ChameleonPrivate.h */,
-				4B0438288F6187D26CE9F6E6389BDFCE /* UIImage+ChameleonPrivate.m */,
-				C484A5913435B56BE5B65CADAB74FCD1 /* UILabel+Chameleon.h */,
-				5563F85CDEC51F406BBB2906A53968A6 /* UILabel+Chameleon.m */,
-				A1C40B45C70FB8D5980F4349E2B213B2 /* UINavigationController+Chameleon.h */,
-				293EB3468DFF56FAFFFFEFD94F1C749B /* UINavigationController+Chameleon.m */,
-				F8B3996D3A8CFF9B0D8FBD42B559044B /* UIView+ChameleonPrivate.h */,
-				F9C24268016DC3D784F9DD66056EC227 /* UIView+ChameleonPrivate.m */,
-				17A424583EC6FD2382E40B2C152A4EF5 /* UIViewController+Chameleon.h */,
-				2DAD938E4969535ACCF731485F835449 /* UIViewController+Chameleon.m */,
+				135962C4648643744C90E398FADBF55A /* ChameleonFramework */,
+				A01738232B501C3FCC4A1D1D0A031B06 /* Cosmos */,
+				D9C38A70F9328C2A7B41BE8653C99CA1 /* Crashlytics */,
+				4CF8B0321F8BB608EC438E56D39FC46F /* Fabric */,
 			);
-			name = Default;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		D48238E20C696A56E216FE990BF40B85 /* Frameworks */ = {
+		D9C38A70F9328C2A7B41BE8653C99CA1 /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				9A35D3471A08B578C065C6E8D51E9C9A /* Fabric.framework */,
+				70F94CFFE265582CF606CADAB8016EB9 /* ANSCompatibility.h */,
+				7C61A52230ECF7CDFD0299704C5A90C3 /* Answers.h */,
+				F29EF17756BCD34C0BDC2E82D4905E3B /* CLSAttributes.h */,
+				76AF51733057755639FD32E26566DB52 /* CLSLogging.h */,
+				1193252E3696E9DCA06F0E18BB40EA41 /* CLSReport.h */,
+				1ACA6AA6A4FDBED3316A29AE346100D7 /* CLSStackFrame.h */,
+				3B7B0254F7FC948E8B6C5F2710645CAD /* Crashlytics.h */,
+				E2AFE45424808C46CDD93D0C01570DC1 /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		E2AFE45424808C46CDD93D0C01570DC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A37C5775F796FA1875125DF01FCBEB98 /* Crashlytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F9753CE420E6D70F18AAAE20894B4E00 /* Support Files */ = {
+		FBADF09EFD9A48C231FA228EEFE0F9CC /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				38FDAAF8CEF3FEE58A99BBAE6B5C9532 /* ChameleonFramework.modulemap */,
-				2197BFF059C9B51065D22144DB81EBD1 /* ChameleonFramework.xcconfig */,
-				9EEE3F6B53271411B82640C606A42BF6 /* ChameleonFramework-dummy.m */,
-				78AC0D528548A6273CE2D08D62819C3D /* ChameleonFramework-prefix.pch */,
-				C2AC1D007AD3757591E877D96447B589 /* ChameleonFramework-umbrella.h */,
-				CCE226B07BF2CDD49577FEF3124F36B0 /* Info.plist */,
+				A6EC52DEC63C3D643F5D3E05708F25B9 /* Chameleon.h */,
+				63E16470E0CD0A6F4E76838B4A916321 /* Chameleon_.h */,
+				B920F8119095616B46058B60C2E22C20 /* Chameleon_.m */,
+				9ADFB13CCBBF0DC184168C16E694D8F6 /* ChameleonConstants.h */,
+				BCE9039C5EB0CCCE4653EE2EF5A89D4A /* ChameleonConstants.m */,
+				E5E08BD9350FDF52ABD2669848B1F97D /* ChameleonEnums.h */,
+				DD2D3D9A36DEBFB4AD0DEBB3068966AD /* ChameleonMacros.h */,
+				2693F6C3731373219F880A57EABEE06C /* NSArray+Chameleon.h */,
+				DF0234E9F5749DC2E8DDA4075762C30F /* NSArray+Chameleon.m */,
+				4D9723C6299A0EF658CFEE87D5030DF2 /* UIAppearance+Swift.h */,
+				3892C4692E560BF41C3C94E639241A6A /* UIAppearance+Swift.m */,
+				724CE2363024DA0A7A2F652202C22CF5 /* UIButton+Chameleon.h */,
+				76DA17EEF964551976B7B9D2757B3D6C /* UIButton+Chameleon.m */,
+				FBEA6F6A943BFC5BA3B129772556A484 /* UIColor+Chameleon.h */,
+				8F9C7DE46F37579C3E39502AF0795AFF /* UIColor+Chameleon.m */,
+				FB861FB0008D5729151341955E157669 /* UIColor+ChameleonPrivate.h */,
+				5FD4BD32665BA87D6B78F4389CB6D78D /* UIColor+ChameleonPrivate.m */,
+				B5B07F291D8A0C8D80416810228F75C2 /* UIImage+ChameleonPrivate.h */,
+				C437B6DB0A53DD98E63D639D19987818 /* UIImage+ChameleonPrivate.m */,
+				0CE8A203E3D5760D05AFAD79565837A7 /* UILabel+Chameleon.h */,
+				53649A5B5DC1EC8A9FF206C30C3DE435 /* UILabel+Chameleon.m */,
+				ECAE5E2FE4219EA40B65F0E8E773411F /* UINavigationController+Chameleon.h */,
+				646BBA9F9292FA7846063367C9AAB5F4 /* UINavigationController+Chameleon.m */,
+				1BEEEB73E90499612A7903AC1C8D4087 /* UIView+ChameleonPrivate.h */,
+				C859436122A01C53F0B9F01B756E7410 /* UIView+ChameleonPrivate.m */,
+				FBCEFF3DF148EA69DBC7C3B8C78B1DEE /* UIViewController+Chameleon.h */,
+				A0FFF3523B233C571159B8BDF995322B /* UIViewController+Chameleon.m */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ChameleonFramework";
-			sourceTree = "<group>";
-		};
-		FB7547BAE4F55762221BCE2640E8F71D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C67FD68B605D1C8E03E1D85B4D732972 /* Info.plist */,
-				8F88E9AFE2593699C67FB8BEDF8320E4 /* TTRangeSlider.modulemap */,
-				20099B1286C05F8EF11C6A601A8A95CA /* TTRangeSlider.xcconfig */,
-				9480CE472970BEC6127E995355CD64CA /* TTRangeSlider-dummy.m */,
-				79CA0DF5A1A2B6727F574692D0DFB8E9 /* TTRangeSlider-prefix.pch */,
-				430D7DD3B1A99AF0FDC827E99BF6A333 /* TTRangeSlider-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TTRangeSlider";
+			name = Default;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0028C5F345AF3863E8ACEE049CBA2227 /* Headers */ = {
+		0EB78514067C48ACC19DB42A55F3E755 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				363F6766DD6E758221960AD19289C7A9 /* TTRangeSlider-umbrella.h in Headers */,
-				D4D8BBAC0B0F0F16A0F489DFA3364527 /* TTRangeSlider.h in Headers */,
-				4BC2BC0D45984D22B01FFC270FB5657E /* TTRangeSliderDelegate.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		331B4826D99107F600669D993F9ED2D2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				357DC56761361A12BF9BC219F3EC91F0 /* Pods-MovieRating-umbrella.h in Headers */,
+				A706DDD3C5420F5D16B1730F1C37A979 /* Pods-MovieRating-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,43 +447,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3E127692AE0709ADDECA8AC982E647C8 /* Pods-MovieRating */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 743BE2BE9B1956A80F8748A3566F512F /* Build configuration list for PBXNativeTarget "Pods-MovieRating" */;
-			buildPhases = (
-				A10C87E88084B10CBBD3C8051DE50B32 /* Sources */,
-				72439B7524B795B3D95C19C70FD4C4B6 /* Frameworks */,
-				331B4826D99107F600669D993F9ED2D2 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC8D950EA59E3F068D0971DEF0641D7E /* PBXTargetDependency */,
-				3B7AF1A1C050BBE775EF62E328335A20 /* PBXTargetDependency */,
-				80D60CF54A6A037703E7B5A059E0E6E4 /* PBXTargetDependency */,
-			);
-			name = "Pods-MovieRating";
-			productName = "Pods-MovieRating";
-			productReference = 8CA35631831A3D090DE110C3C71D5F94 /* Pods_MovieRating.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		5DDAB2C1E7DF05477F1D128533DD026F /* TTRangeSlider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 275F0DCC7B9ACE0D90D8D347EC271A33 /* Build configuration list for PBXNativeTarget "TTRangeSlider" */;
-			buildPhases = (
-				F7CE1BEF81CDEC1618BE3BBE276F172F /* Sources */,
-				2F7ABBFE7B9C75F5E6EE35A907663EA4 /* Frameworks */,
-				0028C5F345AF3863E8ACEE049CBA2227 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TTRangeSlider;
-			productName = TTRangeSlider;
-			productReference = 5741D93B2EFD225D701EEE6CF0E00378 /* TTRangeSlider.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		608B49B5DDACC601EE8044A1931993F9 /* Cosmos */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B580BEC7E92B10FC3C82CD96A459AF5D /* Build configuration list for PBXNativeTarget "Cosmos" */;
@@ -566,7 +461,7 @@
 			);
 			name = Cosmos;
 			productName = Cosmos;
-			productReference = 36BA165A0BD22A5CD4F0218A28BE27F6 /* Cosmos.framework */;
+			productReference = 3D6764F6F3E017961FF70EB911DDF058 /* Cosmos.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9B57F4EE4746045CEAE2D933A3C8EC9E /* ChameleonFramework */ = {
@@ -583,7 +478,26 @@
 			);
 			name = ChameleonFramework;
 			productName = ChameleonFramework;
-			productReference = 506D6C058172FF8912E88E4351562458 /* ChameleonFramework.framework */;
+			productReference = 3571C2688B7A8304537F78116F13B049 /* ChameleonFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A1D2E1A4188189A3E6B115F3A22B817D /* Pods-MovieRating */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 413301634DD9703AA6AC69DF60C74C8C /* Build configuration list for PBXNativeTarget "Pods-MovieRating" */;
+			buildPhases = (
+				5FAB4D4BA393A36C0F5386735F4DF4CB /* Sources */,
+				07894AAEE84AC25E9137803258F93FAA /* Frameworks */,
+				0EB78514067C48ACC19DB42A55F3E755 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				656B65E5B57CDE0EE51E2385957677B8 /* PBXTargetDependency */,
+				8D383DF4F02A5D6E3BEBC38866A0A13E /* PBXTargetDependency */,
+			);
+			name = "Pods-MovieRating";
+			productName = "Pods-MovieRating";
+			productReference = C3EB5F598BD0AF5998AF6307FADF4885 /* Pods_MovieRating.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -603,19 +517,26 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B3B0EAFC079A268BDB0403D18EB47138 /* Products */;
+			productRefGroup = 48D6612CF49718CAF4C6A1CFE875279A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9B57F4EE4746045CEAE2D933A3C8EC9E /* ChameleonFramework */,
 				608B49B5DDACC601EE8044A1931993F9 /* Cosmos */,
-				3E127692AE0709ADDECA8AC982E647C8 /* Pods-MovieRating */,
-				5DDAB2C1E7DF05477F1D128533DD026F /* TTRangeSlider */,
+				A1D2E1A4188189A3E6B115F3A22B817D /* Pods-MovieRating */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5FAB4D4BA393A36C0F5386735F4DF4CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAABDD5FD3A2B36D757CD771D1BF2106 /* Pods-MovieRating-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64ACD90BE8F69E7FD4BDFC22146B42DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,79 +579,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A10C87E88084B10CBBD3C8051DE50B32 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0617AC9E287B5037CCE413456C22F24E /* Pods-MovieRating-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7CE1BEF81CDEC1618BE3BBE276F172F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B9731964F6C025516C65BF80A2CA963 /* TTRangeSlider-dummy.m in Sources */,
-				61E35193AFF56879C94011BF94E911BA /* TTRangeSlider.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3B7AF1A1C050BBE775EF62E328335A20 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Cosmos;
-			target = 608B49B5DDACC601EE8044A1931993F9 /* Cosmos */;
-			targetProxy = 43A8E0794ED7D867C374B1003A690787 /* PBXContainerItemProxy */;
-		};
-		80D60CF54A6A037703E7B5A059E0E6E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TTRangeSlider;
-			target = 5DDAB2C1E7DF05477F1D128533DD026F /* TTRangeSlider */;
-			targetProxy = CFB5D0CC2CE28BD56A2D3223073479BE /* PBXContainerItemProxy */;
-		};
-		FC8D950EA59E3F068D0971DEF0641D7E /* PBXTargetDependency */ = {
+		656B65E5B57CDE0EE51E2385957677B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChameleonFramework;
 			target = 9B57F4EE4746045CEAE2D933A3C8EC9E /* ChameleonFramework */;
-			targetProxy = AC87C7D99407462C0BCFB4F753F912CF /* PBXContainerItemProxy */;
+			targetProxy = 4ED3E719735BEDCD52E6C94B338453BA /* PBXContainerItemProxy */;
+		};
+		8D383DF4F02A5D6E3BEBC38866A0A13E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cosmos;
+			target = 608B49B5DDACC601EE8044A1931993F9 /* Cosmos */;
+			targetProxy = FF253FC8C20865F7BF17AACF7E0A8ACF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08E6F9797206BF69517791A407A8A5CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20099B1286C05F8EF11C6A601A8A95CA /* TTRangeSlider.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TTRangeSlider/TTRangeSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TTRangeSlider/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TTRangeSlider/TTRangeSlider.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = TTRangeSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1B24A155DCF7355F89DD93D73D4EF55C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A54400ADDD27BCACCC297EC9DA4BE387 /* Cosmos.xcconfig */;
+			baseConfigurationReference = 034B32FC9999BDDD73E5119788C0A5A3 /* Cosmos.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -795,39 +664,6 @@
 			};
 			name = Release;
 		};
-		55FCEBD79986C319025BFD4931FFE4BC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCA9CBFDD6A602D8E8690CE4C2594A0D /* Pods-MovieRating.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MovieRating/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MovieRating/Pods-MovieRating.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MovieRating;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -870,7 +706,40 @@
 			};
 			name = Debug;
 		};
-		81D6D2D52B34218FF1F6FECA1C0B3C22 /* Debug */ = {
+		7588127F3BD3873DD954212396F2BB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCA9CBFDD6A602D8E8690CE4C2594A0D /* Pods-MovieRating.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MovieRating/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MovieRating/Pods-MovieRating.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MovieRating;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		93D55F8E28D8488C5B0381B6258997AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 70E8904672CC249BA046553972AFD340 /* Pods-MovieRating.debug.xcconfig */;
 			buildSettings = {
@@ -904,38 +773,9 @@
 			};
 			name = Debug;
 		};
-		97AF256DE3B921A188D72617D9A45E82 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20099B1286C05F8EF11C6A601A8A95CA /* TTRangeSlider.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TTRangeSlider/TTRangeSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TTRangeSlider/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TTRangeSlider/TTRangeSlider.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TTRangeSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		ABA038DC5B09B6183AE1577C0833ADD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A54400ADDD27BCACCC297EC9DA4BE387 /* Cosmos.xcconfig */;
+			baseConfigurationReference = 034B32FC9999BDDD73E5119788C0A5A3 /* Cosmos.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -965,7 +805,7 @@
 		};
 		D74F64C08344E2A30D1FC66C331D3682 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2197BFF059C9B51065D22144DB81EBD1 /* ChameleonFramework.xcconfig */;
+			baseConfigurationReference = 586C358111FA3D5E67AC189EA0135EA3 /* ChameleonFramework.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -994,7 +834,7 @@
 		};
 		E46F16042DD7EF9846376915EEB1EB9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2197BFF059C9B51065D22144DB81EBD1 /* ChameleonFramework.xcconfig */;
+			baseConfigurationReference = 586C358111FA3D5E67AC189EA0135EA3 /* ChameleonFramework.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1033,15 +873,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		275F0DCC7B9ACE0D90D8D347EC271A33 /* Build configuration list for PBXNativeTarget "TTRangeSlider" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				97AF256DE3B921A188D72617D9A45E82 /* Debug */,
-				08E6F9797206BF69517791A407A8A5CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1051,11 +882,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		743BE2BE9B1956A80F8748A3566F512F /* Build configuration list for PBXNativeTarget "Pods-MovieRating" */ = {
+		413301634DD9703AA6AC69DF60C74C8C /* Build configuration list for PBXNativeTarget "Pods-MovieRating" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81D6D2D52B34218FF1F6FECA1C0B3C22 /* Debug */,
-				55FCEBD79986C319025BFD4931FFE4BC /* Release */,
+				93D55F8E28D8488C5B0381B6258997AF /* Debug */,
+				7588127F3BD3873DD954212396F2BB52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
