@@ -188,6 +188,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="zYA-W0-40s">
+                            <rect key="frame" x="0.0" y="213" width="600" height="122"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieRating was created and is maintained by Ephraim Kunz and is free as a courtesy to you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5E-3o-0o3">
+                                    <rect key="frame" x="20" y="20" width="560" height="82"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="C5E-3o-0o3" firstAttribute="leading" secondItem="zYA-W0-40s" secondAttribute="leading" constant="20" symbolic="YES" id="67j-id-DhB"/>
+                                <constraint firstAttribute="bottom" secondItem="C5E-3o-0o3" secondAttribute="bottom" constant="20" symbolic="YES" id="Nnm-zD-tlV"/>
+                                <constraint firstAttribute="trailing" secondItem="C5E-3o-0o3" secondAttribute="trailing" constant="20" symbolic="YES" id="Oxd-ya-3bg"/>
+                                <constraint firstItem="C5E-3o-0o3" firstAttribute="top" secondItem="zYA-W0-40s" secondAttribute="top" constant="20" symbolic="YES" id="hDa-Yn-19a"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leaveFeedbackCell" rowHeight="121" id="B6e-ug-6cv" customClass="LeaveFeedbackCell" customModule="MovieRating" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="121"/>

@@ -18,13 +18,20 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func addPreviewLayer() {
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
         previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        previewLayer?.bounds = self.view.bounds
+        //previewLayer?.bounds = self.view.bounds
         previewLayer?.position = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds))
         self.view.layer.addSublayer(previewLayer!)
+        updateBracketSubview()
+    }
+    
+    func updateBracketSubview(){
+        if (self.view.subviews.last!.isKindOfClass(UIImageView)){ //Remove old bracket subview, if it exists
+            self.view.subviews.last!.removeFromSuperview()
+        }
         
         let bracket = UIImageView(image: UIImage(named: "overlayBracket"))
         bracket.backgroundColor = UIColor.clearColor()
-        bracket.frame = self.view.frame
+        bracket.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
         self.view.addSubview(bracket)
     }
     
@@ -47,14 +54,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 let inputDevice = try AVCaptureDeviceInput(device: captureDevice)
                 
                 session.addInput(inputDevice)
-                addPreviewLayer()
             }
             catch _{
                 print("Cannot find the capture device. You may be running this in the simulator");
             }
             
-            
-            /* Check for metadata */
             let output = AVCaptureMetadataOutput()
             session.addOutput(output)
             output.metadataObjectTypes = [
@@ -66,7 +70,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
         let firstTime = NSUserDefaults().boolForKey("firstTime")
         if(firstTime){
             NSUserDefaults().setBool(false, forKey: "firstTime")
@@ -77,19 +83,16 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             self.presentViewController(historyNavCtrl, animated: false, completion: nil)
         }
 
-        if(!Platform.isSimulator){
-            updateCameraFeed() 
-        }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
 
         processingNetworkRequest = false
+        if(!Platform.isSimulator){
+            addPreviewLayer()
+        }
         session.startRunning()
-        
+        updateCameraFeed()
         UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateCameraFeed), name: UIDeviceOrientationDidChangeNotification, object: UIDevice.currentDevice())
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateBracketSubview), name: UIDeviceOrientationDidChangeNotification, object: UIDevice.currentDevice())
     }
     
     override func didReceiveMemoryWarning() {

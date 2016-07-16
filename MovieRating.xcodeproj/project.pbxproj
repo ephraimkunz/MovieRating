@@ -21,7 +21,6 @@
 		18BAF99A1D0C9067001CC185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BAF9991D0C9067001CC185 /* Assets.xcassets */; };
 		18BAF99D1D0C9067001CC185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */; };
 		18C8EFFB1D2D425300E79221 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8EFFA1D2D425300E79221 /* SettingsTableViewController.swift */; };
-		18C8EFFF1D2DD52D00E79221 /* SettingsViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8EFFE1D2DD52D00E79221 /* SettingsViewFooter.xib */; };
 		18CC69E61D0DDF4A0073E5FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */; };
 		18E865721D1EE2E900340FF6 /* TableViewHasDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */; };
 		18E865741D1EE6BE00340FF6 /* NoDataLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */; };
@@ -53,7 +52,6 @@
 		18BAF99C1D0C9067001CC185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18BAF99E1D0C9067001CC185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C8EFFA1D2D425300E79221 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		18C8EFFE1D2DD52D00E79221 /* SettingsViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewFooter.xib; sourceTree = "<group>"; };
 		18CC69E51D0DDF4A0073E5FD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18E865711D1EE2E900340FF6 /* TableViewHasDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHasDataProtocol.swift; sourceTree = "<group>"; };
 		18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataLabel.xib; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				18BAF99B1D0C9067001CC185 /* LaunchScreen.storyboard */,
 				18BAF9961D0C9067001CC185 /* Main.storyboard */,
 				18E865731D1EE6BE00340FF6 /* NoDataLabel.xib */,
-				18C8EFFE1D2DD52D00E79221 /* SettingsViewFooter.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -266,7 +263,6 @@
 				18BAF99A1D0C9067001CC185 /* Assets.xcassets in Resources */,
 				18BAF9981D0C9067001CC185 /* Main.storyboard in Resources */,
 				18E865741D1EE6BE00340FF6 /* NoDataLabel.xib in Resources */,
-				18C8EFFF1D2DD52D00E79221 /* SettingsViewFooter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

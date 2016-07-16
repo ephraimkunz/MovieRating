@@ -15,12 +15,6 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        let footerView = UINib(nibName: "SettingsViewFooter", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
-        footerView.frame = CGRectMake(0, 0, 50, 100)
-        self.tableView.tableFooterView = footerView
-    }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("leaveFeedbackCell") as! LeaveFeedbackCell
         cell.parentTableView = self
@@ -39,11 +33,15 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         if(MFMailComposeViewController.canSendMail()){
             let body = "\n\n\niOS: \(Platform.systemName()) \(Platform.systemVersion())\nApp: \(Platform.appName())\nVersion: \(Platform.appVersion())\nBuild: \(Platform.appBuild())"
             
+            UINavigationBar.appearance().barTintColor = UIColor.flatMintColor()
+
             let controller = MFMailComposeViewController()
+            controller.navigationBar.tintColor = UIColor.whiteColor()
             controller.mailComposeDelegate = self
             controller.setToRecipients(["ephraimkunz@me.com"])
             controller.setSubject("Feedback for MovieRating")
             controller.setMessageBody(body, isHTML: false)
+            
             self.presentViewController(controller, animated: true, completion: nil)
         }
         else{
