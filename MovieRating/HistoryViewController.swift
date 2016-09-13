@@ -36,6 +36,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, TableViewHas
         }
         else{
             let noDataLabel = UINib(nibName: "NoDataLabel", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
+            
             self.historyTableView.backgroundView = noDataLabel;
             self.historyTableView.separatorStyle = .None;
         }

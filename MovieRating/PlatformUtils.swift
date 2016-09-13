@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 struct Platform {
     static let isSimulator: Bool = {
@@ -53,5 +54,35 @@ struct Platform {
     
     static func appBuild() -> String{
         return NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as!String
+    }
+    
+    static func hasTorch() -> Bool{
+        return AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo).hasTorch
+    }
+    
+    static func toggleTorch() -> Bool{
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        if (device.hasTorch) {
+            do {
+                try device.lockForConfiguration()
+                if (device.torchMode == .On) {
+                    device.torchMode = .Off
+                }
+                else {
+                    do {
+                        try device.setTorchModeOnWithLevel(1.0)
+                    }
+                    catch {
+                        print(error)
+                    }
+                }
+                device.unlockForConfiguration()
+                return true
+            } catch {
+                print(error)
+                return false
+            }
+        }
+        return false
     }
 }
