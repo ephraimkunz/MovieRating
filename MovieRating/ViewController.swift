@@ -24,6 +24,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func updateBracketSubview(){
+        if (self.view.subviews.last!.isKind(of: UIButton.self)){ //Remove old button subview, if it exists
+            self.view.subviews.last!.removeFromSuperview()
+        }
         if (self.view.subviews.last!.isKind(of: UIImageView.self)){ //Remove old bracket subview, if it exists
             self.view.subviews.last!.removeFromSuperview()
         }
@@ -32,6 +35,27 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         bracket.backgroundColor = UIColor.clear
         bracket.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(bracket)
+        
+        //Add torch toggle button
+        if(Platform.hasTorch()){
+            let torchButton = UIButton(type: .custom)
+            torchButton.setImage(#imageLiteral(resourceName: "flashIcon").withRenderingMode(.alwaysTemplate), for: .normal)
+            torchButton.backgroundColor = UIColor.flatMint()
+            torchButton.tintColor = UIColor.white
+            torchButton.frame = CGRect(x:self.view.frame.width / 2 - 25, y:self.view.frame.height - 60, width: 50, height: 50)
+            torchButton.layer.cornerRadius = 0.5 * torchButton.bounds.size.width
+            torchButton.addTarget(self, action: #selector(torchButtonTapped), for: .touchUpInside)
+            self.view.addSubview(torchButton) // Add it as a subview of bracket so things update properly when bracket is removed on rotation
+        }
+    }
+    
+    func torchButtonTapped(_ sender: UIButton){
+        if Platform.toggleTorch(){
+            sender.setImage(#imageLiteral(resourceName: "filledFlashIcon").withRenderingMode(.alwaysTemplate), for: .normal)
+        }
+        else{
+            sender.setImage(#imageLiteral(resourceName: "flashIcon").withRenderingMode(.alwaysTemplate), for: .normal)
+        }
     }
     
     func updateCameraFeed(){
