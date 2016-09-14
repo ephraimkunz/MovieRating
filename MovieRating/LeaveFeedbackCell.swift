@@ -13,7 +13,7 @@ import MessageUI
 class LeaveFeedbackCell: UITableViewCell{
     var parentTableView: SettingsTableViewController?
     
-    @IBAction func leaveFeedbackTapped(sender: AnyObject) {
+    @IBAction func leaveFeedbackTapped(_ sender: AnyObject) {
         parentTableView!.launchMailComposer()
     }
 }

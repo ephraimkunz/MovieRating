@@ -16,7 +16,7 @@ class DetailTitleCell: UITableViewCell, ConfigurableCell{
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var mpaaRatingLabel: UILabel!
     
-    func configure(row: Int, data: MovieInfo){
+    func configure(_ row: Int, data: MovieInfo){
         if let imageUrl = data.imageUrl{
             NetworkManager.getImageForUrl(imageUrl){ image in
                 self.infoImage.image = image
@@ -29,17 +29,17 @@ class DetailTitleCell: UITableViewCell, ConfigurableCell{
         }
         
         if let year = data.year{
-            yearLabel.hidden = false
+            yearLabel.isHidden = false
             yearLabel.text = year + " • "
         }else{
-            yearLabel.hidden = true
+            yearLabel.isHidden = true
         }
         
         if let mpaaRating = data.mpaaRating{
-            mpaaRatingLabel.hidden = false
+            mpaaRatingLabel.isHidden = false
             mpaaRatingLabel.text = mpaaRating
         }else{
-            mpaaRatingLabel.hidden = true
+            mpaaRatingLabel.isHidden = true
         }
     }
 }

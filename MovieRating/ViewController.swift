@@ -18,27 +18,27 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func addPreviewLayer() {
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
         previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        previewLayer?.position = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds))
+        previewLayer?.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
         self.view.layer.addSublayer(previewLayer!)
         updateBracketSubview()
     }
     
     func updateBracketSubview(){
-        if (self.view.subviews.last!.isKindOfClass(UIImageView)){ //Remove old bracket subview, if it exists
+        if (self.view.subviews.last!.isKind(of: UIImageView.self)){ //Remove old bracket subview, if it exists
             self.view.subviews.last!.removeFromSuperview()
         }
         
         let bracket = UIImageView(image: UIImage(named: "overlayBracket"))
-        bracket.backgroundColor = UIColor.clearColor()
-        bracket.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        bracket.backgroundColor = UIColor.clear
+        bracket.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(bracket)
     }
     
     func updateCameraFeed(){
         let previewLayerConnection = previewLayer?.connection;
         
-        if (previewLayerConnection!.supportsVideoOrientation){
-            previewLayerConnection?.videoOrientation = AVCaptureVideoOrientation.init(rawValue: UIApplication.sharedApplication().statusBarOrientation.rawValue)!
+        if (previewLayerConnection!.isVideoOrientationSupported){
+            previewLayerConnection?.videoOrientation = AVCaptureVideoOrientation.init(rawValue: UIApplication.shared.statusBarOrientation.rawValue)!
             previewLayer?.frame = self.view.bounds
         }
     }
@@ -47,7 +47,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         super.viewDidLoad()
         
         if(!Platform.isSimulator){
-            let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+            let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
             do{
                 let inputDevice = try AVCaptureDeviceInput(device: captureDevice)
                 
@@ -64,22 +64,22 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 AVMetadataObjectTypeUPCECode,
                 AVMetadataObjectTypeEAN13Code]
           
-            output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+            output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         }
         
-        let firstTime = NSUserDefaults().boolForKey("firstTime")
+        let firstTime = UserDefaults().bool(forKey: "firstTime")
         if(firstTime){
-            NSUserDefaults().setBool(false, forKey: "firstTime")
+            UserDefaults().set(false, forKey: "firstTime")
             
-            let historyVC = self.storyboard?.instantiateViewControllerWithIdentifier("historyController")
-            let historyNavCtrl = self.storyboard?.instantiateViewControllerWithIdentifier("historyNavController") as! UINavigationController
+            let historyVC = self.storyboard?.instantiateViewController(withIdentifier: "historyController")
+            let historyNavCtrl = self.storyboard?.instantiateViewController(withIdentifier: "historyNavController") as! UINavigationController
             historyNavCtrl.viewControllers = [historyVC!]
-            self.presentViewController(historyNavCtrl, animated: false, completion: nil)
+            self.present(historyNavCtrl, animated: false, completion: nil)
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = UIColor.flatMintColor()
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMint()
 
         processingNetworkRequest = false
         if(!Platform.isSimulator){
@@ -87,21 +87,21 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
         session.startRunning()
         updateCameraFeed()
-        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateCameraFeed), name: UIDeviceOrientationDidChangeNotification, object: UIDevice.currentDevice())
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateBracketSubview), name: UIDeviceOrientationDidChangeNotification, object: UIDevice.currentDevice())
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateCameraFeed), name: NSNotification.Name.UIDeviceOrientationDidChange, object: UIDevice.current)
+         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateBracketSubview), name: NSNotification.Name.UIDeviceOrientationDidChange, object: UIDevice.current)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         session.stopRunning()
     }
 
     
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         if(self.processingNetworkRequest){
             return
         }
@@ -110,7 +110,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             let barcode = data as! AVMetadataMachineReadableCodeObject
  
             NetworkManager.getItemForUPC(barcode.stringValue){movieInfo in
-                let detailView = self.storyboard?.instantiateViewControllerWithIdentifier("detailViewController") as! DetailViewController
+                let detailView = self.storyboard?.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
                 detailView.movieInfo = movieInfo
                 self.navigationController?.pushViewController(detailView, animated: true)
             }

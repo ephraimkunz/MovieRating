@@ -18,38 +18,38 @@ class HistoryTableCell: UITableViewCell{
     @IBOutlet weak var ratingIcon: UIImageView!
     @IBOutlet weak var ratingIconHeight: NSLayoutConstraint!
     
-    func setData(data: BarcodeData){
+    func setData(_ data: BarcodeData){
         title.text = data.title
         barcode.text = data.barcode
         date.text = getDateText(data.timestamp!)
         
         if let imdb = data.imdbRating{
             rating.text = formatRatingsText(imdb)
-            rating.hidden = false
-            ratingIcon.hidden = false
+            rating.isHidden = false
+            ratingIcon.isHidden = false
             ratingIconHeight.constant = 25
         }
         else{
-            rating.hidden = true
-            ratingIcon.hidden = true
+            rating.isHidden = true
+            ratingIcon.isHidden = true
             ratingIconHeight.constant = 0 //Don't leave space in the cell for it if we won't show it
         }
     }
     
-    func formatRatingsText(ratingNumber: NSNumber) -> String{
+    func formatRatingsText(_ ratingNumber: NSNumber) -> String{
         let doubleVal = ratingNumber.doubleValue
         rating.textColor = Platform.getColorForRating(doubleVal)
         
-        let formatter = NSNumberFormatter()
+        let formatter = NumberFormatter()
         formatter.positiveFormat = "0.#"
-        return formatter.stringFromNumber(ratingNumber)!
+        return formatter.string(from: ratingNumber)!
     }
     
-    func getDateText(millis: NSNumber) -> String{
-        let date = NSDate(timeIntervalSince1970: NSTimeInterval(millis.doubleValue))
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .MediumStyle
-        formatter.timeStyle = .ShortStyle
-        return formatter.stringFromDate(date)
+    func getDateText(_ millis: NSNumber) -> String{
+        let date = Date(timeIntervalSince1970: TimeInterval(millis.doubleValue))
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
     }
 }

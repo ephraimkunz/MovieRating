@@ -14,7 +14,7 @@ class BarcodeStore{
     static let moc = CoreDataController().managedObjectContext //Singleton so that we all use it. This way,
     //FetchedResultController can keep track of the changes
     
-    private func historyFetchRequest() -> NSFetchRequest{
+    fileprivate func historyFetchRequest() -> NSFetchRequest<AnyObject>{
         return NSFetchRequest(entityName: BARCODE_NAME)
     }
     
@@ -22,7 +22,7 @@ class BarcodeStore{
         return BarcodeStoreDatasource(tableView: refTableView, delegate: delegate);
     }
     
-    func historyFetchedResultsController() -> NSFetchedResultsController{
+    func historyFetchedResultsController() -> NSFetchedResultsController<AnyObject>{
         let request = historyFetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
 
@@ -43,7 +43,7 @@ class BarcodeStore{
         histFetch.sortDescriptors = [sort]
         
         do{
-            let fetchedHistory = try BarcodeStore.moc.executeFetchRequest(histFetch) as! [BarcodeData]
+            let fetchedHistory = try BarcodeStore.moc.fetch(histFetch) as! [BarcodeData]
             return fetchedHistory
         }
         catch{
@@ -52,7 +52,7 @@ class BarcodeStore{
     }
     
     
-    func saveBarcode(movieInfo: MovieInfo, saveTimestamp: Bool){
+    func saveBarcode(_ movieInfo: MovieInfo, saveTimestamp: Bool){
         if movieInfo.title == nil || movieInfo.title! == " " {
             return //Don't save with no title: this means there is no other useful info. But we still need to allow the user to get to the detail screen so they know that.
         }
@@ -63,16 +63,16 @@ class BarcodeStore{
             entity = exists
         }
         else{
-            entity = NSEntityDescription.insertNewObjectForEntityForName(BARCODE_NAME, inManagedObjectContext: BarcodeStore.moc) as! BarcodeData
+            entity = NSEntityDescription.insertNewObject(forEntityName: BARCODE_NAME, into: BarcodeStore.moc) as! BarcodeData
         }
         
         if(saveTimestamp){
-            entity.timestamp = NSDate().timeIntervalSince1970
+            entity.timestamp = Date().timeIntervalSince1970 as NSNumber?
         }
         entity.title = movieInfo.title
-        entity.imdbRating = movieInfo.imdbRating
-        entity.metaRating = movieInfo.metaRating
-        entity.rottenRating = movieInfo.rottenRating
+        entity.imdbRating = movieInfo.imdbRating as NSNumber?
+        entity.metaRating = movieInfo.metaRating as NSNumber?
+        entity.rottenRating = movieInfo.rottenRating as NSNumber?
         entity.barcode = movieInfo.barcode
         entity.imdbId = movieInfo.imdbId
         entity.rottenUrl = movieInfo.rottenUrl
@@ -94,9 +94,9 @@ class BarcodeStore{
         let fetchRequest = historyFetchRequest()
         fetchRequest.returnsObjectsAsFaults = false
         do{
-            let results = try BarcodeStore.moc.executeFetchRequest(fetchRequest)
+            let results = try BarcodeStore.moc.fetch(fetchRequest)
             for managedObject in results{
-                BarcodeStore.moc.deleteObject(managedObject as! NSManagedObject)
+                BarcodeStore.moc.delete(managedObject as! NSManagedObject)
             }
             try BarcodeStore.moc.save()
         }
@@ -105,13 +105,13 @@ class BarcodeStore{
         }
     }
     
-    func getHistoryByBarcode(barcode: String) -> BarcodeData?{
+    func getHistoryByBarcode(_ barcode: String) -> BarcodeData?{
         let fetchRequest = historyFetchRequest()
         let predicate = NSPredicate(format: "barcode = %@", barcode)
         fetchRequest.predicate = predicate
         
         do{
-            let histItems = try BarcodeStore.moc.executeFetchRequest(fetchRequest)
+            let histItems = try BarcodeStore.moc.fetch(fetchRequest)
             let items = histItems as! [BarcodeData]
             if let item = items.first{
                 return item
@@ -125,15 +125,15 @@ class BarcodeStore{
         }
     }
     
-    func removeHistoryByBarcode(barcode: String){
+    func removeHistoryByBarcode(_ barcode: String){
         let fetchRequest = historyFetchRequest()
         let predicate = NSPredicate(format: "barcode = %@", barcode)
         fetchRequest.returnsObjectsAsFaults = false
         fetchRequest.predicate = predicate
         
         do{
-            let results = try BarcodeStore.moc.executeFetchRequest(fetchRequest)
-            BarcodeStore.moc.deleteObject(results.first as! NSManagedObject)
+            let results = try BarcodeStore.moc.fetch(fetchRequest)
+            BarcodeStore.moc.delete(results.first as! NSManagedObject)
             try BarcodeStore.moc.save()
         }
         catch{

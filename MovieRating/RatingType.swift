@@ -9,8 +9,8 @@
 import Foundation
 
 enum RatingType {
-    case Imdb
-    case Rotten
-    case Meta
-    case NoType
+    case imdb
+    case rotten
+    case meta
+    case noType
 }

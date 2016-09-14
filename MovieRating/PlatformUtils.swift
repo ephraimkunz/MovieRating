@@ -19,64 +19,64 @@ struct Platform {
         return isSim
     }()
     
-    static func getColorForRating(rating: Double) -> UIColor{
-        if rating < NSUserDefaults().doubleForKey("badMovieThreshold"){
-            return UIColor.flatRedColor()
+    static func getColorForRating(_ rating: Double) -> UIColor{
+        if rating < UserDefaults().double(forKey: "badMovieThreshold"){
+            return UIColor.flatRed()
         }
-        else if rating < NSUserDefaults().doubleForKey("okMovieThreshold"){
-            return UIColor.flatYellowColor()
+        else if rating < UserDefaults().double(forKey: "okMovieThreshold"){
+            return UIColor.flatYellow()
         }
         else{
-            return UIColor.flatGreenColor()
+            return UIColor.flatGreen()
         }
 
     }
     
     static func systemVersion() -> String{
-        return UIDevice.currentDevice().systemVersion
+        return UIDevice.current.systemVersion
     }
     
     static func systemName() -> String{
-        return UIDevice.currentDevice().systemName
+        return UIDevice.current.systemName
     }
     
     static func appName() -> String{
-        let bundleDisplayName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleDisplayName")
+        let bundleDisplayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName")
         if(bundleDisplayName != nil){
             return bundleDisplayName as! String
         }
-        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String
     }
     
     static func appVersion() -> String{
-        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }
     
     static func appBuild() -> String{
-        return NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as!String
+        return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as!String
     }
     
     static func hasTorch() -> Bool{
-        return AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo).hasTorch
+        return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo).hasTorch
     }
     
     static func toggleTorch() -> Bool{
-        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        if (device.hasTorch) {
+        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        if (device?.hasTorch)! {
             do {
-                try device.lockForConfiguration()
-                if (device.torchMode == .On) {
-                    device.torchMode = .Off
+                try device?.lockForConfiguration()
+                if (device?.torchMode == .on) {
+                    device?.torchMode = .off
                 }
                 else {
                     do {
-                        try device.setTorchModeOnWithLevel(1.0)
+                        try device?.setTorchModeOnWithLevel(1.0)
                     }
                     catch {
                         print(error)
                     }
                 }
-                device.unlockForConfiguration()
+                device?.unlockForConfiguration()
                 return true
             } catch {
                 print(error)

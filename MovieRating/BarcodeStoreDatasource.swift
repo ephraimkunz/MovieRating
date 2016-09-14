@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate{
-    var fetchedController: NSFetchedResultsController
+    var fetchedController: NSFetchedResultsController<AnyObject>
     var referencingTableView: UITableView
     var delegate: TableViewHasDataProtocol?
     
@@ -22,14 +22,14 @@ class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsC
         fetchedController.delegate = self
         self.delegate = delegate
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellData = fetchedController.objectAtIndexPath(indexPath) as! BarcodeData;
-        let cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as! HistoryTableCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellData = fetchedController.object(at: indexPath) as! BarcodeData;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as! HistoryTableCell
         cell.setData(cellData)
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        if fetchedController.sections![section].numberOfObjects > 0{
             self.delegate?.tableViewHasData(true)
         }
@@ -40,32 +40,32 @@ class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsC
         return fetchedController.sections![section].numberOfObjects
     }
         
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        if type == .Delete{
-            referencingTableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        if type == .delete{
+            referencingTableView.deleteRows(at: [indexPath!], with: .automatic)
         }
-        else if type == .Insert{
-            referencingTableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
+        else if type == .insert{
+            referencingTableView.insertRows(at: [newIndexPath!], with: .automatic)
         }
-        else if type == .Move{
-            referencingTableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+        else if type == .move{
+            referencingTableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         referencingTableView.beginUpdates()
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         referencingTableView.endUpdates()
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true;
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        let cellText = (tableView.cellForRowAtIndexPath(indexPath) as! HistoryTableCell).barcode?.text
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let cellText = (tableView.cellForRow(at: indexPath) as! HistoryTableCell).barcode?.text
         BarcodeStore().removeHistoryByBarcode(cellText!)
     }
 }

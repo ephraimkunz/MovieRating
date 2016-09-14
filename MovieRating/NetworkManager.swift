@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 class NetworkManager{
-    class func getItemForUPC(code: String, callback: (data: MovieInfo) -> Void){
-        let url = NSURL(string: "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+    class func getItemForUPC(_ code: String, callback: @escaping (_ data: MovieInfo) -> Void){
+        let url = URL(string: "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) -> Void in
             do{
-                let str = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
+                let str = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions())
                 
                 let item = str["0"]! as! [String:String]
                 print(item)
@@ -22,8 +22,8 @@ class NetworkManager{
                 movieInfo.imageUrl = item["imageurl"]
                 
                 movieInfo.barcode = code
-                dispatch_async(dispatch_get_main_queue()){
-                    callback(data: movieInfo)
+                DispatchQueue.main.async{
+                    callback(movieInfo)
                 }
             }
             catch {
@@ -57,31 +57,31 @@ class NetworkManager{
 //    }
 
     
-    class func parseRawTitle(raw: String?) -> String?{
+    class func parseRawTitle(_ raw: String?) -> String?{
         //Remove items in brackets or parenthesis, along with brackets or parenthesis
         guard let rawUnwrapped = raw else{
             return raw
         }
-        var parsed = rawUnwrapped.stringByReplacingOccurrencesOfString("\\(.*\\)", withString: "", options: .RegularExpressionSearch, range: rawUnwrapped.startIndex ..< rawUnwrapped.endIndex)
+        var parsed = rawUnwrapped.replacingOccurrences(of: "\\(.*\\)", with: "", options: .regularExpression, range: rawUnwrapped.characters.indices)
         
-        parsed = parsed.stringByReplacingOccurrencesOfString("\\[.*\\]", withString: "", options: .RegularExpressionSearch, range: parsed.startIndex ..< parsed.endIndex)
+        parsed = parsed.replacingOccurrences(of: "\\[.*\\]", with: "", options: .regularExpression, range: parsed.characters.indices)
         
         return parsed
     }
     
-    class func getRatingForItemTitle(title: String, callback: (data: NSDictionary) -> Void){
-        let encodedTitle = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-        let url = NSURL(string: "https://www.omdbapi.com/?t=\(encodedTitle)&y=&plot=short&r=json&tomatoes=true")
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+    class func getRatingForItemTitle(_ title: String, callback: @escaping (_ data: NSDictionary) -> Void){
+        let encodedTitle = title.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed())!
+        let url = URL(string: "https://www.omdbapi.com/?t=\(encodedTitle)&y=&plot=short&r=json&tomatoes=true")
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) -> Void in
             do{
                 guard error == nil else{
                     print("Error fetching ratings: \(error)")
                     return
                 }
-                let dict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSDictionary
+                let dict = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as! NSDictionary
                 
                 print("Ratings fetch \(dict.description)")
-                dispatch_async(dispatch_get_main_queue()){
+                DispatchQueue.main.async{
                     callback(data: dict)
                 }
             }
@@ -92,12 +92,12 @@ class NetworkManager{
         task.resume()
     }
     
-    class func getImageForUrl(imageUrl: String, callback: (image: UIImage) -> Void){
-        let url = NSURL(string: imageUrl)
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
-                if let data = data, image = UIImage(data: data){
-                    dispatch_async(dispatch_get_main_queue()){
-                        callback(image: image)
+    class func getImageForUrl(_ imageUrl: String, callback: @escaping (_ image: UIImage) -> Void){
+        let url = URL(string: imageUrl)
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) -> Void in
+                if let data = data, let image = UIImage(data: data){
+                    DispatchQueue.main.async{
+                        callback(image)
                     }
                 }
         })

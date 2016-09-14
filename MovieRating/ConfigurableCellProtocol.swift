@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ConfigurableCell {
-    func configure(row: Int, data: MovieInfo)
+    func configure(_ row: Int, data: MovieInfo)
 }

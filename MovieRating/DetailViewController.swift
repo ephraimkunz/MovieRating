@@ -25,7 +25,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var detailTableView: UITableView!
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         if(movieInfo.imdbRating != nil){
             if(movieInfo.description != nil && movieInfo.description != "N/A"){
                 return 3
@@ -35,7 +35,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section{
             case descriptionSection:
                 fallthrough
@@ -49,23 +49,23 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: ConfigurableCell
-        switch indexPath.section{
+        switch (indexPath as NSIndexPath).section{
         case titleSection:
-            cell = detailTableView.dequeueReusableCellWithIdentifier(titleCellId) as! DetailTitleCell
+            cell = detailTableView.dequeueReusableCell(withIdentifier: titleCellId) as! DetailTitleCell
         case ratingSection:
-            cell = detailTableView.dequeueReusableCellWithIdentifier(ratingCellId) as! DetailRatingCell
+            cell = detailTableView.dequeueReusableCell(withIdentifier: ratingCellId) as! DetailRatingCell
         case descriptionSection:
-            cell = detailTableView.dequeueReusableCellWithIdentifier(descriptionCellId) as! DetailDescriptionCell
+            cell = detailTableView.dequeueReusableCell(withIdentifier: descriptionCellId) as! DetailDescriptionCell
         default:
-            fatalError("Unrecognized section for cellForRowAtIndexPath: \(indexPath.section)")
+            fatalError("Unrecognized section for cellForRowAtIndexPath: \((indexPath as NSIndexPath).section)")
         }
-        cell.configure(indexPath.row, data: self.movieInfo)
+        cell.configure((indexPath as NSIndexPath).row, data: self.movieInfo)
         return cell as! UITableViewCell
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section{
         case titleSection:
             return "Information"
@@ -78,45 +78,45 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200 //No special meaning to this, but to autosize the height we need it
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Only cells selectable are the rating cells with urls
-        if indexPath.section == ratingSection{
-            let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailRatingCell
+        if (indexPath as NSIndexPath).section == ratingSection{
+            let cell = tableView.cellForRow(at: indexPath) as! DetailRatingCell
             cell.didSelect(movieInfo)
         }
     }
     
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == descriptionSection || indexPath.section == titleSection{
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        if (indexPath as NSIndexPath).section == descriptionSection || (indexPath as NSIndexPath).section == titleSection{
             return false
         }
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailRatingCell
+        let cell = tableView.cellForRow(at: indexPath) as! DetailRatingCell
         return cell.shouldHighlightRow()
     }
     
     func deselectRow() {
         if let row = self.detailTableView.indexPathForSelectedRow{
-            self.detailTableView.deselectRowAtIndexPath(row, animated: true)
+            self.detailTableView.deselectRow(at: row, animated: true)
         }
     }
     
     deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DetailViewController.deselectRow), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.deselectRow), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
         detailTableView.rowHeight = UITableViewAutomaticDimension
         let parent = self.navigationController!.viewControllers.first! //Find this out here and save it so that we avoid the race condition where they press back before the url request completes.
         
         
         //Save the barcode basic info here. Sometimes the omdb lookup seems to timeout so no history is saved. By saving here, we can update it if the omdb api works.
-         BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKindOfClass(ViewController))
+         BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKind(of: ViewController.self))
         
         /* So why do we do this here. I'm glad you asked. A couple reasons. First, we want to switch from
          the barcode scanning screen as quickly as possible after a scan happens so the user knows that it
@@ -126,8 +126,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
          */
         if let movieTitle = movieInfo.title{
             // Log for analytics
-            let contentType = parent.isKindOfClass(ViewController) ? "New scan" : "History"
-            Answers.logContentViewWithName("Viewing Detail Page For Barcode",
+            let contentType = parent.isKind(of: ViewController.self) ? "New scan" : "History"
+            Answers.logContentView(withName: "Viewing Detail Page For Barcode",
                                            contentType: contentType,
                                            contentId: movieInfo.barcode!,
                                            customAttributes: [
@@ -174,7 +174,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.movieInfo.rottenUrl = rottenUrl
                 }
                 
-                BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKindOfClass(ViewController))
+                BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKind(of: ViewController.self))
                 
                 if let rating = self.movieInfo.imdbRating{
                     self.navigationController?.navigationBar.barTintColor = Platform.getColorForRating(rating)

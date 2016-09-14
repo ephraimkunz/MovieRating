@@ -6,7 +6,7 @@ target 'MovieRating' do
   use_frameworks!
 
   # Pods for MovieRating
-pod 'Cosmos', '~> 1.2'
+pod 'Cosmos'
 pod 'ChameleonFramework'
 pod 'Fabric'
 pod 'Crashlytics'

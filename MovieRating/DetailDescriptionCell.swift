@@ -13,7 +13,7 @@ class DetailDescriptionCell: UITableViewCell, ConfigurableCell{
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    func configure(row: Int, data: MovieInfo){
+    func configure(_ row: Int, data: MovieInfo){
         if let descriptionText = data.description{
             descriptionLabel.text = descriptionText
         }

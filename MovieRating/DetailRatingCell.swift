@@ -20,65 +20,65 @@ class DetailRatingCell: UITableViewCell, ConfigurableCell{
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var ratingStars: CosmosView!
     @IBOutlet weak var ratingValue: UILabel!
-    var type = RatingType.NoType
+    var type = RatingType.noType
     
-    func configure(row: Int, data: MovieInfo){
+    func configure(_ row: Int, data: MovieInfo){
         switch row{
         case imdbRow:
-            type = RatingType.Imdb
+            type = RatingType.imdb
             iconImage.image = UIImage(named: "imdbIcon")
             if let rating = data.imdbRating{
                 ratingStars.rating = rating
                 ratingValue.text = String(rating)
             }
             if data.imdbId != nil{
-                self.accessoryType = .DisclosureIndicator
+                self.accessoryType = .disclosureIndicator
             }else{
-                self.accessoryType = .None
+                self.accessoryType = .none
             }
         case rottenRow:
-            type = RatingType.Rotten
+            type = RatingType.rotten
             iconImage.image = UIImage(named: "rottenIcon")
             if let rating = data.rottenRating{
                 ratingStars.rating = rating
                 ratingValue.text = String(rating)
             }
             if data.rottenUrl != nil{
-                self.accessoryType = .DisclosureIndicator
+                self.accessoryType = .disclosureIndicator
             }else{
-                self.accessoryType = .None
+                self.accessoryType = .none
             }
 
             case metaRow:
-            type = RatingType.Meta
+            type = RatingType.meta
             iconImage.image = UIImage(named: "metaIcon")
             if let rating = data.metaRating{
                 ratingStars.rating = rating
                 ratingValue.text = String(rating)
             }
-            self.accessoryType = .None
+            self.accessoryType = .none
         default:
             fatalError("Unexpected row to fetch icon image for: \(row)")
         }
     }
     
     func shouldHighlightRow() -> Bool{
-        return self.accessoryType != .None
+        return self.accessoryType != .none
     }
     
-    func didSelect(data: MovieInfo){
-        let url: NSURL
+    func didSelect(_ data: MovieInfo){
+        let url: URL
         switch type {
-        case .Imdb:
+        case .imdb:
             if let id = data.imdbId{
-                url = NSURL(string: imdbUrlScheme + id)!
-                UIApplication.sharedApplication().openURL(url)
+                url = URL(string: imdbUrlScheme + id)!
+                UIApplication.shared.openURL(url)
 
             }
-        case .Rotten:
+        case .rotten:
             if let rottenUrl = data.rottenUrl{
-                url = NSURL(string: rottenUrl)!
-                UIApplication.sharedApplication().openURL(url)
+                url = URL(string: rottenUrl)!
+                UIApplication.shared.openURL(url)
             }
         default:
             fatalError("User selected row that should never have been selected")
