@@ -516,9 +516,6 @@
 					608B49B5DDACC601EE8044A1931993F9 = {
 						LastSwiftMigration = 0800;
 					};
-					9B57F4EE4746045CEAE2D933A3C8EC9E = {
-						LastSwiftMigration = 0800;
-					};
 					A1D2E1A4188189A3E6B115F3A22B817D = {
 						LastSwiftMigration = 0800;
 					};
@@ -845,7 +842,6 @@
 				PRODUCT_NAME = ChameleonFramework;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -875,7 +871,6 @@
 				PRODUCT_NAME = ChameleonFramework;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

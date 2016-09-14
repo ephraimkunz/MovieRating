@@ -14,7 +14,7 @@ class BarcodeStore{
     static let moc = CoreDataController().managedObjectContext //Singleton so that we all use it. This way,
     //FetchedResultController can keep track of the changes
     
-    fileprivate func historyFetchRequest() -> NSFetchRequest<AnyObject>{
+    fileprivate func historyFetchRequest() -> NSFetchRequest<NSFetchRequestResult>{
         return NSFetchRequest(entityName: BARCODE_NAME)
     }
     
@@ -22,7 +22,7 @@ class BarcodeStore{
         return BarcodeStoreDatasource(tableView: refTableView, delegate: delegate);
     }
     
-    func historyFetchedResultsController() -> NSFetchedResultsController<AnyObject>{
+    func historyFetchedResultsController() -> NSFetchedResultsController<NSFetchRequestResult>{
         let request = historyFetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
 

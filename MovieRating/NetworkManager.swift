@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 class NetworkManager{
     class func getItemForUPC(_ code: String, callback: @escaping (_ data: MovieInfo) -> Void){
         let url = URL(string: "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
@@ -15,7 +16,7 @@ class NetworkManager{
             do{
                 let str = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions())
                 
-                let item = str["0"]! as! [String:String]
+                let item = (str as AnyObject)["0"]! as! [String:String]
                 print(item)
                 let movieInfo = MovieInfo()
                 movieInfo.title = NetworkManager.parseRawTitle(item["productname"])
@@ -62,15 +63,19 @@ class NetworkManager{
         guard let rawUnwrapped = raw else{
             return raw
         }
-        var parsed = rawUnwrapped.replacingOccurrences(of: "\\(.*\\)", with: "", options: .regularExpression, range: rawUnwrapped.characters.indices)
         
-        parsed = parsed.replacingOccurrences(of: "\\[.*\\]", with: "", options: .regularExpression, range: parsed.characters.indices)
+        var parsed = rawUnwrapped.replacingOccurrences(of: "\\(.*\\)", with: "", options: .regularExpression, range: rawUnwrapped.range(of: rawUnwrapped))
+        
+        parsed = parsed.replacingOccurrences(of: "\\[.*\\]", with: "", options: .regularExpression, range: parsed.range(of: parsed))
         
         return parsed
     }
     
     class func getRatingForItemTitle(_ title: String, callback: @escaping (_ data: NSDictionary) -> Void){
-        let encodedTitle = title.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed())!
+        var encodedTitle = title.trimmingCharacters(in: .whitespaces)
+        encodedTitle = encodedTitle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+
         let url = URL(string: "https://www.omdbapi.com/?t=\(encodedTitle)&y=&plot=short&r=json&tomatoes=true")
         let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) -> Void in
             do{
@@ -82,7 +87,7 @@ class NetworkManager{
                 
                 print("Ratings fetch \(dict.description)")
                 DispatchQueue.main.async{
-                    callback(data: dict)
+                    callback(dict)
                 }
             }
             catch {

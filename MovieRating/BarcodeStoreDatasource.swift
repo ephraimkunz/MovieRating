@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class BarcodeStoreDatasource: NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate{
-    var fetchedController: NSFetchedResultsController<AnyObject>
+    var fetchedController: NSFetchedResultsController<NSFetchRequestResult>
     var referencingTableView: UITableView
     var delegate: TableViewHasDataProtocol?
     
