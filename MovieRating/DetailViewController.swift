@@ -135,43 +135,41 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 ])
     
             NetworkManager.getRatingForItemTitle(movieTitle){ json in
-                if let imdb = json["imdbRating"] as? NSString{
-                    let imdbDouble = imdb.doubleValue
-                    self.movieInfo.imdbRating = imdbDouble
-                }
-                
-                if let meta = json["Metascore"] as? NSString{
-                    let metaDouble = meta.doubleValue / 10.0
-                    self.movieInfo.metaRating = metaDouble
-                }
-                
-                if let tomato = json["tomatoRating"] as? NSString{
-                    let tomatoDouble = tomato.doubleValue
-                    self.movieInfo.rottenRating = tomatoDouble
-                }
-                
-                if let tomatoConsensus = json["tomatoConsensus"] as? String{
-                    self.movieInfo.description = tomatoConsensus
-                }
-                
-//                if let imageUrl = json["Poster"] as? String{
-//                    self.movieInfo.imageUrl = imageUrl
-//                }
-                
-                if let mpaa = json["Rated"] as? String{
-                    self.movieInfo.mpaaRating = mpaa
-                }
-                
-                if let year = json["Year"] as? String{
-                    self.movieInfo.year = year
-                }
-                
-                if let imdbId = json["imdbID"] as? String{
-                    self.movieInfo.imdbId = imdbId
-                }
-                
-                if let rottenUrl = json["tomatoURL"] as? String{
-                    self.movieInfo.rottenUrl = rottenUrl
+                if let dictionary = json as? [String:Any]{
+                    if let imdb = dictionary["imdbRating"] as? NSString{
+                        let imdbDouble = imdb.doubleValue
+                        self.movieInfo.imdbRating = imdbDouble
+                    }
+                    
+                    if let meta = dictionary["Metascore"] as? NSString{
+                        let metaDouble = meta.doubleValue / 10.0
+                        self.movieInfo.metaRating = metaDouble
+                    }
+                    
+                    if let tomato = dictionary["tomatoRating"] as? NSString{
+                        let tomatoDouble = tomato.doubleValue
+                        self.movieInfo.rottenRating = tomatoDouble
+                    }
+                    
+                    if let tomatoConsensus = dictionary["tomatoConsensus"] as? String{
+                        self.movieInfo.description = tomatoConsensus
+                    }
+                    
+                    if let mpaa = dictionary["Rated"] as? String{
+                        self.movieInfo.mpaaRating = mpaa
+                    }
+                    
+                    if let year = dictionary["Year"] as? String{
+                        self.movieInfo.year = year
+                    }
+                    
+                    if let imdbId = dictionary["imdbID"] as? String{
+                        self.movieInfo.imdbId = imdbId
+                    }
+                    
+                    if let rottenUrl = dictionary["tomatoURL"] as? String{
+                        self.movieInfo.rottenUrl = rottenUrl
+                    }
                 }
                 
                 BarcodeStore().saveBarcode(self.movieInfo, saveTimestamp: parent.isKind(of: ViewController.self))
