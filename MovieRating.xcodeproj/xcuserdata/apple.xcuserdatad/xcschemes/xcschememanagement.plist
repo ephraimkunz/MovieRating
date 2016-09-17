@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MovieRating.xcscheme</key>
+		<key>MovieRating.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,6 +12,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>18033D081D8DBD2B00BC5D79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>18BAF98E1D0C9065001CC185</key>
 		<dict>
 			<key>primary</key>

@@ -1,0 +1,5 @@
+language: objective-c
+osx-image: xcode8.1
+xcode_workspace: MovieRating.xcworkspace
+xcode_scheme: MovieRating
+xcode_sdk: iphonesimulator9.0
