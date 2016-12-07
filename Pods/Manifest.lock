@@ -2,10 +2,10 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
-  - Cosmos (6.0.1)
-  - Crashlytics (3.8.1):
+  - Cosmos (7.0.0)
+  - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.8)
+  - Fabric (1.6.11)
 
 DEPENDENCIES:
   - ChameleonFramework
@@ -15,9 +15,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Cosmos: 374de9804e382a23662908688ab15c8f473977fe
-  Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
-  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  Cosmos: 2c8299147138758f6ebbb247cf1aeed77998bdf9
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
 
 PODFILE CHECKSUM: cbb4cdf4bcaa8f2b8827b23c165210ef279b2c9d
 

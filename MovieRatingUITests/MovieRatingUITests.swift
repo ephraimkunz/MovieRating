@@ -14,7 +14,6 @@ class MovieRatingUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
         XCUIDevice.shared().orientation = .faceUp
         XCUIDevice.shared().orientation = .faceUp
         continueAfterFailure = false

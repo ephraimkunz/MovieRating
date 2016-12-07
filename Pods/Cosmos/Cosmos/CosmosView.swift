@@ -44,7 +44,7 @@ Shows: ★★★★☆ (132)
   }
   
   /// Stores calculated size of the view. It is used as intrinsic content size.
-  fileprivate var viewSize = CGSize()
+  private var viewSize = CGSize()
 
   /// Draws the stars when the view comes out of storyboard with default settings
   open override func awakeFromNib() {
@@ -86,7 +86,7 @@ Shows: ★★★★☆ (132)
   }
   
   /// Change view settings for faster drawing
-  fileprivate func improvePerformance() {
+  private func improvePerformance() {
     /// Cache the view into a bitmap instead of redrawing the stars each time
     layer.shouldRasterize = true
     layer.rasterizationScale = UIScreen.main.scale
@@ -136,7 +136,7 @@ Shows: ★★★★☆ (132)
   - returns: The newly created text layer.
   
   */
-  fileprivate func createTextLayer(_ text: String, layers: [CALayer]) -> CALayer {
+  private func createTextLayer(_ text: String, layers: [CALayer]) -> CALayer {
     let textLayer = CosmosLayerHelper.createTextLayer(text,
       font: settings.textFont, color: settings.textColor)
     
@@ -156,7 +156,7 @@ Shows: ★★★★☆ (132)
   - parameter layers: Array of layers containing stars and the text.
 
   */
-  fileprivate func updateSize(_ layers: [CALayer]) {
+  private func updateSize(_ layers: [CALayer]) {
     viewSize = CosmosSize.calculateSizeToFitLayers(layers)
     invalidateIntrinsicContentSize()
   }
@@ -168,7 +168,7 @@ Shows: ★★★★☆ (132)
   
   // MARK: - Accessibility
   
-  fileprivate func updateAccessibility() {
+  private func updateAccessibility() {
     CosmosAccessibility.update(self, rating: rating, text: text, settings: settings)
   }
   
@@ -251,7 +251,7 @@ Shows: ★★★★☆ (132)
     previousRatingForDidTouchCallback = calculatedTouchRating
   }
   
-  fileprivate var previousRatingForDidTouchCallback: Double = -123.192
+  private var previousRatingForDidTouchCallback: Double = -123.192
   
   
   /// Width of the stars (excluding the text). Used for calculating touch location.

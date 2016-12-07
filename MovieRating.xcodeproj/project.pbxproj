@@ -277,19 +277,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Ephraim Kunz";
 				TargetAttributes = {
 					18033D081D8DBD2B00BC5D79 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = D5ED37V79V;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 18BAF98E1D0C9065001CC185;
 					};
 					18BAF98E1D0C9065001CC185 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = D5ED37V79V;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -631,6 +632,7 @@
 				18033D111D8DBD2B00BC5D79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BAF98A1D0C9065001CC185 /* Build configuration list for PBXProject "MovieRating" */ = {
 			isa = XCConfigurationList;
