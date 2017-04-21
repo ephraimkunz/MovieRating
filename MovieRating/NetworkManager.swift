@@ -69,15 +69,16 @@ class NetworkManager{
         
         let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) -> Void in
             do{
-                guard error == nil else{
+                if let error = error {
                     print("Error fetching ratings: \(error)")
                     return
-                }
-                let dict = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions())
-                
-                print("Ratings fetch \(dict)")
-                DispatchQueue.main.async{
-                    callback(dict)
+                } else {
+                    let dict = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions())
+
+                    print("Ratings fetch \(dict)")
+                    DispatchQueue.main.async{
+                        callback(dict)
+                    }
                 }
             }
             catch {
