@@ -13,7 +13,6 @@ class NetworkManager{
     class func getItemForUPC(_ code: String, callback: @escaping (_ data: MovieInfo) -> Void){
         //Back up database to fetch item info from, if the current one stops working
         //"http://api.upcdatabase.org/json/82a4b5ee8dbaf3d18a653a0a74aeff66/\(code)"
-        
         let url = URL(string: "https://secure25.win.hostgator.com/searchupc_com/handlers/upcsearch.ashx?request_type=3&access_token=5A19B55C-88CB-4F31-937B-8FF6380C62D3&upc=\(code)")
         
         let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, _) -> Void in

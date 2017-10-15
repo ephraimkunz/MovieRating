@@ -125,7 +125,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
 
     
-    func metadataOutput(captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if(self.processingNetworkRequest){
             return
         }
