@@ -57,11 +57,11 @@ struct Platform {
     }
     
     static func hasTorch() -> Bool{
-        return AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo).hasTorch
+        return AVCaptureDevice.default(for: AVMediaType.video)!.hasTorch
     }
     
     static func toggleTorch() -> Bool{ // Returns new value of torch
-        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let device = AVCaptureDevice.default(for: AVMediaType.video)
         var newTorchState = false
         
         if (device?.hasTorch)! {
@@ -72,7 +72,7 @@ struct Platform {
                 }
                 else {
                     do {
-                        try device?.setTorchModeOnWithLevel(1.0)
+                        try device?.setTorchModeOn(level: 1.0)
                         newTorchState = true
                     }
                     catch {

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "firstTime": true
             ])
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         
         Fabric.with([Crashlytics.self])
         

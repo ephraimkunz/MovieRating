@@ -98,7 +98,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell.shouldHighlightRow()
     }
     
-    func deselectRow() {
+    @objc func deselectRow() {
         if let row = self.detailTableView.indexPathForSelectedRow{
             self.detailTableView.deselectRow(at: row, animated: true)
         }

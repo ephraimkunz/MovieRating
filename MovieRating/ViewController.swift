@@ -17,13 +17,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     func addPreviewLayer() {
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewLayer?.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
         self.view.layer.addSublayer(previewLayer!)
         updateBracketSubview()
     }
     
-    func updateBracketSubview(){
+    @objc func updateBracketSubview(){
         if (self.view.subviews.last!.isKind(of: UIButton.self)){ //Remove old button subview, if it exists
             self.view.subviews.last!.removeFromSuperview()
         }
@@ -49,7 +49,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
     }
     
-    func torchButtonTapped(_ sender: UIButton){
+    @objc func torchButtonTapped(_ sender: UIButton){
         if Platform.toggleTorch(){
             sender.setImage(#imageLiteral(resourceName: "filledFlashIcon").withRenderingMode(.alwaysTemplate), for: .normal)
         }
@@ -58,7 +58,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
     }
     
-    func updateCameraFeed(){
+    @objc func updateCameraFeed(){
         let previewLayerConnection = previewLayer?.connection;
         
         if (previewLayerConnection!.isVideoOrientationSupported){
@@ -71,9 +71,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         super.viewDidLoad()
         
         if(!Platform.isSimulator){
-            let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+            let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
             do{
-                let inputDevice = try AVCaptureDeviceInput(device: captureDevice)
+                let inputDevice = try AVCaptureDeviceInput(device: captureDevice!)
                 
                 session.addInput(inputDevice)
             }
@@ -84,9 +84,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             let output = AVCaptureMetadataOutput()
             session.addOutput(output)
             output.metadataObjectTypes = [
-                AVMetadataObjectTypeEAN8Code,
-                AVMetadataObjectTypeUPCECode,
-                AVMetadataObjectTypeEAN13Code]
+                AVMetadataObject.ObjectType.ean8,
+                AVMetadataObject.ObjectType.upce,
+                AVMetadataObject.ObjectType.ean13]
           
             output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         }
@@ -125,7 +125,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
 
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func metadataOutput(captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if(self.processingNetworkRequest){
             return
         }
@@ -133,7 +133,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         for data in metadataObjects {
             let barcode = data as! AVMetadataMachineReadableCodeObject
  
-            NetworkManager.getItemForUPC(barcode.stringValue){movieInfo in
+            NetworkManager.getItemForUPC(barcode.stringValue!){movieInfo in
                 let detailView = self.storyboard?.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
                 detailView.movieInfo = movieInfo
                 self.navigationController?.pushViewController(detailView, animated: true)
